@@ -1,6 +1,6 @@
 ﻿namespace CalorieTracker
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.panelBottom = new System.Windows.Forms.Panel();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.btnSettings = new System.Windows.Forms.Button();
@@ -36,16 +36,18 @@
             this.btnMeal = new System.Windows.Forms.Button();
             this.btnReports = new System.Windows.Forms.Button();
             this.btnHome = new System.Windows.Forms.Button();
-            this.panelTitleBar = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.panelTitleBar = new System.Windows.Forms.Panel();
+            this.btnMinimizeApp = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnCloseApp = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
             this.panelTitleBar.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelBottom
             // 
-            this.panelBottom.BackColor = System.Drawing.Color.Peru;
+            this.panelBottom.BackColor = System.Drawing.Color.OliveDrab;
             this.panelBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelBottom.Location = new System.Drawing.Point(0, 770);
             this.panelBottom.Name = "panelBottom";
@@ -54,7 +56,7 @@
             // 
             // panelMenu
             // 
-            this.panelMenu.BackColor = System.Drawing.Color.Peru;
+            this.panelMenu.BackColor = System.Drawing.Color.OliveDrab;
             this.panelMenu.Controls.Add(this.btnSettings);
             this.panelMenu.Controls.Add(this.btnUser);
             this.panelMenu.Controls.Add(this.btnMeal);
@@ -69,7 +71,7 @@
             // 
             // btnSettings
             // 
-            this.btnSettings.BackColor = System.Drawing.Color.Peru;
+            this.btnSettings.BackColor = System.Drawing.Color.OliveDrab;
             this.btnSettings.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSettings.BackgroundImage")));
             this.btnSettings.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnSettings.Dock = System.Windows.Forms.DockStyle.Left;
@@ -86,7 +88,7 @@
             // 
             // btnUser
             // 
-            this.btnUser.BackColor = System.Drawing.Color.Peru;
+            this.btnUser.BackColor = System.Drawing.Color.OliveDrab;
             this.btnUser.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnUser.BackgroundImage")));
             this.btnUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnUser.Dock = System.Windows.Forms.DockStyle.Left;
@@ -103,7 +105,7 @@
             // 
             // btnMeal
             // 
-            this.btnMeal.BackColor = System.Drawing.Color.Peru;
+            this.btnMeal.BackColor = System.Drawing.Color.OliveDrab;
             this.btnMeal.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMeal.BackgroundImage")));
             this.btnMeal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMeal.Dock = System.Windows.Forms.DockStyle.Left;
@@ -120,7 +122,7 @@
             // 
             // btnReports
             // 
-            this.btnReports.BackColor = System.Drawing.Color.Peru;
+            this.btnReports.BackColor = System.Drawing.Color.OliveDrab;
             this.btnReports.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnReports.BackgroundImage")));
             this.btnReports.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnReports.Dock = System.Windows.Forms.DockStyle.Left;
@@ -137,7 +139,7 @@
             // 
             // btnHome
             // 
-            this.btnHome.BackColor = System.Drawing.Color.Peru;
+            this.btnHome.BackColor = System.Drawing.Color.OliveDrab;
             this.btnHome.BackgroundImage = global::CalorieTracker.Properties.Resources.home_button;
             this.btnHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnHome.Dock = System.Windows.Forms.DockStyle.Left;
@@ -152,15 +154,43 @@
             this.btnHome.UseVisualStyleBackColor = false;
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.OliveDrab;
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(69, 66);
+            this.panel3.TabIndex = 0;
+            // 
             // panelTitleBar
             // 
-            this.panelTitleBar.BackColor = System.Drawing.Color.Peru;
+            this.panelTitleBar.BackColor = System.Drawing.Color.OliveDrab;
+            this.panelTitleBar.Controls.Add(this.btnMinimizeApp);
             this.panelTitleBar.Controls.Add(this.label1);
             this.panelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitleBar.Location = new System.Drawing.Point(0, 0);
             this.panelTitleBar.Name = "panelTitleBar";
             this.panelTitleBar.Size = new System.Drawing.Size(640, 68);
             this.panelTitleBar.TabIndex = 2;
+            this.panelTitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitleBar_MouseDown);
+            // 
+            // btnMinimizeApp
+            // 
+            this.btnMinimizeApp.BackColor = System.Drawing.Color.OliveDrab;
+            this.btnMinimizeApp.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnMinimizeApp.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.btnMinimizeApp.FlatAppearance.MouseDownBackColor = System.Drawing.Color.YellowGreen;
+            this.btnMinimizeApp.FlatAppearance.MouseOverBackColor = System.Drawing.Color.OliveDrab;
+            this.btnMinimizeApp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinimizeApp.Location = new System.Drawing.Point(513, 12);
+            this.btnMinimizeApp.Name = "btnMinimizeApp";
+            this.btnMinimizeApp.Size = new System.Drawing.Size(40, 40);
+            this.btnMinimizeApp.TabIndex = 4;
+            this.btnMinimizeApp.Text = "_";
+            this.btnMinimizeApp.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnMinimizeApp.UseVisualStyleBackColor = false;
+            this.btnMinimizeApp.Click += new System.EventHandler(this.btnMinimizeApp_Click);
             // 
             // label1
             // 
@@ -174,24 +204,34 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "HOME";
             // 
-            // panel3
+            // btnCloseApp
             // 
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(69, 66);
-            this.panel3.TabIndex = 0;
+            this.btnCloseApp.BackColor = System.Drawing.Color.OliveDrab;
+            this.btnCloseApp.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnCloseApp.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.btnCloseApp.FlatAppearance.MouseDownBackColor = System.Drawing.Color.YellowGreen;
+            this.btnCloseApp.FlatAppearance.MouseOverBackColor = System.Drawing.Color.OliveDrab;
+            this.btnCloseApp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCloseApp.Location = new System.Drawing.Point(573, 12);
+            this.btnCloseApp.Name = "btnCloseApp";
+            this.btnCloseApp.Size = new System.Drawing.Size(40, 40);
+            this.btnCloseApp.TabIndex = 4;
+            this.btnCloseApp.Text = "X";
+            this.btnCloseApp.UseVisualStyleBackColor = false;
+            this.btnCloseApp.Click += new System.EventHandler(this.btnCloseApp_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(640, 796);
+            this.Controls.Add(this.btnCloseApp);
             this.Controls.Add(this.panelTitleBar);
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.panelBottom);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
-            this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panelMenu.ResumeLayout(false);
             this.panelTitleBar.ResumeLayout(false);
@@ -212,5 +252,7 @@
         private Panel panelTitleBar;
         private Label label1;
         private Panel panel3;
+        private Button btnCloseApp;
+        private Button btnMinimizeApp;
     }
 }
