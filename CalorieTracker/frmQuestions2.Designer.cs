@@ -47,17 +47,19 @@
             // 
             this.panelBottom.BackColor = System.Drawing.Color.OliveDrab;
             this.panelBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelBottom.Location = new System.Drawing.Point(0, 704);
+            this.panelBottom.Location = new System.Drawing.Point(0, 423);
+            this.panelBottom.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelBottom.Name = "panelBottom";
-            this.panelBottom.Size = new System.Drawing.Size(640, 92);
+            this.panelBottom.Size = new System.Drawing.Size(448, 55);
             this.panelBottom.TabIndex = 40;
             // 
             // btnNext
             // 
             this.btnNext.BackColor = System.Drawing.Color.OliveDrab;
-            this.btnNext.Location = new System.Drawing.Point(444, 608);
+            this.btnNext.Location = new System.Drawing.Point(311, 365);
+            this.btnNext.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(147, 50);
+            this.btnNext.Size = new System.Drawing.Size(103, 30);
             this.btnNext.TabIndex = 41;
             this.btnNext.Text = "Next";
             this.btnNext.UseVisualStyleBackColor = false;
@@ -68,9 +70,10 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe Print", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(218, 7);
+            this.label1.Location = new System.Drawing.Point(153, 4);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(205, 54);
+            this.label1.Size = new System.Drawing.Size(137, 35);
             this.label1.TabIndex = 10;
             this.label1.Text = "QUESTIONS";
             // 
@@ -82,9 +85,10 @@
             this.btnMinimizeApp.FlatAppearance.MouseDownBackColor = System.Drawing.Color.YellowGreen;
             this.btnMinimizeApp.FlatAppearance.MouseOverBackColor = System.Drawing.Color.OliveDrab;
             this.btnMinimizeApp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMinimizeApp.Location = new System.Drawing.Point(513, 12);
+            this.btnMinimizeApp.Location = new System.Drawing.Point(359, 7);
+            this.btnMinimizeApp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnMinimizeApp.Name = "btnMinimizeApp";
-            this.btnMinimizeApp.Size = new System.Drawing.Size(40, 40);
+            this.btnMinimizeApp.Size = new System.Drawing.Size(28, 24);
             this.btnMinimizeApp.TabIndex = 0;
             this.btnMinimizeApp.Text = "_";
             this.btnMinimizeApp.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -98,9 +102,10 @@
             this.btnCloseApp.FlatAppearance.MouseDownBackColor = System.Drawing.Color.YellowGreen;
             this.btnCloseApp.FlatAppearance.MouseOverBackColor = System.Drawing.Color.OliveDrab;
             this.btnCloseApp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCloseApp.Location = new System.Drawing.Point(573, 12);
+            this.btnCloseApp.Location = new System.Drawing.Point(401, 7);
+            this.btnCloseApp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCloseApp.Name = "btnCloseApp";
-            this.btnCloseApp.Size = new System.Drawing.Size(40, 40);
+            this.btnCloseApp.Size = new System.Drawing.Size(28, 24);
             this.btnCloseApp.TabIndex = 0;
             this.btnCloseApp.Text = "X";
             this.btnCloseApp.UseVisualStyleBackColor = false;
@@ -113,17 +118,19 @@
             this.panelTitleBar.Controls.Add(this.btnCloseApp);
             this.panelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitleBar.Location = new System.Drawing.Point(0, 0);
+            this.panelTitleBar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelTitleBar.Name = "panelTitleBar";
-            this.panelTitleBar.Size = new System.Drawing.Size(640, 68);
+            this.panelTitleBar.Size = new System.Drawing.Size(448, 41);
             this.panelTitleBar.TabIndex = 39;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe Print", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(60, 114);
+            this.label5.Location = new System.Drawing.Point(42, 68);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(543, 245);
+            this.label5.Size = new System.Drawing.Size(384, 168);
             this.label5.TabIndex = 50;
             this.label5.Text = resources.GetString("label5.Text");
             // 
@@ -133,9 +140,10 @@
             this.txtWeightGoal.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtWeightGoal.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtWeightGoal.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.txtWeightGoal.Location = new System.Drawing.Point(335, 372);
+            this.txtWeightGoal.Location = new System.Drawing.Point(234, 223);
+            this.txtWeightGoal.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtWeightGoal.Name = "txtWeightGoal";
-            this.txtWeightGoal.Size = new System.Drawing.Size(255, 33);
+            this.txtWeightGoal.Size = new System.Drawing.Size(178, 22);
             this.txtWeightGoal.TabIndex = 54;
             this.txtWeightGoal.Text = "Enter";
             // 
@@ -143,34 +151,37 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(60, 372);
+            this.label3.Location = new System.Drawing.Point(42, 223);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(176, 32);
+            this.label3.Size = new System.Drawing.Size(120, 22);
             this.label3.TabIndex = 48;
             this.label3.Text = "Goal Weight:";
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel3.Location = new System.Drawing.Point(60, 409);
+            this.panel3.Location = new System.Drawing.Point(42, 245);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(530, 1);
+            this.panel3.Size = new System.Drawing.Size(371, 1);
             this.panel3.TabIndex = 43;
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel4.Location = new System.Drawing.Point(61, 563);
+            this.panel4.Location = new System.Drawing.Point(43, 338);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(530, 1);
+            this.panel4.Size = new System.Drawing.Size(371, 1);
             this.panel4.TabIndex = 42;
             // 
             // frmQuestions2
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(640, 796);
+            this.ClientSize = new System.Drawing.Size(448, 478);
             this.ControlBox = false;
             this.Controls.Add(this.txtWeightGoal);
             this.Controls.Add(this.label3);
@@ -181,6 +192,7 @@
             this.Controls.Add(this.panelTitleBar);
             this.Controls.Add(this.label5);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmQuestions2";
             this.Load += new System.EventHandler(this.frmQuestions2_Load);
             this.panelTitleBar.ResumeLayout(false);

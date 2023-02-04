@@ -19,7 +19,7 @@ namespace UI
 
         private void frmQuestions2_Load(object sender, EventArgs e)
         {
-
+            this.ClientSize = new System.Drawing.Size(640, 796);
         }
     }
 }

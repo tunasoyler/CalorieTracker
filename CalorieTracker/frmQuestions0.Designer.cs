@@ -43,17 +43,19 @@
             // 
             this.panelBottom.BackColor = System.Drawing.Color.OliveDrab;
             this.panelBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelBottom.Location = new System.Drawing.Point(0, 704);
+            this.panelBottom.Location = new System.Drawing.Point(0, 423);
+            this.panelBottom.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelBottom.Name = "panelBottom";
-            this.panelBottom.Size = new System.Drawing.Size(640, 92);
+            this.panelBottom.Size = new System.Drawing.Size(448, 55);
             this.panelBottom.TabIndex = 39;
             // 
             // btnNext
             // 
             this.btnNext.BackColor = System.Drawing.Color.OliveDrab;
-            this.btnNext.Location = new System.Drawing.Point(444, 608);
+            this.btnNext.Location = new System.Drawing.Point(311, 365);
+            this.btnNext.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(147, 50);
+            this.btnNext.Size = new System.Drawing.Size(103, 30);
             this.btnNext.TabIndex = 40;
             this.btnNext.Text = "Next";
             this.btnNext.UseVisualStyleBackColor = false;
@@ -63,9 +65,10 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe Print", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(42, 135);
+            this.label5.Location = new System.Drawing.Point(29, 81);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(563, 420);
+            this.label5.Size = new System.Drawing.Size(398, 288);
             this.label5.TabIndex = 41;
             this.label5.Text = resources.GetString("label5.Text");
             // 
@@ -77,8 +80,9 @@
             this.panelTitleBar.Controls.Add(this.btnClose);
             this.panelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitleBar.Location = new System.Drawing.Point(0, 0);
+            this.panelTitleBar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelTitleBar.Name = "panelTitleBar";
-            this.panelTitleBar.Size = new System.Drawing.Size(640, 68);
+            this.panelTitleBar.Size = new System.Drawing.Size(448, 41);
             this.panelTitleBar.TabIndex = 42;
             this.panelTitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitleBar_MouseDown);
             // 
@@ -88,9 +92,10 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe Print", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label2.Location = new System.Drawing.Point(228, 7);
+            this.label2.Location = new System.Drawing.Point(160, 4);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(185, 54);
+            this.label2.Size = new System.Drawing.Size(125, 35);
             this.label2.TabIndex = 10;
             this.label2.Text = "WELCOME";
             // 
@@ -102,9 +107,10 @@
             this.btnMinimize.FlatAppearance.MouseDownBackColor = System.Drawing.Color.YellowGreen;
             this.btnMinimize.FlatAppearance.MouseOverBackColor = System.Drawing.Color.OliveDrab;
             this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMinimize.Location = new System.Drawing.Point(513, 12);
+            this.btnMinimize.Location = new System.Drawing.Point(359, 7);
+            this.btnMinimize.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnMinimize.Name = "btnMinimize";
-            this.btnMinimize.Size = new System.Drawing.Size(40, 40);
+            this.btnMinimize.Size = new System.Drawing.Size(28, 24);
             this.btnMinimize.TabIndex = 0;
             this.btnMinimize.Text = "_";
             this.btnMinimize.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -119,9 +125,10 @@
             this.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.YellowGreen;
             this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.OliveDrab;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Location = new System.Drawing.Point(573, 12);
+            this.btnClose.Location = new System.Drawing.Point(401, 7);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(40, 40);
+            this.btnClose.Size = new System.Drawing.Size(28, 24);
             this.btnClose.TabIndex = 0;
             this.btnClose.Text = "X";
             this.btnClose.UseVisualStyleBackColor = false;
@@ -129,16 +136,18 @@
             // 
             // frmQuestions0
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(640, 796);
+            this.ClientSize = new System.Drawing.Size(448, 478);
             this.Controls.Add(this.panelTitleBar);
             this.Controls.Add(this.panelBottom);
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.label5);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmQuestions0";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.frmQuestions0_Load);
             this.panelTitleBar.ResumeLayout(false);
             this.panelTitleBar.PerformLayout();
             this.ResumeLayout(false);
