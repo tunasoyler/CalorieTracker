@@ -2,11 +2,10 @@
 {
     public class MealType : BaseEntity
     {
-        public string MealTypeName { get; set; }
-        public virtual ICollection<Meal> Meals { get; set; }
+        public virtual ICollection<MealDetails> MealDetails { get; set; }
         public MealType()
         {
-            Meals = new HashSet<Meal>();
+            MealDetails = new HashSet<MealDetails>();
         }
     }
 }

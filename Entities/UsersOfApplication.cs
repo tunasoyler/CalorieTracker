@@ -1,4 +1,4 @@
-﻿namespace Entities.Enums
+﻿namespace Entities
 {
     public enum UsersOfApplication
     {
