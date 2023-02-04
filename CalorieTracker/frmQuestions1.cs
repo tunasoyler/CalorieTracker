@@ -53,9 +53,42 @@ namespace CalorieTracker
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        private void txtWeight_Enter(object sender, EventArgs e)
         {
+            if (txtWeight.Text == "Enter")
+            {
+                txtWeight.Text = string.Empty;
+            }
+        }
 
+        private void txtWeight_Leave(object sender, EventArgs e)
+        {
+            if (txtWeight.Text == "")
+            {
+                txtWeight.Text = "Enter";
+            }
+        }
+
+        private void txtHeight_Enter(object sender, EventArgs e)
+        {
+            if (txtHeight.Text == "Enter")
+            {
+                txtHeight.Text = string.Empty;
+            }
+
+        }
+
+        private void txtHeight_Leave(object sender, EventArgs e)
+        {
+            if (txtHeight.Text == "")
+            {
+                txtHeight.Text = "Enter";
+            }
+        }
+
+        private void frmQuestions1_Load(object sender, EventArgs e)
+        {
+            dtpBirthDate.Value = DateTime.Now;
         }
     }
 }
