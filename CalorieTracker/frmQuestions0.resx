@@ -60,15 +60,17 @@
   <data name="label5.Text" xml:space="preserve">
     <value>      Welcome to the Calorie Tracker App! 
 Before we begin, it's important to understand 
-what BMR is and why it's important to calculate it.
-BMR, or Basal Metabolic Rate, is the amount of 
-energy your body needs to function at rest. 
-     This means that it's the amount of energy your 
-body requires just to maintain its basic functions, 
-like breathing, circulating blood, and repairing cells, 
-without any additional physical activity. 
-   Calculating your BMR can give you valuable insight 
-into your body's energy needs and can help you 
-determine your calorie goals.</value>
+what BMR is and why it's important to 
+calculate it. BMR, or Basal Metabolic Rate, is
+ the amount of energy your body needs to 
+function at rest. 
+     This means that it's the amount of energy 
+your body requires just to maintain its basic 
+functions, like breathing, circulating blood, 
+and repairing cells, without any additional 
+physical activity. 
+   Calculating your BMR can give you valuable 
+insight into your body's energy needs and can 
+help you determine your calorie goals.</value>
   </data>
 </root>

@@ -49,9 +49,10 @@
             // 
             this.panelBottom.BackColor = System.Drawing.Color.OliveDrab;
             this.panelBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelBottom.Location = new System.Drawing.Point(0, 770);
+            this.panelBottom.Location = new System.Drawing.Point(0, 504);
+            this.panelBottom.Margin = new System.Windows.Forms.Padding(2);
             this.panelBottom.Name = "panelBottom";
-            this.panelBottom.Size = new System.Drawing.Size(640, 26);
+            this.panelBottom.Size = new System.Drawing.Size(360, 16);
             this.panelBottom.TabIndex = 0;
             // 
             // panelMenu
@@ -64,9 +65,10 @@
             this.panelMenu.Controls.Add(this.btnHome);
             this.panelMenu.Controls.Add(this.panel3);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelMenu.Location = new System.Drawing.Point(0, 704);
+            this.panelMenu.Location = new System.Drawing.Point(0, 464);
+            this.panelMenu.Margin = new System.Windows.Forms.Padding(2);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(640, 66);
+            this.panelMenu.Size = new System.Drawing.Size(360, 40);
             this.panelMenu.TabIndex = 1;
             // 
             // btnSettings
@@ -78,9 +80,10 @@
             this.btnSettings.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSettings.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnSettings.Location = new System.Drawing.Point(469, 0);
+            this.btnSettings.Location = new System.Drawing.Point(270, 0);
+            this.btnSettings.Margin = new System.Windows.Forms.Padding(2);
             this.btnSettings.Name = "btnSettings";
-            this.btnSettings.Size = new System.Drawing.Size(100, 66);
+            this.btnSettings.Size = new System.Drawing.Size(60, 40);
             this.btnSettings.TabIndex = 4;
             this.btnSettings.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnSettings.UseVisualStyleBackColor = false;
@@ -95,9 +98,10 @@
             this.btnUser.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUser.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnUser.Location = new System.Drawing.Point(369, 0);
+            this.btnUser.Location = new System.Drawing.Point(210, 0);
+            this.btnUser.Margin = new System.Windows.Forms.Padding(2);
             this.btnUser.Name = "btnUser";
-            this.btnUser.Size = new System.Drawing.Size(100, 66);
+            this.btnUser.Size = new System.Drawing.Size(60, 40);
             this.btnUser.TabIndex = 3;
             this.btnUser.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnUser.UseVisualStyleBackColor = false;
@@ -112,9 +116,10 @@
             this.btnMeal.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnMeal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMeal.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnMeal.Location = new System.Drawing.Point(269, 0);
+            this.btnMeal.Location = new System.Drawing.Point(150, 0);
+            this.btnMeal.Margin = new System.Windows.Forms.Padding(2);
             this.btnMeal.Name = "btnMeal";
-            this.btnMeal.Size = new System.Drawing.Size(100, 66);
+            this.btnMeal.Size = new System.Drawing.Size(60, 40);
             this.btnMeal.TabIndex = 2;
             this.btnMeal.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnMeal.UseVisualStyleBackColor = false;
@@ -129,9 +134,10 @@
             this.btnReports.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnReports.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReports.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnReports.Location = new System.Drawing.Point(169, 0);
+            this.btnReports.Location = new System.Drawing.Point(90, 0);
+            this.btnReports.Margin = new System.Windows.Forms.Padding(2);
             this.btnReports.Name = "btnReports";
-            this.btnReports.Size = new System.Drawing.Size(100, 66);
+            this.btnReports.Size = new System.Drawing.Size(60, 40);
             this.btnReports.TabIndex = 1;
             this.btnReports.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnReports.UseVisualStyleBackColor = false;
@@ -146,9 +152,10 @@
             this.btnHome.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHome.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnHome.Location = new System.Drawing.Point(69, 0);
+            this.btnHome.Location = new System.Drawing.Point(30, 0);
+            this.btnHome.Margin = new System.Windows.Forms.Padding(2);
             this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(100, 66);
+            this.btnHome.Size = new System.Drawing.Size(60, 40);
             this.btnHome.TabIndex = 0;
             this.btnHome.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnHome.UseVisualStyleBackColor = false;
@@ -159,19 +166,22 @@
             this.panel3.BackColor = System.Drawing.Color.OliveDrab;
             this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(69, 66);
+            this.panel3.Size = new System.Drawing.Size(30, 40);
             this.panel3.TabIndex = 0;
             // 
             // panelTitleBar
             // 
             this.panelTitleBar.BackColor = System.Drawing.Color.OliveDrab;
+            this.panelTitleBar.Controls.Add(this.btnCloseApp);
             this.panelTitleBar.Controls.Add(this.btnMinimizeApp);
             this.panelTitleBar.Controls.Add(this.label1);
             this.panelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitleBar.Location = new System.Drawing.Point(0, 0);
+            this.panelTitleBar.Margin = new System.Windows.Forms.Padding(2);
             this.panelTitleBar.Name = "panelTitleBar";
-            this.panelTitleBar.Size = new System.Drawing.Size(640, 68);
+            this.panelTitleBar.Size = new System.Drawing.Size(360, 41);
             this.panelTitleBar.TabIndex = 2;
             this.panelTitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitleBar_MouseDown);
             // 
@@ -183,9 +193,10 @@
             this.btnMinimizeApp.FlatAppearance.MouseDownBackColor = System.Drawing.Color.YellowGreen;
             this.btnMinimizeApp.FlatAppearance.MouseOverBackColor = System.Drawing.Color.OliveDrab;
             this.btnMinimizeApp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMinimizeApp.Location = new System.Drawing.Point(513, 12);
+            this.btnMinimizeApp.Location = new System.Drawing.Point(280, 10);
+            this.btnMinimizeApp.Margin = new System.Windows.Forms.Padding(2);
             this.btnMinimizeApp.Name = "btnMinimizeApp";
-            this.btnMinimizeApp.Size = new System.Drawing.Size(40, 40);
+            this.btnMinimizeApp.Size = new System.Drawing.Size(28, 24);
             this.btnMinimizeApp.TabIndex = 4;
             this.btnMinimizeApp.Text = "_";
             this.btnMinimizeApp.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -198,9 +209,10 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe Print", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(261, 7);
+            this.label1.Location = new System.Drawing.Point(139, 4);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(119, 54);
+            this.label1.Size = new System.Drawing.Size(80, 35);
             this.label1.TabIndex = 3;
             this.label1.Text = "HOME";
             // 
@@ -212,9 +224,10 @@
             this.btnCloseApp.FlatAppearance.MouseDownBackColor = System.Drawing.Color.YellowGreen;
             this.btnCloseApp.FlatAppearance.MouseOverBackColor = System.Drawing.Color.OliveDrab;
             this.btnCloseApp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCloseApp.Location = new System.Drawing.Point(573, 12);
+            this.btnCloseApp.Location = new System.Drawing.Point(320, 10);
+            this.btnCloseApp.Margin = new System.Windows.Forms.Padding(2);
             this.btnCloseApp.Name = "btnCloseApp";
-            this.btnCloseApp.Size = new System.Drawing.Size(40, 40);
+            this.btnCloseApp.Size = new System.Drawing.Size(28, 24);
             this.btnCloseApp.TabIndex = 4;
             this.btnCloseApp.Text = "X";
             this.btnCloseApp.UseVisualStyleBackColor = false;
@@ -222,16 +235,17 @@
             // 
             // frmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(640, 796);
-            this.Controls.Add(this.btnCloseApp);
+            this.ClientSize = new System.Drawing.Size(360, 520);
             this.Controls.Add(this.panelTitleBar);
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.panelBottom);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmMain";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panelMenu.ResumeLayout(false);
             this.panelTitleBar.ResumeLayout(false);
