@@ -2,11 +2,11 @@ using System.Runtime.InteropServices;
 
 namespace CalorieTracker
 {
-    public partial class MainForm : Form
+    public partial class frmMain : Form
     {
         private Button currentButton;
         private int tempIndex;
-        public MainForm()
+        public frmMain()
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.FixedSingle;

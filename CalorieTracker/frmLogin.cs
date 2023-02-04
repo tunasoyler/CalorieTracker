@@ -11,10 +11,10 @@ using System.Windows.Forms;
 
 namespace CalorieTracker
 {
-    public partial class LoginScreen : Form
+    public partial class frmLogin : Form
     {
 
-        public LoginScreen()
+        public frmLogin()
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.FixedSingle;

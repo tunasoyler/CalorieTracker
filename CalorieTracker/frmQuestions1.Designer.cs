@@ -35,23 +35,18 @@
             this.btnCloseApp = new System.Windows.Forms.Button();
             this.btnNext = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txtRePassword = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.cmbGender = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.dtpBirthDate = new System.Windows.Forms.DateTimePicker();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtWeight = new System.Windows.Forms.TextBox();
+            this.txtHeight = new System.Windows.Forms.TextBox();
             this.panelTitleBar.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -126,7 +121,7 @@
             // btnNext
             // 
             this.btnNext.BackColor = System.Drawing.Color.OliveDrab;
-            this.btnNext.Location = new System.Drawing.Point(459, 610);
+            this.btnNext.Location = new System.Drawing.Point(444, 608);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(147, 50);
             this.btnNext.TabIndex = 25;
@@ -136,65 +131,16 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel1.Location = new System.Drawing.Point(63, 166);
+            this.panel1.Location = new System.Drawing.Point(61, 323);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(550, 1);
+            this.panel1.Size = new System.Drawing.Size(530, 1);
             this.panel1.TabIndex = 31;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-            // 
-            // txtRePassword
-            // 
-            this.txtRePassword.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.txtRePassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtRePassword.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtRePassword.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.txtRePassword.Location = new System.Drawing.Point(318, 288);
-            this.txtRePassword.Name = "txtRePassword";
-            this.txtRePassword.Size = new System.Drawing.Size(271, 33);
-            this.txtRePassword.TabIndex = 34;
-            this.txtRePassword.Text = "Weight";
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox1.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.textBox1.Location = new System.Drawing.Point(318, 368);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(271, 33);
-            this.textBox1.TabIndex = 32;
-            this.textBox1.Text = "Height";
-            // 
-            // textBox2
-            // 
-            this.textBox2.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox2.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.textBox2.Location = new System.Drawing.Point(318, 448);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(271, 33);
-            this.textBox2.TabIndex = 33;
-            this.textBox2.Text = "BirthDate";
-            // 
-            // textBox3
-            // 
-            this.textBox3.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox3.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox3.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.textBox3.Location = new System.Drawing.Point(318, 528);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(271, 33);
-            this.textBox3.TabIndex = 34;
-            this.textBox3.Text = "Repeat Password";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(57, 122);
+            this.label2.Location = new System.Drawing.Point(55, 279);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(115, 32);
             this.label2.TabIndex = 35;
@@ -203,67 +149,48 @@
             // cmbGender
             // 
             this.cmbGender.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.cmbGender.DisplayMember = "1";
             this.cmbGender.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmbGender.Font = new System.Drawing.Font("Arial Narrow", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cmbGender.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cmbGender.FormattingEnabled = true;
             this.cmbGender.Items.AddRange(new object[] {
-            "Male,",
+            "Male",
             "Female"});
-            this.cmbGender.Location = new System.Drawing.Point(316, 119);
+            this.cmbGender.Location = new System.Drawing.Point(334, 276);
             this.cmbGender.Name = "cmbGender";
-            this.cmbGender.Size = new System.Drawing.Size(273, 41);
+            this.cmbGender.Size = new System.Drawing.Size(255, 40);
             this.cmbGender.TabIndex = 36;
+            this.cmbGender.Text = " Select";
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel2.Location = new System.Drawing.Point(63, 246);
+            this.panel2.Location = new System.Drawing.Point(61, 403);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(550, 1);
+            this.panel2.Size = new System.Drawing.Size(530, 1);
             this.panel2.TabIndex = 31;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel4.Location = new System.Drawing.Point(63, 406);
+            this.panel4.Location = new System.Drawing.Point(61, 563);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(550, 1);
+            this.panel4.Size = new System.Drawing.Size(530, 1);
             this.panel4.TabIndex = 31;
-            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel5.Location = new System.Drawing.Point(63, 486);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(550, 1);
-            this.panel5.TabIndex = 31;
-            this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel6.Location = new System.Drawing.Point(63, 566);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(550, 1);
-            this.panel6.TabIndex = 31;
-            this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel3.Location = new System.Drawing.Point(63, 326);
+            this.panel3.Location = new System.Drawing.Point(61, 483);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(550, 1);
+            this.panel3.Size = new System.Drawing.Size(530, 1);
             this.panel3.TabIndex = 31;
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(57, 207);
+            this.label3.Location = new System.Drawing.Point(55, 364);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(146, 32);
             this.label3.TabIndex = 35;
@@ -273,49 +200,69 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(57, 288);
+            this.label4.Location = new System.Drawing.Point(55, 445);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(115, 32);
+            this.label4.Size = new System.Drawing.Size(110, 32);
             this.label4.TabIndex = 35;
-            this.label4.Text = "Gender:";
+            this.label4.Text = "Weight:";
+            // 
+            // dtpBirthDate
+            // 
+            this.dtpBirthDate.Checked = false;
+            this.dtpBirthDate.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dtpBirthDate.Location = new System.Drawing.Point(334, 356);
+            this.dtpBirthDate.Name = "dtpBirthDate";
+            this.dtpBirthDate.Size = new System.Drawing.Size(255, 40);
+            this.dtpBirthDate.TabIndex = 37;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label8.Location = new System.Drawing.Point(55, 525);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(103, 32);
+            this.label8.TabIndex = 35;
+            this.label8.Text = "Height:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(57, 368);
+            this.label5.Font = new System.Drawing.Font("Segoe Print", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label5.Location = new System.Drawing.Point(60, 150);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(115, 32);
+            this.label5.Size = new System.Drawing.Size(527, 140);
             this.label5.TabIndex = 35;
-            this.label5.Text = "Gender:";
+            this.label5.Text = "    So, let\'s get started by answering the following \r\nquestions about you to cal" +
+    "culate your BMR:\r\n\r\n\r\n";
             // 
-            // label6
+            // txtWeight
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(57, 448);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(115, 32);
-            this.label6.TabIndex = 35;
-            this.label6.Text = "Gender:";
+            this.txtWeight.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.txtWeight.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtWeight.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtWeight.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.txtWeight.Location = new System.Drawing.Point(334, 444);
+            this.txtWeight.Name = "txtWeight";
+            this.txtWeight.Size = new System.Drawing.Size(255, 33);
+            this.txtWeight.TabIndex = 38;
+            this.txtWeight.Text = "Enter";
+            this.txtWeight.Enter += new System.EventHandler(this.txtWeight_Enter);
+            this.txtWeight.Leave += new System.EventHandler(this.txtWeight_Leave);
             // 
-            // label7
+            // txtHeight
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(57, 528);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(115, 32);
-            this.label7.TabIndex = 35;
-            this.label7.Text = "Gender:";
-            // 
-            // dtpBirthDate
-            // 
-            this.dtpBirthDate.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dtpBirthDate.Location = new System.Drawing.Point(316, 199);
-            this.dtpBirthDate.Name = "dtpBirthDate";
-            this.dtpBirthDate.Size = new System.Drawing.Size(273, 40);
-            this.dtpBirthDate.TabIndex = 37;
+            this.txtHeight.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.txtHeight.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtHeight.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtHeight.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.txtHeight.Location = new System.Drawing.Point(334, 524);
+            this.txtHeight.Name = "txtHeight";
+            this.txtHeight.Size = new System.Drawing.Size(255, 33);
+            this.txtHeight.TabIndex = 38;
+            this.txtHeight.Text = "Enter";
+            this.txtHeight.Enter += new System.EventHandler(this.txtHeight_Enter);
+            this.txtHeight.Leave += new System.EventHandler(this.txtHeight_Leave);
             // 
             // frmQuestions1
             // 
@@ -323,29 +270,26 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(640, 796);
+            this.Controls.Add(this.txtHeight);
+            this.Controls.Add(this.txtWeight);
             this.Controls.Add(this.dtpBirthDate);
             this.Controls.Add(this.cmbGender);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.txtRePassword);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.panelBottom);
             this.Controls.Add(this.panelTitleBar);
             this.Controls.Add(this.btnNext);
-            this.Controls.Add(this.panel6);
-            this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.label5);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmQuestions1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.frmQuestions1_Load);
             this.panelTitleBar.ResumeLayout(false);
             this.panelTitleBar.PerformLayout();
             this.ResumeLayout(false);
@@ -362,22 +306,17 @@
         private Button btnCloseApp;
         private Button btnNext;
         private Panel panel1;
-        private TextBox txtRePassword;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
         private Label label2;
         private ComboBox cmbGender;
         private Panel panel2;
         private Panel panel4;
-        private Panel panel5;
-        private Panel panel6;
         private Panel panel3;
         private Label label3;
         private Label label4;
-        private Label label5;
-        private Label label6;
-        private Label label7;
         private DateTimePicker dtpBirthDate;
+        private Label label8;
+        private Label label5;
+        private TextBox txtWeight;
+        private TextBox txtHeight;
     }
 }
