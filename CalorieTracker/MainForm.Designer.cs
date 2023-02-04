@@ -220,7 +220,7 @@
             this.btnCloseApp.UseVisualStyleBackColor = false;
             this.btnCloseApp.Click += new System.EventHandler(this.btnCloseApp_Click);
             // 
-            // Form1
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -231,7 +231,7 @@
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.panelBottom);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Form1";
+            this.Name = "MainForm";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panelMenu.ResumeLayout(false);
             this.panelTitleBar.ResumeLayout(false);

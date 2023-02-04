@@ -11,58 +11,25 @@ using System.Windows.Forms;
 
 namespace CalorieTracker
 {
-    public partial class LoginScreen : Form
+    public partial class frmQuestions1 : Form
     {
-
-        public LoginScreen()
+        public frmQuestions1()
         {
+            //tüm formlarda kopyalanacak
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.ControlBox = false;
             this.Text = string.Empty;
             CenterToScreen();
+            //tmfk son
         }
+        //tüm formlarda kopyalanacak
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
-
-        private void txtUsername_Enter(object sender, EventArgs e)
-        {
-            if (txtUsername.Text == "Username")
-            {
-                txtUsername.Text = string.Empty;
-            }
-
-        }
-
-        private void txtPassword_Enter(object sender, EventArgs e)
-        {
-            if (txtPassword.Text == "Password")
-            {
-                txtPassword.Text = string.Empty;
-                txtPassword.PasswordChar = '*';
-            }
-
-        }
-
-        private void txtUsername_Leave(object sender, EventArgs e)
-        {
-            if (txtUsername.Text == "")
-            {
-                txtUsername.Text = "Username";
-            }
-        }
-
-        private void txtPassword_Leave(object sender, EventArgs e)
-        {
-            if (txtPassword.Text == "")
-            {
-                txtPassword.PasswordChar = default;
-                txtPassword.Text = "Password";
-            }
-        }
+        //tmfk son
 
         private void btnCloseApp_Click(object sender, EventArgs e)
         {
@@ -71,7 +38,7 @@ namespace CalorieTracker
 
         private void btnMinimizeApp_Click(object sender, EventArgs e)
         {
-             this.WindowState= FormWindowState.Minimized;
+            this.WindowState = FormWindowState.Minimized;
         }
 
         private void panelTitleBar_MouseDown(object sender, MouseEventArgs e)
@@ -79,7 +46,11 @@ namespace CalorieTracker
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
-        
-    }
 
+        private void label1_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+    }
 }

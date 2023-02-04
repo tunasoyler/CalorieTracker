@@ -11,10 +11,9 @@ using System.Windows.Forms;
 
 namespace CalorieTracker
 {
-    public partial class LoginScreen : Form
+    public partial class frmSignUp : Form
     {
-
-        public LoginScreen()
+        public frmSignUp()
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -23,10 +22,16 @@ namespace CalorieTracker
             this.Text = string.Empty;
             CenterToScreen();
         }
+
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+
+        private void frmSignUp_Load(object sender, EventArgs e)
+        {
+
+        }
 
         private void txtUsername_Enter(object sender, EventArgs e)
         {
@@ -34,7 +39,6 @@ namespace CalorieTracker
             {
                 txtUsername.Text = string.Empty;
             }
-
         }
 
         private void txtPassword_Enter(object sender, EventArgs e)
@@ -44,7 +48,15 @@ namespace CalorieTracker
                 txtPassword.Text = string.Empty;
                 txtPassword.PasswordChar = '*';
             }
+        }
 
+        private void txtRePassword_Enter(object sender, EventArgs e)
+        {
+            if (txtRePassword.Text == "Repeat Password")
+            {
+                txtRePassword.Text = string.Empty;
+                txtRePassword.PasswordChar = '*';
+            }
         }
 
         private void txtUsername_Leave(object sender, EventArgs e)
@@ -64,6 +76,15 @@ namespace CalorieTracker
             }
         }
 
+        private void txtRePassword_Leave(object sender, EventArgs e)
+        {
+            if (txtRePassword.Text == "")
+            {
+                txtRePassword.PasswordChar = default;
+                txtRePassword.Text = "Repeat Password";
+            }
+        }
+
         private void btnCloseApp_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -71,7 +92,7 @@ namespace CalorieTracker
 
         private void btnMinimizeApp_Click(object sender, EventArgs e)
         {
-             this.WindowState= FormWindowState.Minimized;
+            this.WindowState = FormWindowState.Minimized;
         }
 
         private void panelTitleBar_MouseDown(object sender, MouseEventArgs e)
@@ -79,7 +100,5 @@ namespace CalorieTracker
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
-        
     }
-
 }
