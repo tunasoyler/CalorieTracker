@@ -1,9 +1,7 @@
 ﻿namespace Entities.Concrete
 {
-    public enum Purposes
+    public class Purposes : BaseEntity
     {
-        WeightGain,
-        WeightLoss,
-        KeepingFit
+        
     }
 }

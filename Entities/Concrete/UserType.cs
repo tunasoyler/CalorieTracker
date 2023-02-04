@@ -1,8 +1,7 @@
 ﻿namespace Entities.Concrete
 {
-    public enum UsersOfApplication
+    public class UserType : BaseEntity
     {
-        User,
-        Admin
+        
     }
 }

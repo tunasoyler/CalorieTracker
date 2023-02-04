@@ -3,7 +3,7 @@
     public class User : BaseEntity
     {
         public string Password { get; set; }
-        public UsersOfApplication UserOfApplication { get; set; }
+        public UserType UserType { get; set; }
         public Genders Gender { get; set; }
         public Purposes Purpose { get; set; }
         public double Height { get; set; }

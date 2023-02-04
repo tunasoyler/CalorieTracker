@@ -1,8 +1,7 @@
 ﻿namespace Entities.Concrete
 {
-    public enum Genders
+    public class Genders : BaseEntity
     {
-        Woman,
-        Man
+        
     }
 }

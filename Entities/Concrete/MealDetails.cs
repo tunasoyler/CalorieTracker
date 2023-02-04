@@ -8,5 +8,9 @@ namespace Entities.Concrete
 {
     public class MealDetails
     {
+        public int MealId { get; set; }
+        public virtual Meal Meal { get; set; }
+        public int FoodId { get; set; }
+        public virtual  Food Food { get; set;}
     }
 }
