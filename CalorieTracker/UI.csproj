@@ -9,7 +9,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="CircularProgressBar_NET5" Version="3.0.0" />
+    <PackageReference Include="ProgressBarCSharp.Core" Version="1.0.0.2" />
     <PackageReference Include="Syncfusion.Blazor.ProgressBar" Version="20.4.0.48" />
+    <PackageReference Include="TailBlazor.ProgressBar" Version="1.0.2" />
   </ItemGroup>
 
   <ItemGroup>
