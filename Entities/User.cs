@@ -2,9 +2,8 @@
 
 namespace Entities
 {
-    public class User
+    public class User : BaseEntity
     {
-        public int UserID { get; set; }
         public string UserName { get; set; }
         public string Password { get; set; }
         public UsersOfApplication UserOfApplication { get; set; }
@@ -13,11 +12,10 @@ namespace Entities
         public double Height { get; set; }
         public double Weight { get; set; }
         public DateTime BirthDate { get; set; }
-        public DateTime RegisterDate { get; set; }
         public virtual ICollection<Meal> Meals { get; set; }
         public User()
         {
-            Meals = new List<Meal>();
+            Meals = new HashSet<Meal>();
         }
     }
 }

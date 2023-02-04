@@ -1,16 +1,14 @@
 ﻿namespace Entities
 {
-    public class Food
+    public class Food : BaseEntity
     {
-        public int Id { get; set; }
-        public string ProductName { get; set; }
+        public string FoodName { get; set; }
         public double Calorie { get; set; }
-        public virtual ICollection<Meal> Meals { get; set; }
-        public DateTime CreatedDate { get; set; }
-        public DateTime UpdatedDate { get; set; }
+        public virtual ICollection<MealDetails> MealDetails { get; set; }
+        
         public Food()
         {
-            Meals= new List<Meal>();
+            MealDetails = new HashSet<MealDetails>();
         }
     }
     
