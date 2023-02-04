@@ -1,4 +1,4 @@
-﻿namespace CalorieTracker
+﻿namespace UI
 {
     partial class frmQuestions2
     {

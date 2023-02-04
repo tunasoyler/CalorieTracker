@@ -1,6 +1,6 @@
 using System.Runtime.InteropServices;
 
-namespace CalorieTracker
+namespace UI
 {
     public partial class frmMain : Form
     {

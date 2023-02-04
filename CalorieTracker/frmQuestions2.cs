@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CalorieTracker
+namespace UI
 {
     public partial class frmQuestions2 : Form
     {
