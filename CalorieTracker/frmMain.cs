@@ -5,7 +5,7 @@ namespace UI
     public partial class frmMain : Form
     {
         private Button currentButton;
-        private int tempIndex;
+        //private int tempIndex;
         public frmMain()
         {
             InitializeComponent();
