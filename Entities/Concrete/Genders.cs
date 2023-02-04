@@ -1,6 +1,6 @@
 ﻿namespace Entities.Concrete
 {
-    public class Genders : BaseEntity
+    public class Genders : CommonEntity
     {
         
     }

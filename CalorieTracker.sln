@@ -7,6 +7,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UI", "CalorieTracker\UI.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entities", "Entities\Entities.csproj", "{26236AFC-9DF3-4489-ACBD-5F291DB79E5A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{149D2985-AC01-4503-8166-3315EF1DA65E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL", "BLL\BLL.csproj", "{A27EEE12-69A9-4778-B427-A8B72DB87FF8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{26236AFC-9DF3-4489-ACBD-5F291DB79E5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{26236AFC-9DF3-4489-ACBD-5F291DB79E5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{26236AFC-9DF3-4489-ACBD-5F291DB79E5A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{149D2985-AC01-4503-8166-3315EF1DA65E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{149D2985-AC01-4503-8166-3315EF1DA65E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{149D2985-AC01-4503-8166-3315EF1DA65E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{149D2985-AC01-4503-8166-3315EF1DA65E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A27EEE12-69A9-4778-B427-A8B72DB87FF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A27EEE12-69A9-4778-B427-A8B72DB87FF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A27EEE12-69A9-4778-B427-A8B72DB87FF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A27EEE12-69A9-4778-B427-A8B72DB87FF8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,6 +1,6 @@
 ﻿namespace Entities.Concrete
 {
-    public class UserType : BaseEntity
+    public class UserType : CommonEntity
     {
         
     }
