@@ -140,7 +140,7 @@
             // btnHome
             // 
             this.btnHome.BackColor = System.Drawing.Color.OliveDrab;
-            this.btnHome.BackgroundImage = global::CalorieTracker.Properties.Resources.home_button;
+            this.btnHome.BackgroundImage = global::UI.Properties.Resources.home_button;
             this.btnHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnHome.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnHome.FlatAppearance.BorderColor = System.Drawing.Color.Black;
