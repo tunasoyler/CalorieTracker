@@ -1,4 +1,4 @@
-﻿namespace Entities
+﻿namespace Entities.Concrete
 {
     public class User : BaseEntity
     {

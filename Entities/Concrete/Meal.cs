@@ -1,4 +1,4 @@
-﻿namespace Entities
+﻿namespace Entities.Concrete
 {
     public class Meal : BaseEntity
     {
@@ -9,7 +9,7 @@
         public virtual MealType MealType { get; set; }
         public Meal()
         {
-            MealDetails= new HashSet<MealDetails>();
+            MealDetails = new HashSet<MealDetails>();
         }
     }
 }

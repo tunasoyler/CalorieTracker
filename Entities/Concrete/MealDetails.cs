@@ -4,11 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Entities
+namespace Entities.Concrete
 {
-    public class BaseEntity
+    public class MealDetails
     {
-        public int Id { get; set; } 
-        public string Name { get; set; }
     }
 }
