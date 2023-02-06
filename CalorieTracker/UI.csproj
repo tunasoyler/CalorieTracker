@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <PackageReference Include="CircleProgressBar" Version="1.0.1" />
+    <PackageReference Include="CircularProgressBar_NET5" Version="3.0.0" />
   </ItemGroup>
 
   <ItemGroup>
