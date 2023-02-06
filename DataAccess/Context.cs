@@ -1,4 +1,5 @@
-﻿using Entities.Concrete;
+﻿using DataAccess.Configurations;
+using Entities.Concrete;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -23,7 +24,9 @@ namespace DataAccess
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            base.OnModelCreating(modelBuilder);
+            modelBuilder.ApplyConfiguration(new FoodConfiguration()).ApplyConfiguration(new MealConfiguration())
+                .ApplyConfiguration(new MealConfiguration()).ApplyConfiguration(new MealTypeConfiguration())
+                .ApplyConfiguration(new UserConfiguration());
         }
     }
 }
