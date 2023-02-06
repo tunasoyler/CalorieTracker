@@ -12,7 +12,6 @@
     <PackageReference Include="CircleProgressBar" Version="1.0.1" />
     <PackageReference Include="CircularProgressBar_NET5" Version="3.0.0" />
     <PackageReference Include="Syncfusion.Chart.Windows" Version="20.4.0.48" />
-    <PackageReference Include="Syncfusion.SfGrid.WPF" Version="20.4.0.48" />
   </ItemGroup>
 
   <ItemGroup>
