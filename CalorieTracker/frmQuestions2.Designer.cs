@@ -69,6 +69,7 @@
             this.btnBegin.TabIndex = 41;
             this.btnBegin.Text = "Begin";
             this.btnBegin.UseVisualStyleBackColor = false;
+            this.btnBegin.Click += new System.EventHandler(this.btnBegin_Click);
             // 
             // label1
             // 
