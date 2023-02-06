@@ -2,10 +2,11 @@
 {
     public class User : BaseEntity
     {
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
         public string Password { get; set; }
         public UserType UserType { get; set; }
         public Genders Gender { get; set; }
-        public Purposes Purpose { get; set; }
         public double Height { get; set; }
         public double Weight { get; set; }
         public DateTime BirthDate { get; set; }
