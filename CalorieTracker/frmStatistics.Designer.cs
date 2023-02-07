@@ -244,6 +244,7 @@
             this.Controls.Add(this.panelBottom);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmStatistics";
+            this.Load += new System.EventHandler(this.frmStatistics_Load);
             this.panelTitleBar.ResumeLayout(false);
             this.panelTitleBar.PerformLayout();
             this.panelMenu.ResumeLayout(false);
