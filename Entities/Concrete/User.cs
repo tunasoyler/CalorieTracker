@@ -6,9 +6,12 @@
         public string Password { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public UserType UserType { get; set; }
-        public Genders Gender { get; set; }
-        public ActivityType ActivityType { get; set; }
+        public int UserTypeId { get; set; }
+        public virtual UserType UserType { get; set; }
+        public int GenderId { get; set; }
+        public virtual Genders Gender { get; set; }
+        public int ActivityTypeId { get; set; }
+        public virtual ActivityType ActivityType { get; set; }
         public double GoalWeight { get; set; }
         public double Height { get; set; }
         public double Weight { get; set; }

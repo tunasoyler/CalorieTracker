@@ -9,5 +9,10 @@ namespace Entities.Concrete
     public class ActivityType : CommonEntity
     {
         public double ActivityMultiplier { get; set; }
+        public virtual ICollection<User> Users { get; set; }
+        public ActivityType()
+        {
+            Users = new HashSet<User>();
+        }
     }
 }

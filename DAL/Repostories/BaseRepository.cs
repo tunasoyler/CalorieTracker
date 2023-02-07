@@ -48,44 +48,44 @@ namespace DAL.Repostories
             context.SaveChanges();
         }
 
-        public virtual void Add(T entity)
-        {
-            using (var context = new TContext())
-            {
-                var addedEntity = context.Entry(entity);
-                addedEntity.State = EntityState.Added;
-                context.SaveChanges();
-            }
-        }
+        //public virtual void Add(T entity)
+        //{
+        //    using (var context = new TContext())
+        //    {
+        //        var addedEntity = context.Entry(entity);
+        //        addedEntity.State = EntityState.Added;
+        //        context.SaveChanges();
+        //    }
+        //}
 
-        public virtual void Delete(T entity)
-        {
+        //public virtual void Delete(T entity)
+        //{
             
-                var deletedEntity = context.Entry(entity);
-                deletedEntity.State = EntityState.Deleted;
-                context.SaveChanges();
+        //        var deletedEntity = context.Entry(entity);
+        //        deletedEntity.State = EntityState.Deleted;
+        //        context.SaveChanges();
             
-        }
+        //}
 
-        public virtual T Get(Expression<Func<T, bool>> filter)
-        {
+        //public virtual T Get(Expression<Func<T, bool>> filter)
+        //{
             
-            return (context.Set<T>().SingleOrDefault(filter), context);
-        }
+        //    return (context.Set<T>().SingleOrDefault(filter), context);
+        //}
 
-        public virtual (List<TEntity>, TContext) GetAll(Expression<Func<TEntity, bool>> filter = null)
-        {
-            TContext context = new();
-            return (filter == null ? context.Set<TEntity>().ToList() : context.Set<TEntity>().Where(filter).ToList(), context);
-        }
+        //public virtual (List<TEntity>, TContext) GetAll(Expression<Func<TEntity, bool>> filter = null)
+        //{
+        //    TContext context = new();
+        //    return (filter == null ? context.Set<TEntity>().ToList() : context.Set<TEntity>().Where(filter).ToList(), context);
+        //}
 
-        public virtual void Update(T entity)
-        {
+        //public virtual void Update(T entity)
+        //{
             
-                var updatedEntity = context.Entry(entity);
-                updatedEntity.State = EntityState.Modified;
-                Save();
+        //        var updatedEntity = context.Entry(entity);
+        //        updatedEntity.State = EntityState.Modified;
+        //        Save();
             
-        }
+        //}
     }
 }
