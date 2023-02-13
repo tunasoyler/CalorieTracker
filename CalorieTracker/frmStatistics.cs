@@ -13,11 +13,14 @@ namespace UI
 {
     public partial class frmStatistics : Form
     {
-        frmStatistics statisticsForm;
-        frmUser userForm;
-        frmSettings settingsForm;
-        frmAddMeal addMealForm;
-        frmMain mainForm;
+        private Form activeForm;
+
+
+        //frmStatistics statisticsForm;
+        //frmUser userForm;
+        //frmSettings settingsForm;
+        //frmAddMeal addMealForm;
+        //frmMain mainForm;
 
 
         private Button currentButton;
@@ -64,41 +67,52 @@ namespace UI
         private void btnHome_Click(object sender, EventArgs e)
         {
             ActivateButton(sender);
-            mainForm = new frmMain();
-            mainForm.Show();
-            this.Hide();
+
+
+            //this.Hide();
+            //mainForm = new frmMain();
+            //mainForm.Show();
+            
         }
 
         private void btnReports_Click(object sender, EventArgs e)
         {
             ActivateButton(sender);
-            this.Hide();
-            statisticsForm = new frmStatistics();
-            statisticsForm.Show();
+
+
+            //this.Hide();
+            //statisticsForm = new frmStatistics();
+            //statisticsForm.Show();
         }
 
         private void btnMeal_Click(object sender, EventArgs e)
         {
             ActivateButton(sender);
-            this.Hide();
-            addMealForm = new frmAddMeal();
-            addMealForm.Show();
+
+
+            //this.Hide();
+            //addMealForm = new frmAddMeal();
+            //addMealForm.Show();
         }
 
         private void btnUser_Click(object sender, EventArgs e)
         {
             ActivateButton(sender);
-            this.Hide();
-            userForm = new frmUser();
-            userForm.Show();
+
+
+            //this.Hide();
+            //userForm = new frmUser();
+            //userForm.Show();
         }
 
         private void btnSettings_Click(object sender, EventArgs e)
         {
             ActivateButton(sender);
-            this.Hide();
-            settingsForm = new frmSettings();
-            settingsForm.Show();
+
+
+            //this.Hide();
+            //settingsForm = new frmSettings();
+            //settingsForm.Show();
         }
 
         private void btnMinimizeApp_Click(object sender, EventArgs e)
@@ -116,5 +130,11 @@ namespace UI
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
+
+        private void frmStatistics_Load(object sender, EventArgs e)
+        {
+
+        }
+        
     }
 }

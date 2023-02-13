@@ -4,8 +4,10 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.ConstrainedExecution;
 using System.Text;
 using System.Threading.Tasks;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace DAL.Configurations
 {
@@ -16,37 +18,42 @@ namespace DAL.Configurations
             builder.HasKey(x => x.Id);
             builder.HasData(
                 new ActivityType
+                //                Sedentary(little or no exercise, desk job)
+                //Lightly active(light exercise 1 - 3 days / week)
+                //Moderately active(moderate exercise 2 - 4 days / week)
+                //Very active(hard exercise every day)
+                //Extra active(hard exercise 2 or more times per day)
                 {
                     Id = 1,
-                    Name = "Active1",
-                    ActivityMultiplier=1.15,
-                    
+                    Name = "Sedentary",
+                    ActivityMultiplier = 1.2,
+
                 },
                 new ActivityType
                 {
                     Id = 2,
-                    Name = "Active2",
-                    ActivityMultiplier = 1.20,
+                    Name = "Lightly active",
+                    ActivityMultiplier = 1.375,
                 },
                 new ActivityType
                 {
                     Id = 3,
-                    Name = "Active3",
-                    ActivityMultiplier = 1.25,
+                    Name = "Moderately active",
+                    ActivityMultiplier = 1.55,
 
                 },
                 new ActivityType
                 {
                     Id = 4,
-                    Name = "Active4",
-                    ActivityMultiplier = 1.30,
+                    Name = "Very active",
+                    ActivityMultiplier = 1.725,
 
                 },
                 new ActivityType
                 {
                     Id = 5,
-                    Name = "Active5",
-                    ActivityMultiplier = 1.35,
+                    Name = "Extra active",
+                    ActivityMultiplier = 1.9,
 
                 });
         }
