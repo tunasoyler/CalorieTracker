@@ -9,24 +9,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="..\.editorconfig" Link=".editorconfig" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <PackageReference Include="CircleProgressBar" Version="1.0.1" />
     <PackageReference Include="CircularProgressBar_NET5" Version="3.0.0" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.13" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.13">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.13" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.13">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-    <PackageReference Include="ProgressBarCSharp.Core" Version="1.0.0.2" />
-    <PackageReference Include="Syncfusion.Blazor.ProgressBar" Version="20.4.0.48" />
-    <PackageReference Include="TailBlazor.ProgressBar" Version="1.0.2" />
+    <PackageReference Include="Syncfusion.Chart.Windows" Version="20.4.0.48" />
+    <PackageReference Include="Syncfusion.SfChart.WPF" Version="20.4.0.48" />
+    <PackageReference Include="Syncfusion.Xamarin.SfChart" Version="20.4.0.48" />
+    <PackageReference Include="Syncfusion.Xamarin.SfProgressBar" Version="20.4.0.48" />
   </ItemGroup>
 
   <ItemGroup>

@@ -90,5 +90,13 @@ namespace UI
         {
             dtpBirthDate.Value = DateTime.Now;
         }
+
+        frmQuestions2 frmQuestions2;
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmQuestions2= new frmQuestions2();
+            frmQuestions2.Show();
+        }
     }
 }
