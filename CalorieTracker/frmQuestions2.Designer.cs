@@ -44,8 +44,11 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbTimeline = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.cmbActivityLevel = new System.Windows.Forms.ComboBox();
             this.panelTitleBar.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -137,7 +140,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe Print", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(23, 70);
+            this.label5.Location = new System.Drawing.Point(23, 65);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(316, 192);
@@ -150,7 +153,7 @@
             this.txtWeightGoal.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtWeightGoal.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtWeightGoal.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.txtWeightGoal.Location = new System.Drawing.Point(215, 251);
+            this.txtWeightGoal.Location = new System.Drawing.Point(215, 236);
             this.txtWeightGoal.Margin = new System.Windows.Forms.Padding(2);
             this.txtWeightGoal.Name = "txtWeightGoal";
             this.txtWeightGoal.Size = new System.Drawing.Size(61, 22);
@@ -163,7 +166,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(25, 251);
+            this.label3.Location = new System.Drawing.Point(25, 236);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(120, 22);
@@ -173,7 +176,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel3.Location = new System.Drawing.Point(25, 275);
+            this.panel3.Location = new System.Drawing.Point(25, 260);
             this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(310, 1);
@@ -182,7 +185,7 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel4.Location = new System.Drawing.Point(25, 321);
+            this.panel4.Location = new System.Drawing.Point(25, 306);
             this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(310, 1);
@@ -192,7 +195,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(25, 297);
+            this.label2.Location = new System.Drawing.Point(25, 282);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(86, 22);
@@ -203,7 +206,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(25, 363);
+            this.label4.Location = new System.Drawing.Point(25, 372);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(155, 22);
@@ -214,7 +217,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(215, 363);
+            this.label6.Location = new System.Drawing.Point(215, 372);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(92, 22);
@@ -224,37 +227,75 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel1.Location = new System.Drawing.Point(25, 387);
+            this.panel1.Location = new System.Drawing.Point(25, 396);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(310, 1);
             this.panel1.TabIndex = 42;
             // 
-            // comboBox1
+            // cmbTimeline
             // 
-            this.comboBox1.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cmbTimeline.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.cmbTimeline.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbTimeline.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cmbTimeline.FormattingEnabled = true;
+            this.cmbTimeline.Items.AddRange(new object[] {
             "6 months",
             "12 months"});
-            this.comboBox1.Location = new System.Drawing.Point(215, 293);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 26);
-            this.comboBox1.TabIndex = 55;
+            this.cmbTimeline.Location = new System.Drawing.Point(215, 278);
+            this.cmbTimeline.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbTimeline.Name = "cmbTimeline";
+            this.cmbTimeline.Size = new System.Drawing.Size(121, 26);
+            this.cmbTimeline.TabIndex = 55;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(280, 251);
+            this.label7.Location = new System.Drawing.Point(280, 236);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(30, 22);
             this.label7.TabIndex = 48;
             this.label7.Text = "kg";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panel2.Location = new System.Drawing.Point(25, 351);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(310, 1);
+            this.panel2.TabIndex = 42;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label8.Location = new System.Drawing.Point(25, 327);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(125, 22);
+            this.label8.TabIndex = 48;
+            this.label8.Text = "Activity Level:";
+            // 
+            // cmbActivityLevel
+            // 
+            this.cmbActivityLevel.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.cmbActivityLevel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbActivityLevel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cmbActivityLevel.FormattingEnabled = true;
+            this.cmbActivityLevel.Items.AddRange(new object[] {
+            "Sedentary (little or no exercise, desk job)",
+            "Lightly active (light exercise 1-3 days/week) ",
+            "Moderately active (moderate exercise 2-4 days/week)",
+            "Very active  (hard exercise every day)",
+            "Extra active (hard exercise 2 or more times per day)"});
+            this.cmbActivityLevel.Location = new System.Drawing.Point(215, 323);
+            this.cmbActivityLevel.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbActivityLevel.Name = "cmbActivityLevel";
+            this.cmbActivityLevel.Size = new System.Drawing.Size(121, 26);
+            this.cmbActivityLevel.TabIndex = 55;
             // 
             // frmQuestions2
             // 
@@ -263,15 +304,18 @@
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(360, 520);
             this.ControlBox = false;
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cmbActivityLevel);
+            this.Controls.Add(this.cmbTimeline);
             this.Controls.Add(this.txtWeightGoal);
             this.Controls.Add(this.label6);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.panelBottom);
             this.Controls.Add(this.btnBegin);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
@@ -304,7 +348,10 @@
         private Label label4;
         private Label label6;
         private Panel panel1;
-        private ComboBox comboBox1;
+        private ComboBox cmbTimeline;
         private Label label7;
+        private Panel panel2;
+        private Label label8;
+        private ComboBox cmbActivityLevel;
     }
 }
