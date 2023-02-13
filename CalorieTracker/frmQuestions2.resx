@@ -58,12 +58,13 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="label5.Text" xml:space="preserve">
-    <value>     Great, now that we have calculated your BMR, 
-let's set a weight goal for you! 
-   We'll ask you to choose between a 6-month or 
-12-month timeline to reach your goal. This will 
-help us personalize your journey and ensure that 
-you stay on track. 
+    <value>     Great, now that we have calculated 
+your BMR, let's set a weight goal for you! 
+   We'll ask you to choose between a 
+6-month or 12-month timeline to reach 
+your goal. This will help us personalize 
+your journey and ensure that you stay on 
+track. 
 
 </value>
   </data>
