@@ -1,6 +1,6 @@
 ﻿namespace Entities.Concrete
 {
-    public class MealType : BaseEntity
+    public class MealType : CommonEntity
     {
         public virtual ICollection<Meal> Meals { get; set; }
         public MealType()
