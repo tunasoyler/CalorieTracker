@@ -88,7 +88,7 @@ namespace DAL.Migrations
                     b.Property<DateTime>("CreatedDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2023, 2, 16, 14, 0, 56, 950, DateTimeKind.Local).AddTicks(1790));
+                        .HasDefaultValue(new DateTime(2023, 2, 16, 16, 26, 46, 900, DateTimeKind.Local).AddTicks(5459));
 
                     b.Property<byte[]>("Image")
                         .IsRequired()
@@ -105,7 +105,7 @@ namespace DAL.Migrations
                     b.Property<DateTime>("UpdatedDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2023, 2, 16, 14, 0, 56, 950, DateTimeKind.Local).AddTicks(1984));
+                        .HasDefaultValue(new DateTime(2023, 2, 16, 16, 26, 46, 900, DateTimeKind.Local).AddTicks(5655));
 
                     b.HasKey("Id");
 
@@ -152,7 +152,7 @@ namespace DAL.Migrations
                     b.Property<DateTime>("CreatedDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2023, 2, 16, 14, 0, 56, 950, DateTimeKind.Local).AddTicks(4226));
+                        .HasDefaultValue(new DateTime(2023, 2, 16, 16, 26, 46, 900, DateTimeKind.Local).AddTicks(7843));
 
                     b.Property<int>("MealTypeID")
                         .HasColumnType("int");
@@ -167,7 +167,7 @@ namespace DAL.Migrations
                     b.Property<DateTime>("UpdatedDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2023, 2, 16, 14, 0, 56, 950, DateTimeKind.Local).AddTicks(4399));
+                        .HasDefaultValue(new DateTime(2023, 2, 16, 16, 26, 46, 900, DateTimeKind.Local).AddTicks(8058));
 
                     b.Property<int>("UserID")
                         .HasColumnType("int");
@@ -320,7 +320,9 @@ namespace DAL.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<int>("UserTypeId")
-                        .HasColumnType("int");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasDefaultValue(2);
 
                     b.Property<double>("Weight")
                         .HasColumnType("float");

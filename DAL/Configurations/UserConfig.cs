@@ -17,6 +17,7 @@ namespace DAL.Configurations
             builder.HasKey(x => x.Id);
             builder.HasOne(x => x.Gender).WithMany(x => x.Users).HasForeignKey(x => x.GenderId);
             builder.HasOne(x=>x.UserType).WithMany(x=>x.Users).HasForeignKey(x => x.UserTypeId);
+            builder.Property(x => x.UserTypeId).HasDefaultValue(2);
             builder.HasOne(x => x.ActivityType).WithMany(x => x.Users).HasForeignKey(x => x.ActivityTypeId);
             builder.Property(x => x.Name).IsRequired().HasColumnType("varchar").HasMaxLength(25);
             builder.Property(x => x.Password).IsRequired().HasColumnType("varchar").HasMaxLength(25);

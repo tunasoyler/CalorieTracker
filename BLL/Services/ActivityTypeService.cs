@@ -16,7 +16,7 @@ namespace BLL.Services
         }
         public List<ActivityType> ActivityTypeList()
         {
-            return GetAll().Select(x => new ActivityType { Name = x.Name,Id=x.Id , ActivityMultiplier=x.ActivityMultiplier }).ToList();
+            return GetAll().Select(x => new ActivityType { Name = x.Name, ActivityMultiplier=x.ActivityMultiplier }).ToList();
         }
     }
 }
