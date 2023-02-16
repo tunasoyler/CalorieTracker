@@ -15,7 +15,9 @@
         public double GoalWeight { get; set; }
         public double Height { get; set; }
         public double Weight { get; set; }
+        public string Timeline { get; set; }
         public double BMR { get; set; }
+        public double DailyCalorieLimit { get; set; }
         public DateTime BirthDate { get; set; }
         public virtual ICollection<Meal> Meals { get; set; }
         public User()

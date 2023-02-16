@@ -12,80 +12,80 @@ namespace DAL.Repostories
 {
     public class BaseRepository <T> : IBaseRepository<T>  where T : class
     {
-        Context context = new Context();
-        public IQueryable<T> GetList()
+        private readonly DbContext _context;
+        private readonly DbSet<T> _dbSet;
+
+        public BaseRepository(DbContext context)
         {
-            return context.Set<T>().AsQueryable();
+            _context = context;
+            _dbSet = context.Set<T>();
         }
-        public void Create(T entity)
+
+        public void Add(T entity)
         {
-            context.Set<T>().Add(entity);
-            Save();
+            _dbSet.Add(entity);
+            _context.SaveChanges();
+        }
+
+        public void Update(T entity)
+        {
+            _dbSet.Update(entity);
+            _context.SaveChanges();
         }
 
         public void Delete(T entity)
         {
-            context.Set<T>().Remove(entity); 
-            Save();
+            _dbSet.Remove(entity);
+            _context.SaveChanges();
         }
 
         public T GetById(int id)
         {
-            return context.Set<T>().Find(id);
+            return _dbSet.Find(id);
         }
 
-        public void Update(T entity,int Id)
+        public IEnumerable<T> GetAll()
         {
-            var updatedEntity = context.Entry(entity);
-            updatedEntity.State = EntityState.Modified;
-            Save();
-
-
+            return _dbSet.ToList();
         }
+        
+        //Context context = new Context();        
 
-        public void Save()
-        {
-            context.SaveChanges();
-        }
-
-        //public virtual void Add(T entity)
+        //public void Create(T entity)
         //{
-        //    using (var context = new TContext())
-        //    {
-        //        var addedEntity = context.Entry(entity);
-        //        addedEntity.State = EntityState.Added;
-        //        context.SaveChanges();
-        //    }
+        //    context.Set<T>().Add(entity);
+        //    Save();
         //}
 
-        //public virtual void Delete(T entity)
+        //public void Delete(T entity)
         //{
-            
-        //        var deletedEntity = context.Entry(entity);
-        //        deletedEntity.State = EntityState.Deleted;
-        //        context.SaveChanges();
-            
+        //    context.Set<T>().Remove(entity); 
+        //    Save();
         //}
 
-        //public virtual T Get(Expression<Func<T, bool>> filter)
+        //public T GetById(int id)
         //{
-            
-        //    return (context.Set<T>().SingleOrDefault(filter), context);
+        //    return context.Set<T>().Find(id);
         //}
 
-        //public virtual (List<TEntity>, TContext) GetAll(Expression<Func<TEntity, bool>> filter = null)
+        //public void Update(T entity,int Id)
         //{
-        //    TContext context = new();
-        //    return (filter == null ? context.Set<TEntity>().ToList() : context.Set<TEntity>().Where(filter).ToList(), context);
+        //    var updatedEntity = context.Entry(entity);
+        //    updatedEntity.State = EntityState.Modified;
+        //    Save();
+
+
         //}
 
-        //public virtual void Update(T entity)
+        //public void Save()
         //{
-            
-        //        var updatedEntity = context.Entry(entity);
-        //        updatedEntity.State = EntityState.Modified;
-        //        Save();
-            
+        //    context.SaveChanges();
         //}
+
+        //public IQueryable<T> GetAll()
+        //{
+        //    return context.Set<T>().AsQueryable();
+        //}
+
     }
 }

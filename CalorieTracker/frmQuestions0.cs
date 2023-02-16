@@ -1,4 +1,7 @@
-﻿using System;
+﻿using BLL.Services;
+using DAL;
+using Entities.Concrete;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,19 +11,22 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static Syncfusion.Windows.Forms.TabBar;
 
 namespace UI
 {
     public partial class frmQuestions0 : Form
     {
         frmQuestions1 frmQuestions1;
-        public frmQuestions0()
+        private User user;        
+        public frmQuestions0(User user)
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.ControlBox = false;
             this.Text = string.Empty;
+            this.user= user;
             CenterToScreen();            
         }
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -29,8 +35,8 @@ namespace UI
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
 
         private void btnNext_Click(object sender, EventArgs e)
-        {
-            frmQuestions1 = new frmQuestions1();
+        {                      
+            frmQuestions1 = new frmQuestions1(user);
             frmQuestions1.Show();
             this.Hide();
         }

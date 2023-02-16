@@ -1,4 +1,7 @@
-﻿using System;
+﻿using BLL.Services;
+using DAL;
+using Entities.Concrete;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,7 +16,9 @@ namespace UI
 {
     public partial class frmQuestions1 : Form
     {
-        public frmQuestions1()
+        private User user;
+        Context context = new Context();
+        public frmQuestions1(User user)
         {
             //tüm formlarda kopyalanacak
             InitializeComponent();
@@ -21,6 +26,7 @@ namespace UI
             this.MaximizeBox = false;
             this.ControlBox = false;
             this.Text = string.Empty;
+            this.user= user;
             CenterToScreen();
             //tmfk son
         }
@@ -88,14 +94,27 @@ namespace UI
 
         private void frmQuestions1_Load(object sender, EventArgs e)
         {
+            GenderService genderService = new GenderService(context);
             dtpBirthDate.Value = DateTime.Now;
+            cmbGender.Items.Clear();
+            
+            foreach (var item in genderService.GenderList())
+            {
+                cmbGender.Items.Add(item);
+            }
+                
         }
 
         frmQuestions2 frmQuestions2;
         private void btnNext_Click(object sender, EventArgs e)
         {
+
+            user.Gender = (Genders)cmbGender.SelectedItem;
+            user.BirthDate = dtpBirthDate.Value;
+            user.Weight=Convert.ToDouble(txtWeight.Text);
+            user.Height=Convert.ToDouble(txtHeight.Text);
             this.Hide();
-            frmQuestions2= new frmQuestions2();
+            frmQuestions2= new frmQuestions2(user);
             frmQuestions2.Show();
         }
     }

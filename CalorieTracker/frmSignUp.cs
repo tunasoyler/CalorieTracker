@@ -8,11 +8,18 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static Syncfusion.Windows.Forms.TabBar;
+using System.Xml.Linq;
+using BLL.Services;
+using Microsoft.EntityFrameworkCore;
+using Entities.Concrete;
+using DAL;
 
 namespace UI
 {
     public partial class frmSignUp : Form
     {
+        frmQuestions0 frmQuestions0;
         public frmSignUp()
         {
             InitializeComponent();
@@ -99,6 +106,28 @@ namespace UI
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+        Context context = new Context();
+        private void btnRegister_Click(object sender, EventArgs e)
+        {
+            UserService userService = new UserService(context);
+
+            User user = new User
+            {
+                Name = txtUsername.Text,
+                Password= txtPassword.Text,
+            };
+            if (userService.DoesUserExist(user))
+            {
+                MessageBox.Show("Username allready exists.");
+            }
+            else
+            {
+                
+                frmQuestions0 = new frmQuestions0(user);
+                frmQuestions0.Show();
+                this.Hide();
+            }
         }
     }
 }

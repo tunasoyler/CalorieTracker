@@ -33,8 +33,8 @@ namespace DAL.Migrations
                     Image = table.Column<byte[]>(type: "varbinary(max)", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false),
                     State = table.Column<bool>(type: "bit", nullable: false),
-                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2023, 2, 13, 13, 47, 2, 664, DateTimeKind.Local).AddTicks(9431)),
-                    UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2023, 2, 13, 13, 47, 2, 664, DateTimeKind.Local).AddTicks(9639))
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2023, 2, 16, 14, 0, 56, 950, DateTimeKind.Local).AddTicks(1790)),
+                    UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2023, 2, 16, 14, 0, 56, 950, DateTimeKind.Local).AddTicks(1984))
                 },
                 constraints: table =>
                 {
@@ -95,7 +95,9 @@ namespace DAL.Migrations
                     GoalWeight = table.Column<double>(type: "float", nullable: false),
                     Height = table.Column<double>(type: "float", nullable: false),
                     Weight = table.Column<double>(type: "float", nullable: false),
+                    Timeline = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     BMR = table.Column<double>(type: "float", nullable: false),
+                    DailyCalorieLimit = table.Column<double>(type: "float", nullable: false),
                     BirthDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Name = table.Column<string>(type: "varchar(25)", maxLength: 25, nullable: false),
                     State = table.Column<bool>(type: "bit", nullable: false),
@@ -135,8 +137,8 @@ namespace DAL.Migrations
                     MealTypeID = table.Column<int>(type: "int", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     State = table.Column<bool>(type: "bit", nullable: false),
-                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2023, 2, 13, 13, 47, 2, 665, DateTimeKind.Local).AddTicks(2252)),
-                    UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2023, 2, 13, 13, 47, 2, 665, DateTimeKind.Local).AddTicks(2461))
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2023, 2, 16, 14, 0, 56, 950, DateTimeKind.Local).AddTicks(4226)),
+                    UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2023, 2, 16, 14, 0, 56, 950, DateTimeKind.Local).AddTicks(4399))
                 },
                 constraints: table =>
                 {
@@ -191,11 +193,11 @@ namespace DAL.Migrations
                 columns: new[] { "Id", "ActivityMultiplier", "Name" },
                 values: new object[,]
                 {
-                    { 1, 1.1499999999999999, "Active1" },
-                    { 2, 1.2, "Active2" },
-                    { 3, 1.25, "Active3" },
-                    { 4, 1.3, "Active4" },
-                    { 5, 1.3500000000000001, "Active5" }
+                    { 1, 1.2, "Sedentary" },
+                    { 2, 1.375, "Lightly active" },
+                    { 3, 1.55, "Moderately active" },
+                    { 4, 1.7250000000000001, "Very active" },
+                    { 5, 1.8999999999999999, "Extra active" }
                 });
 
             migrationBuilder.InsertData(

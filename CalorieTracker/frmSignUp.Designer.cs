@@ -55,7 +55,7 @@
             this.panelBottom.BackColor = System.Drawing.Color.OliveDrab;
             this.panelBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelBottom.Location = new System.Drawing.Point(0, 465);
-            this.panelBottom.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelBottom.Margin = new System.Windows.Forms.Padding(2);
             this.panelBottom.Name = "panelBottom";
             this.panelBottom.Size = new System.Drawing.Size(360, 55);
             this.panelBottom.TabIndex = 13;
@@ -68,7 +68,7 @@
             this.panelTitleBar.Controls.Add(this.btnCloseApp);
             this.panelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitleBar.Location = new System.Drawing.Point(0, 0);
-            this.panelTitleBar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelTitleBar.Margin = new System.Windows.Forms.Padding(2);
             this.panelTitleBar.Name = "panelTitleBar";
             this.panelTitleBar.Size = new System.Drawing.Size(360, 41);
             this.panelTitleBar.TabIndex = 10;
@@ -96,7 +96,7 @@
             this.btnMinimizeApp.FlatAppearance.MouseOverBackColor = System.Drawing.Color.OliveDrab;
             this.btnMinimizeApp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimizeApp.Location = new System.Drawing.Point(280, 10);
-            this.btnMinimizeApp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnMinimizeApp.Margin = new System.Windows.Forms.Padding(2);
             this.btnMinimizeApp.Name = "btnMinimizeApp";
             this.btnMinimizeApp.Size = new System.Drawing.Size(28, 24);
             this.btnMinimizeApp.TabIndex = 0;
@@ -114,7 +114,7 @@
             this.btnCloseApp.FlatAppearance.MouseOverBackColor = System.Drawing.Color.OliveDrab;
             this.btnCloseApp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCloseApp.Location = new System.Drawing.Point(320, 10);
-            this.btnCloseApp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCloseApp.Margin = new System.Windows.Forms.Padding(2);
             this.btnCloseApp.Name = "btnCloseApp";
             this.btnCloseApp.Size = new System.Drawing.Size(28, 24);
             this.btnCloseApp.TabIndex = 0;
@@ -126,18 +126,19 @@
             // 
             this.btnRegister.BackColor = System.Drawing.Color.OliveDrab;
             this.btnRegister.Location = new System.Drawing.Point(111, 345);
-            this.btnRegister.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRegister.Margin = new System.Windows.Forms.Padding(2);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(158, 30);
             this.btnRegister.TabIndex = 15;
             this.btnRegister.Text = "Register";
             this.btnRegister.UseVisualStyleBackColor = false;
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panel2.Location = new System.Drawing.Point(116, 262);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(168, 1);
             this.panel2.TabIndex = 18;
@@ -146,7 +147,7 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panel1.Location = new System.Drawing.Point(116, 215);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(168, 1);
             this.panel1.TabIndex = 19;
@@ -155,7 +156,7 @@
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(61, 229);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(41, 41);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -166,7 +167,7 @@
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(61, 178);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(41, 39);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -180,7 +181,7 @@
             this.txtPassword.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtPassword.ForeColor = System.Drawing.SystemColors.GrayText;
             this.txtPassword.Location = new System.Drawing.Point(116, 239);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(2);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(217, 22);
             this.txtPassword.TabIndex = 12;
@@ -195,7 +196,7 @@
             this.txtUsername.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtUsername.ForeColor = System.Drawing.SystemColors.GrayText;
             this.txtUsername.Location = new System.Drawing.Point(116, 191);
-            this.txtUsername.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtUsername.Margin = new System.Windows.Forms.Padding(2);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(217, 22);
             this.txtUsername.TabIndex = 11;
@@ -210,7 +211,7 @@
             this.txtRePassword.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtRePassword.ForeColor = System.Drawing.SystemColors.GrayText;
             this.txtRePassword.Location = new System.Drawing.Point(116, 289);
-            this.txtRePassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtRePassword.Margin = new System.Windows.Forms.Padding(2);
             this.txtRePassword.Name = "txtRePassword";
             this.txtRePassword.Size = new System.Drawing.Size(217, 22);
             this.txtRePassword.TabIndex = 12;
@@ -222,7 +223,7 @@
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panel3.Location = new System.Drawing.Point(116, 312);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(168, 1);
             this.panel3.TabIndex = 18;
@@ -257,7 +258,7 @@
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUsername);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmSignUp";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.frmSignUp_Load);
