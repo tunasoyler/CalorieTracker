@@ -33,8 +33,13 @@ namespace DAL.Migrations
                     Image = table.Column<byte[]>(type: "varbinary(max)", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false),
                     State = table.Column<bool>(type: "bit", nullable: false),
+<<<<<<<< HEAD:DAL/Migrations/20230217114048_init.cs
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2023, 2, 17, 14, 40, 48, 184, DateTimeKind.Local).AddTicks(9791)),
                     UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2023, 2, 17, 14, 40, 48, 185, DateTimeKind.Local).AddTicks(41))
+========
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2023, 2, 17, 12, 17, 7, 366, DateTimeKind.Local).AddTicks(7250)),
+                    UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2023, 2, 17, 12, 17, 7, 366, DateTimeKind.Local).AddTicks(7483))
+>>>>>>>> origin/m_v0.5:DAL/Migrations/20230217091707_init.cs
                 },
                 constraints: table =>
                 {
@@ -100,7 +105,7 @@ namespace DAL.Migrations
                     DailyCalorieLimit = table.Column<double>(type: "float", nullable: false),
                     BirthDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Name = table.Column<string>(type: "varchar(25)", maxLength: 25, nullable: false),
-                    State = table.Column<bool>(type: "bit", nullable: false),
+                    State = table.Column<bool>(type: "bit", nullable: false, defaultValue: true),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
@@ -137,8 +142,13 @@ namespace DAL.Migrations
                     MealTypeID = table.Column<int>(type: "int", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     State = table.Column<bool>(type: "bit", nullable: false),
+<<<<<<<< HEAD:DAL/Migrations/20230217114048_init.cs
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2023, 2, 17, 14, 40, 48, 185, DateTimeKind.Local).AddTicks(2276)),
                     UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2023, 2, 17, 14, 40, 48, 185, DateTimeKind.Local).AddTicks(2458))
+========
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2023, 2, 17, 12, 17, 7, 367, DateTimeKind.Local).AddTicks(57)),
+                    UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2023, 2, 17, 12, 17, 7, 367, DateTimeKind.Local).AddTicks(266))
+>>>>>>>> origin/m_v0.5:DAL/Migrations/20230217091707_init.cs
                 },
                 constraints: table =>
                 {

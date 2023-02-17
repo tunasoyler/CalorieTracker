@@ -20,19 +20,12 @@ namespace DAL.Configurations
                 {
                     Id = 1,
                     Name = "Admin",
-
-
                 },
                 new UserType
                 {
                     Id = 2,
                     Name = "User",
-
-                });
-            
-
-
-
+                });   
         }
     }
 }

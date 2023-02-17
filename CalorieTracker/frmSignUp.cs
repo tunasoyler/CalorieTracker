@@ -14,7 +14,6 @@ using BLL.Services;
 using Microsoft.EntityFrameworkCore;
 using Entities.Concrete;
 using DAL;
-using Entities.Dtos.UserDtos;
 
 namespace UI
 {
@@ -93,6 +92,38 @@ namespace UI
             }
         }
 
+        private void txtFirstName_Leave(object sender, EventArgs e)
+        {
+            if (txtFirstName.Text == "")
+            {
+                txtFirstName.Text = "First Name";
+            }
+        }
+
+        private void txtLastName_Leave(object sender, EventArgs e)
+        {
+            if (txtLastName.Text == "")
+            {
+                txtLastName.Text = "Last Name";
+            }
+        }
+
+        private void txtFirstName_Enter(object sender, EventArgs e)
+        {
+            if (txtFirstName.Text == "First Name")
+            {
+                txtFirstName.Text = string.Empty;
+            }
+        }
+
+        private void txtLastName_Enter(object sender, EventArgs e)
+        {
+            if (txtLastName.Text == "Last Name")
+            {
+                txtLastName.Text = string.Empty;
+            }
+        }
+
         private void btnCloseApp_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -113,10 +144,12 @@ namespace UI
         {
             UserService userService = new UserService(context);
 
-            UserCreateDTO user = new UserCreateDTO
+            User user = new User
             {
-                UserName = txtUsername.Text,
-                Password= txtPassword.Text,
+                Name = txtUsername.Text,
+                Password = txtPassword.Text,
+                FirstName = txtFirstName.Text,
+                LastName = txtLastName.Text,
             };
             if (userService.DoesUserExist(user))
             {
@@ -124,11 +157,12 @@ namespace UI
             }
             else
             {
-                
                 frmQuestions0 = new frmQuestions0(user);
                 frmQuestions0.Show();
                 this.Hide();
             }
         }
+
+
     }
 }
