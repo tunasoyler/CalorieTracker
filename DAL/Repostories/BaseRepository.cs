@@ -1,8 +1,10 @@
 ﻿using DAL.Repostories.Interface;
 using Entities.Concrete;
+using Entities.ViewModels;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlTypes;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
@@ -40,11 +42,16 @@ namespace DAL.Repostories
         }
 
         public T GetById(int id)
-        {
+        {            
             return _dbSet.Find(id);
         }
 
-        public IEnumerable<T> GetAll()
+        //public T GetByName(string name)
+        //{
+        //    var result = _context.Set<T>() 
+        //    return result;
+        //}
+        public List<T> GetAll()
         {
             return _dbSet.ToList();
         }

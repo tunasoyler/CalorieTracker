@@ -2,6 +2,7 @@
 using DAL;
 using Entities.Concrete;
 using Entities.Dtos.UserDtos;
+using Entities.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -97,20 +98,24 @@ namespace UI
         {
             GenderService genderService = new GenderService(context);
             dtpBirthDate.Value = DateTime.Now;
-            cmbGender.Items.Clear();
-            
-            foreach (var item in genderService.GenderList())
-            {
-                cmbGender.Items.Add(item);
-            }
-                
-        }
+            FillGenders();
 
+
+
+
+        }
+        private void FillGenders()
+        {
+            GenderService genderService = new GenderService(context);
+            List<GendersViewModel> genders = genderService.GenderList();
+            cmbGender.DataSource = genders;
+
+        }
         frmQuestions2 frmQuestions2;
         private void btnNext_Click(object sender, EventArgs e)
         {
-
-            user.Gender = (Genders)cmbGender.SelectedItem;
+            GenderService genderService = new GenderService(context);            
+            user.Gender = genderService.GetGenderById(((GendersViewModel)cmbGender.SelectedItem).Id);
             user.BirthDate = dtpBirthDate.Value;
             user.Weight=Convert.ToDouble(txtWeight.Text);
             user.Height=Convert.ToDouble(txtHeight.Text);

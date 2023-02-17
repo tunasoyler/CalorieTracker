@@ -62,8 +62,9 @@ namespace BLL.Services
         {
             User newUser = new User()
             {
-                ActivityType = user.ActivityType,
-                Gender = user.Gender,
+
+                ActivityType = user.ActivityType,     
+                Gender = user.Gender,                 
                 Height = user.Height,
                 Weight = user.Weight,
                 FirstName = user.FirstName,
@@ -75,10 +76,11 @@ namespace BLL.Services
                 GoalWeight = user.GoalWeight,
                 Password = user.Password,
                 Timeline= user.Timeline,
-                CreatedDate=DateTime.Now,
-                UpdatedDate=DateTime.Now,
-                 
- 
+                CreatedDate = DateTime.Now,
+                UpdatedDate = DateTime.Now,
+
+
+
             };
             Add(newUser);
         }
@@ -94,7 +96,7 @@ namespace BLL.Services
         {
             return GetById(id);
         }
-        public IEnumerable<User> GetAllUsers()
+        public List<User> GetAllUsers()
         {
             return GetAll();
         }
