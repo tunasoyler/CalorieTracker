@@ -16,9 +16,7 @@ namespace BLL.Services
         {
         }
         public List<ActivityTypeViewModel> ActivityTypeList()
-        {
-            //return GetAll().Select(x => new ActivityType { Name = x.Name, ActivityMultiplier=x.ActivityMultiplier }).ToList();
-
+        {            
             var getAllActivityTypeTuple = GetAll();
             List<ActivityType> activityTypes = getAllActivityTypeTuple;
             List<ActivityTypeViewModel> ActivityTypeVmList = new List<ActivityTypeViewModel>();

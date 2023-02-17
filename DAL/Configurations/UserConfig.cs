@@ -24,7 +24,24 @@ namespace DAL.Configurations
             builder.Property(x => x.Height).IsRequired();
             builder.Property(x => x.Weight).IsRequired();
             builder.Property(x => x.BirthDate).HasConversion(typeof(DateTime)).IsRequired();
-            builder.Property(x=> x.State).HasDefaultValue(1);
+            builder.HasData(
+                new User
+                {
+                    Id= 1,
+                    Name="admin",
+                    Password="admin",
+                    UserTypeId=1,
+                    FirstName="admin",
+                    LastName="admin",
+                    ActivityTypeId=1,
+                    BirthDate=DateTime.Now,
+                    GenderId=1,
+                    Height=1,
+                    Weight=1,
+                    BMR=1,
+
+                });
+                
         }
     }
 }

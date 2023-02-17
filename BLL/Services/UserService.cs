@@ -63,8 +63,8 @@ namespace BLL.Services
             User newUser = new User()
             {
 
-                ActivityTypeId = user.ActivityType.Id,     
-                GenderId = user.Gender.Id,                 
+                ActivityTypeId = user.ActivityType.Id,
+                GenderId = user.Gender.Id,
                 Height = user.Height,
                 Weight = user.Weight,
                 FirstName = user.FirstName,
@@ -75,10 +75,10 @@ namespace BLL.Services
                 DailyCalorieLimit = user.DailyCalorieLimit,
                 GoalWeight = user.GoalWeight,
                 Password = user.Password,
-                Timeline= user.Timeline,
+                Timeline = user.Timeline,
                 CreatedDate = DateTime.Now,
                 UpdatedDate = DateTime.Now,
-
+                State = true
 
 
             };
