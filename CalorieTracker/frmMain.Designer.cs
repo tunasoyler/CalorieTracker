@@ -42,27 +42,27 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnCloseApp = new System.Windows.Forms.Button();
             this.pnlDailyLimit = new System.Windows.Forms.Panel();
-            this.cpbDailyLimit = new CircularProgressBar_NET5.CircularProgressBar();
             this.label2 = new System.Windows.Forms.Label();
+            this.cpbDailyLimit = new CircularProgressBar_NET5.CircularProgressBar();
             this.pnlDailyStats = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
             this.lstDailyStats = new System.Windows.Forms.ListView();
             this.clmMealType = new System.Windows.Forms.ColumnHeader();
             this.clmCalorie = new System.Windows.Forms.ColumnHeader();
-            this.label3 = new System.Windows.Forms.Label();
             this.pnlGoalProgress = new System.Windows.Forms.Panel();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.label4 = new System.Windows.Forms.Label();
-            this.lblGoalDate = new System.Windows.Forms.Label();
-            this.lblStartDate = new System.Windows.Forms.Label();
-            this.sparkLine1 = new Syncfusion.Windows.Forms.Chart.SparkLine();
-            this.label7 = new System.Windows.Forms.Label();
-            this.lblDay1 = new System.Windows.Forms.Label();
-            this.lblDay2 = new System.Windows.Forms.Label();
-            this.lblDay3 = new System.Windows.Forms.Label();
-            this.lblDay4 = new System.Windows.Forms.Label();
-            this.lblDay5 = new System.Windows.Forms.Label();
-            this.lblDay6 = new System.Windows.Forms.Label();
             this.lblDay7 = new System.Windows.Forms.Label();
+            this.lblDay6 = new System.Windows.Forms.Label();
+            this.lblDay5 = new System.Windows.Forms.Label();
+            this.lblDay4 = new System.Windows.Forms.Label();
+            this.lblDay3 = new System.Windows.Forms.Label();
+            this.lblDay2 = new System.Windows.Forms.Label();
+            this.lblDay1 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.sparkLine1 = new Syncfusion.Windows.Forms.Chart.SparkLine();
+            this.lblStartDate = new System.Windows.Forms.Label();
+            this.lblGoalDate = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.panelMenu.SuspendLayout();
             this.panelTitleBar.SuspendLayout();
             this.pnlDailyLimit.SuspendLayout();
@@ -267,6 +267,17 @@
             this.pnlDailyLimit.Size = new System.Drawing.Size(140, 200);
             this.pnlDailyLimit.TabIndex = 6;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(30, 123);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(89, 44);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "My Daily\r\nLimit";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // cpbDailyLimit
             // 
             this.cpbDailyLimit.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -302,17 +313,6 @@
             this.cpbDailyLimit.TextMargin = new System.Windows.Forms.Padding(1, 2, 0, 0);
             this.cpbDailyLimit.Value = 40;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(30, 123);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(89, 44);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "My Daily\r\nLimit";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // pnlDailyStats
             // 
             this.pnlDailyStats.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -323,6 +323,16 @@
             this.pnlDailyStats.Size = new System.Drawing.Size(140, 200);
             this.pnlDailyStats.TabIndex = 6;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(4, 9);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(130, 19);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "My Meals Today";
+            // 
             // lstDailyStats
             // 
             this.lstDailyStats.BackColor = System.Drawing.SystemColors.ControlLight;
@@ -331,9 +341,9 @@
             this.clmMealType,
             this.clmCalorie});
             this.lstDailyStats.FullRowSelect = true;
-            this.lstDailyStats.Location = new System.Drawing.Point(3, 36);
+            this.lstDailyStats.Location = new System.Drawing.Point(2, 36);
             this.lstDailyStats.Name = "lstDailyStats";
-            this.lstDailyStats.Size = new System.Drawing.Size(132, 159);
+            this.lstDailyStats.Size = new System.Drawing.Size(136, 159);
             this.lstDailyStats.TabIndex = 1;
             this.lstDailyStats.UseCompatibleStateImageBehavior = false;
             this.lstDailyStats.View = System.Windows.Forms.View.Details;
@@ -347,16 +357,6 @@
             // 
             this.clmCalorie.Text = "Calorie";
             this.clmCalorie.Width = 53;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(4, 9);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(130, 19);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "My Meals Today";
             // 
             // pnlGoalProgress
             // 
@@ -379,47 +379,77 @@
             this.pnlGoalProgress.Size = new System.Drawing.Size(300, 180);
             this.pnlGoalProgress.TabIndex = 6;
             // 
-            // progressBar1
+            // lblDay7
             // 
-            this.progressBar1.Location = new System.Drawing.Point(43, 31);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(211, 21);
-            this.progressBar1.TabIndex = 0;
-            this.progressBar1.Value = 30;
+            this.lblDay7.AutoSize = true;
+            this.lblDay7.Location = new System.Drawing.Point(245, 161);
+            this.lblDay7.Name = "lblDay7";
+            this.lblDay7.Size = new System.Drawing.Size(32, 15);
+            this.lblDay7.TabIndex = 10;
+            this.lblDay7.Text = "day7";
             // 
-            // label4
+            // lblDay6
             // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(59, 9);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(183, 19);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Track Progress to Goal";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblDay6.AutoSize = true;
+            this.lblDay6.Location = new System.Drawing.Point(208, 161);
+            this.lblDay6.Name = "lblDay6";
+            this.lblDay6.Size = new System.Drawing.Size(32, 15);
+            this.lblDay6.TabIndex = 10;
+            this.lblDay6.Text = "day6";
             // 
-            // lblGoalDate
+            // lblDay5
             // 
-            this.lblGoalDate.AutoSize = true;
-            this.lblGoalDate.Font = new System.Drawing.Font("Arial", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblGoalDate.Location = new System.Drawing.Point(225, 55);
-            this.lblGoalDate.Name = "lblGoalDate";
-            this.lblGoalDate.Size = new System.Drawing.Size(51, 12);
-            this.lblGoalDate.TabIndex = 7;
-            this.lblGoalDate.Text = "06.08.2023";
+            this.lblDay5.AutoSize = true;
+            this.lblDay5.Location = new System.Drawing.Point(171, 161);
+            this.lblDay5.Name = "lblDay5";
+            this.lblDay5.Size = new System.Drawing.Size(32, 15);
+            this.lblDay5.TabIndex = 10;
+            this.lblDay5.Text = "day5";
             // 
-            // lblStartDate
+            // lblDay4
             // 
-            this.lblStartDate.AutoSize = true;
-            this.lblStartDate.Font = new System.Drawing.Font("Arial", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblStartDate.Location = new System.Drawing.Point(20, 55);
-            this.lblStartDate.Name = "lblStartDate";
-            this.lblStartDate.Size = new System.Drawing.Size(51, 12);
-            this.lblStartDate.TabIndex = 7;
-            this.lblStartDate.Text = "06.08.2023";
+            this.lblDay4.AutoSize = true;
+            this.lblDay4.Location = new System.Drawing.Point(134, 161);
+            this.lblDay4.Name = "lblDay4";
+            this.lblDay4.Size = new System.Drawing.Size(32, 15);
+            this.lblDay4.TabIndex = 10;
+            this.lblDay4.Text = "day4";
+            // 
+            // lblDay3
+            // 
+            this.lblDay3.AutoSize = true;
+            this.lblDay3.Location = new System.Drawing.Point(97, 161);
+            this.lblDay3.Name = "lblDay3";
+            this.lblDay3.Size = new System.Drawing.Size(32, 15);
+            this.lblDay3.TabIndex = 10;
+            this.lblDay3.Text = "day3";
+            // 
+            // lblDay2
+            // 
+            this.lblDay2.AutoSize = true;
+            this.lblDay2.Location = new System.Drawing.Point(60, 161);
+            this.lblDay2.Name = "lblDay2";
+            this.lblDay2.Size = new System.Drawing.Size(32, 15);
+            this.lblDay2.TabIndex = 10;
+            this.lblDay2.Text = "day2";
+            // 
+            // lblDay1
+            // 
+            this.lblDay1.AutoSize = true;
+            this.lblDay1.Location = new System.Drawing.Point(23, 161);
+            this.lblDay1.Name = "lblDay1";
+            this.lblDay1.Size = new System.Drawing.Size(32, 15);
+            this.lblDay1.TabIndex = 10;
+            this.lblDay1.Text = "day1";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(115, 71);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(64, 15);
+            this.label7.TabIndex = 10;
+            this.label7.Text = "Last 7 days";
             // 
             // sparkLine1
             // 
@@ -446,77 +476,47 @@
             this.sparkLine1.Text = "sparkLine1";
             this.sparkLine1.Type = Syncfusion.Windows.Forms.Chart.SparkLineType.Column;
             // 
-            // label7
+            // lblStartDate
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(115, 71);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(64, 15);
-            this.label7.TabIndex = 10;
-            this.label7.Text = "Last 7 days";
+            this.lblStartDate.AutoSize = true;
+            this.lblStartDate.Font = new System.Drawing.Font("Arial", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblStartDate.Location = new System.Drawing.Point(20, 55);
+            this.lblStartDate.Name = "lblStartDate";
+            this.lblStartDate.Size = new System.Drawing.Size(51, 12);
+            this.lblStartDate.TabIndex = 7;
+            this.lblStartDate.Text = "06.08.2023";
             // 
-            // lblDay1
+            // lblGoalDate
             // 
-            this.lblDay1.AutoSize = true;
-            this.lblDay1.Location = new System.Drawing.Point(23, 161);
-            this.lblDay1.Name = "lblDay1";
-            this.lblDay1.Size = new System.Drawing.Size(32, 15);
-            this.lblDay1.TabIndex = 10;
-            this.lblDay1.Text = "day1";
+            this.lblGoalDate.AutoSize = true;
+            this.lblGoalDate.Font = new System.Drawing.Font("Arial", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblGoalDate.Location = new System.Drawing.Point(225, 55);
+            this.lblGoalDate.Name = "lblGoalDate";
+            this.lblGoalDate.Size = new System.Drawing.Size(51, 12);
+            this.lblGoalDate.TabIndex = 7;
+            this.lblGoalDate.Text = "06.08.2023";
             // 
-            // lblDay2
+            // label4
             // 
-            this.lblDay2.AutoSize = true;
-            this.lblDay2.Location = new System.Drawing.Point(60, 161);
-            this.lblDay2.Name = "lblDay2";
-            this.lblDay2.Size = new System.Drawing.Size(32, 15);
-            this.lblDay2.TabIndex = 10;
-            this.lblDay2.Text = "day2";
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label4.Location = new System.Drawing.Point(59, 9);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(183, 19);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Track Progress to Goal";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lblDay3
+            // progressBar1
             // 
-            this.lblDay3.AutoSize = true;
-            this.lblDay3.Location = new System.Drawing.Point(97, 161);
-            this.lblDay3.Name = "lblDay3";
-            this.lblDay3.Size = new System.Drawing.Size(32, 15);
-            this.lblDay3.TabIndex = 10;
-            this.lblDay3.Text = "day3";
-            // 
-            // lblDay4
-            // 
-            this.lblDay4.AutoSize = true;
-            this.lblDay4.Location = new System.Drawing.Point(134, 161);
-            this.lblDay4.Name = "lblDay4";
-            this.lblDay4.Size = new System.Drawing.Size(32, 15);
-            this.lblDay4.TabIndex = 10;
-            this.lblDay4.Text = "day4";
-            // 
-            // lblDay5
-            // 
-            this.lblDay5.AutoSize = true;
-            this.lblDay5.Location = new System.Drawing.Point(171, 161);
-            this.lblDay5.Name = "lblDay5";
-            this.lblDay5.Size = new System.Drawing.Size(32, 15);
-            this.lblDay5.TabIndex = 10;
-            this.lblDay5.Text = "day5";
-            // 
-            // lblDay6
-            // 
-            this.lblDay6.AutoSize = true;
-            this.lblDay6.Location = new System.Drawing.Point(208, 161);
-            this.lblDay6.Name = "lblDay6";
-            this.lblDay6.Size = new System.Drawing.Size(32, 15);
-            this.lblDay6.TabIndex = 10;
-            this.lblDay6.Text = "day6";
-            // 
-            // lblDay7
-            // 
-            this.lblDay7.AutoSize = true;
-            this.lblDay7.Location = new System.Drawing.Point(245, 161);
-            this.lblDay7.Name = "lblDay7";
-            this.lblDay7.Size = new System.Drawing.Size(32, 15);
-            this.lblDay7.TabIndex = 10;
-            this.lblDay7.Text = "day7";
+            this.progressBar1.Location = new System.Drawing.Point(43, 31);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(211, 21);
+            this.progressBar1.TabIndex = 0;
+            this.progressBar1.Value = 30;
             // 
             // frmMain
             // 

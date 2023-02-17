@@ -96,12 +96,12 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe Print", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(219, -26);
+            this.label1.Location = new System.Drawing.Point(123, 3);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(80, 35);
+            this.label1.Size = new System.Drawing.Size(115, 35);
             this.label1.TabIndex = 3;
-            this.label1.Text = "HOME";
+            this.label1.Text = "REPORTS";
             // 
             // panelTitleBar
             // 
@@ -232,7 +232,7 @@
             this.panelMenu.Size = new System.Drawing.Size(360, 40);
             this.panelMenu.TabIndex = 8;
             // 
-            // frmStatistics
+            // frmReports
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -243,7 +243,7 @@
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.panelBottom);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "frmStatistics";
+            this.Name = "frmReports";
             this.Load += new System.EventHandler(this.frmStatistics_Load);
             this.panelTitleBar.ResumeLayout(false);
             this.panelTitleBar.PerformLayout();

@@ -39,31 +39,28 @@
             this.btnAdminReports = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.nmdUnitCalorie = new System.Windows.Forms.NumericUpDown();
             this.txtPictureFilePath = new System.Windows.Forms.TextBox();
             this.btnPictureOpenDialog = new System.Windows.Forms.Button();
             this.txtFoodName = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.cmbFoodCategory = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lsvFoods = new System.Windows.Forms.ListView();
             this.clmFoodName = new System.Windows.Forms.ColumnHeader();
-            this.clmCategory = new System.Windows.Forms.ColumnHeader();
             this.clmUnitCalorie = new System.Windows.Forms.ColumnHeader();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.pbFoodPicture = new System.Windows.Forms.PictureBox();
-            this.nmdUnitCalorie = new System.Windows.Forms.NumericUpDown();
             this.panelTitleBar.SuspendLayout();
             this.panelMenu.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmdUnitCalorie)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbFoodPicture)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmdUnitCalorie)).BeginInit();
             this.SuspendLayout();
             // 
             // panelTitleBar
@@ -207,25 +204,33 @@
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.cmbFoodCategory);
-            this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Location = new System.Drawing.Point(11, 52);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(336, 170);
+            this.panel1.Size = new System.Drawing.Size(336, 133);
             this.panel1.TabIndex = 9;
+            // 
+            // nmdUnitCalorie
+            // 
+            this.nmdUnitCalorie.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.nmdUnitCalorie.DecimalPlaces = 2;
+            this.nmdUnitCalorie.Location = new System.Drawing.Point(115, 70);
+            this.nmdUnitCalorie.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.nmdUnitCalorie.Name = "nmdUnitCalorie";
+            this.nmdUnitCalorie.Size = new System.Drawing.Size(216, 23);
+            this.nmdUnitCalorie.TabIndex = 12;
             // 
             // txtPictureFilePath
             // 
             this.txtPictureFilePath.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.txtPictureFilePath.Location = new System.Drawing.Point(115, 132);
+            this.txtPictureFilePath.Location = new System.Drawing.Point(115, 101);
             this.txtPictureFilePath.Name = "txtPictureFilePath";
             this.txtPictureFilePath.Size = new System.Drawing.Size(117, 23);
             this.txtPictureFilePath.TabIndex = 8;
             // 
             // btnPictureOpenDialog
             // 
-            this.btnPictureOpenDialog.Location = new System.Drawing.Point(236, 132);
+            this.btnPictureOpenDialog.Location = new System.Drawing.Point(236, 101);
             this.btnPictureOpenDialog.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.btnPictureOpenDialog.Name = "btnPictureOpenDialog";
             this.btnPictureOpenDialog.Size = new System.Drawing.Size(95, 23);
@@ -237,7 +242,7 @@
             // txtFoodName
             // 
             this.txtFoodName.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.txtFoodName.Location = new System.Drawing.Point(115, 68);
+            this.txtFoodName.Location = new System.Drawing.Point(115, 37);
             this.txtFoodName.Name = "txtFoodName";
             this.txtFoodName.Size = new System.Drawing.Size(216, 23);
             this.txtFoodName.TabIndex = 8;
@@ -246,7 +251,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(3, 134);
+            this.label6.Location = new System.Drawing.Point(3, 103);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(115, 16);
             this.label6.TabIndex = 6;
@@ -257,7 +262,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(3, 102);
+            this.label5.Location = new System.Drawing.Point(3, 71);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(84, 16);
             this.label5.TabIndex = 6;
@@ -268,33 +273,12 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(3, 70);
+            this.label4.Location = new System.Drawing.Point(3, 39);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(84, 16);
             this.label4.TabIndex = 6;
             this.label4.Text = "Food Name:";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // cmbFoodCategory
-            // 
-            this.cmbFoodCategory.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.cmbFoodCategory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmbFoodCategory.FormattingEnabled = true;
-            this.cmbFoodCategory.Location = new System.Drawing.Point(115, 36);
-            this.cmbFoodCategory.Name = "cmbFoodCategory";
-            this.cmbFoodCategory.Size = new System.Drawing.Size(216, 23);
-            this.cmbFoodCategory.TabIndex = 7;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(3, 38);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(106, 16);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Food Category:";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label2
             // 
@@ -311,9 +295,9 @@
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.lsvFoods);
-            this.panel2.Location = new System.Drawing.Point(11, 228);
+            this.panel2.Location = new System.Drawing.Point(11, 191);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(233, 220);
+            this.panel2.Size = new System.Drawing.Size(233, 257);
             this.panel2.TabIndex = 10;
             // 
             // lsvFoods
@@ -321,13 +305,12 @@
             this.lsvFoods.BackColor = System.Drawing.SystemColors.ControlLight;
             this.lsvFoods.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lsvFoods.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.clmCategory,
             this.clmFoodName,
             this.clmUnitCalorie});
             this.lsvFoods.FullRowSelect = true;
-            this.lsvFoods.Location = new System.Drawing.Point(2, 4);
+            this.lsvFoods.Location = new System.Drawing.Point(1, 4);
             this.lsvFoods.Name = "lsvFoods";
-            this.lsvFoods.Size = new System.Drawing.Size(230, 211);
+            this.lsvFoods.Size = new System.Drawing.Size(230, 248);
             this.lsvFoods.TabIndex = 7;
             this.lsvFoods.UseCompatibleStateImageBehavior = false;
             this.lsvFoods.View = System.Windows.Forms.View.Details;
@@ -335,24 +318,19 @@
             // clmFoodName
             // 
             this.clmFoodName.Text = "Food Name";
-            this.clmFoodName.Width = 80;
-            // 
-            // clmCategory
-            // 
-            this.clmCategory.Text = "Category";
-            this.clmCategory.Width = 70;
+            this.clmFoodName.Width = 140;
             // 
             // clmUnitCalorie
             // 
             this.clmUnitCalorie.Text = "Unit Calorie";
-            this.clmUnitCalorie.Width = 77;
+            this.clmUnitCalorie.Width = 90;
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(250, 337);
+            this.btnAdd.Location = new System.Drawing.Point(251, 295);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(100, 30);
+            this.btnAdd.Size = new System.Drawing.Size(97, 30);
             this.btnAdd.TabIndex = 11;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -360,10 +338,10 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(250, 377);
+            this.btnUpdate.Location = new System.Drawing.Point(251, 335);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(100, 30);
+            this.btnUpdate.Size = new System.Drawing.Size(97, 30);
             this.btnUpdate.TabIndex = 11;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
@@ -371,10 +349,10 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(250, 418);
+            this.btnDelete.Location = new System.Drawing.Point(251, 376);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(100, 30);
+            this.btnDelete.Size = new System.Drawing.Size(97, 30);
             this.btnDelete.TabIndex = 11;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -382,22 +360,13 @@
             // 
             // pbFoodPicture
             // 
-            this.pbFoodPicture.Location = new System.Drawing.Point(251, 238);
+            this.pbFoodPicture.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pbFoodPicture.Location = new System.Drawing.Point(251, 191);
             this.pbFoodPicture.Name = "pbFoodPicture";
             this.pbFoodPicture.Size = new System.Drawing.Size(97, 86);
             this.pbFoodPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbFoodPicture.TabIndex = 12;
             this.pbFoodPicture.TabStop = false;
-            // 
-            // nmdUnitCalorie
-            // 
-            this.nmdUnitCalorie.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.nmdUnitCalorie.DecimalPlaces = 2;
-            this.nmdUnitCalorie.Location = new System.Drawing.Point(115, 101);
-            this.nmdUnitCalorie.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.nmdUnitCalorie.Name = "nmdUnitCalorie";
-            this.nmdUnitCalorie.Size = new System.Drawing.Size(216, 23);
-            this.nmdUnitCalorie.TabIndex = 12;
             // 
             // frmAdminUpdate
             // 
@@ -422,9 +391,9 @@
             this.panelMenu.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmdUnitCalorie)).EndInit();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbFoodPicture)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmdUnitCalorie)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -443,13 +412,10 @@
         private Panel panel1;
         private TextBox txtFoodName;
         private Label label4;
-        private ComboBox cmbFoodCategory;
-        private Label label3;
         private Label label2;
         private Panel panel2;
         private ListView lsvFoods;
         private ColumnHeader clmFoodName;
-        private ColumnHeader clmCategory;
         private Label label5;
         private ColumnHeader clmUnitCalorie;
         private Button btnAdd;
