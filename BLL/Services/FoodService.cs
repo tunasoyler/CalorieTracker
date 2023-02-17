@@ -35,7 +35,7 @@ namespace BLL.Services
         {
             return GetById(id);
         }
-        public IEnumerable<Food> GetAllFoods()
+        public List<Food> GetAllFoods()
         {
             return GetAll();
         }

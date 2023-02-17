@@ -1,5 +1,6 @@
 ﻿using DAL.Repostories;
 using Entities.Concrete;
+using Entities.ViewModels;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -14,9 +15,29 @@ namespace BLL.Services
         public ActivityTypeService(DbContext context) : base(context)
         {
         }
-        public List<ActivityType> ActivityTypeList()
+        public List<ActivityTypeViewModel> ActivityTypeList()
+        {            
+            var getAllActivityTypeTuple = GetAll();
+            List<ActivityType> activityTypes = getAllActivityTypeTuple;
+            List<ActivityTypeViewModel> ActivityTypeVmList = new List<ActivityTypeViewModel>();
+
+            foreach (ActivityType item in activityTypes)
+            {
+                ActivityTypeViewModel activityTypeViewModel = new ActivityTypeViewModel()
+                {
+                    ActivityTypeName = item.Name,
+                    Id = item.Id
+                };
+                ActivityTypeVmList.Add(activityTypeViewModel);
+            }
+
+
+            return ActivityTypeVmList;
+        }
+        public ActivityType GetActivityTypeById(int id)
         {
-            return GetAll().Select(x => new ActivityType { Name = x.Name, ActivityMultiplier=x.ActivityMultiplier }).ToList();
+            var currentActivityType = GetById(id);
+            return currentActivityType;
         }
     }
 }

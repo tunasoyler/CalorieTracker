@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DAL.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20230217091707_init")]
+    [Migration("20230217120212_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -90,7 +90,7 @@ namespace DAL.Migrations
                     b.Property<DateTime>("CreatedDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2023, 2, 17, 12, 17, 7, 366, DateTimeKind.Local).AddTicks(7250));
+                        .HasDefaultValue(new DateTime(2023, 2, 17, 15, 2, 12, 810, DateTimeKind.Local).AddTicks(7429));
 
                     b.Property<byte[]>("Image")
                         .IsRequired()
@@ -107,7 +107,7 @@ namespace DAL.Migrations
                     b.Property<DateTime>("UpdatedDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2023, 2, 17, 12, 17, 7, 366, DateTimeKind.Local).AddTicks(7483));
+                        .HasDefaultValue(new DateTime(2023, 2, 17, 15, 2, 12, 810, DateTimeKind.Local).AddTicks(7624));
 
                     b.HasKey("Id");
 
@@ -154,7 +154,7 @@ namespace DAL.Migrations
                     b.Property<DateTime>("CreatedDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2023, 2, 17, 12, 17, 7, 367, DateTimeKind.Local).AddTicks(57));
+                        .HasDefaultValue(new DateTime(2023, 2, 17, 15, 2, 12, 810, DateTimeKind.Local).AddTicks(9863));
 
                     b.Property<int>("MealTypeID")
                         .HasColumnType("int");
@@ -169,7 +169,7 @@ namespace DAL.Migrations
                     b.Property<DateTime>("UpdatedDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2023, 2, 17, 12, 17, 7, 367, DateTimeKind.Local).AddTicks(266));
+                        .HasDefaultValue(new DateTime(2023, 2, 17, 15, 2, 12, 811, DateTimeKind.Local).AddTicks(29));
 
                     b.Property<int>("UserID")
                         .HasColumnType("int");
@@ -269,36 +269,38 @@ namespace DAL.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int>("ActivityTypeId")
+                    b.Property<int?>("ActivityTypeId")
+                        .IsRequired()
                         .HasColumnType("int");
 
-                    b.Property<double>("BMR")
+                    b.Property<double?>("BMR")
                         .HasColumnType("float");
 
-                    b.Property<DateTime>("BirthDate")
+                    b.Property<DateTime?>("BirthDate")
+                        .IsRequired()
                         .HasColumnType("datetime2");
 
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<double>("DailyCalorieLimit")
+                    b.Property<double?>("DailyCalorieLimit")
                         .HasColumnType("float");
 
                     b.Property<string>("FirstName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("GenderId")
+                    b.Property<int?>("GenderId")
+                        .IsRequired()
                         .HasColumnType("int");
 
-                    b.Property<double>("GoalWeight")
+                    b.Property<double?>("GoalWeight")
                         .HasColumnType("float");
 
-                    b.Property<double>("Height")
+                    b.Property<double?>("Height")
+                        .IsRequired()
                         .HasColumnType("float");
 
                     b.Property<string>("LastName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
@@ -312,23 +314,22 @@ namespace DAL.Migrations
                         .HasColumnType("varchar(25)");
 
                     b.Property<bool>("State")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bit")
-                        .HasDefaultValue(true);
+                        .HasColumnType("bit");
 
                     b.Property<string>("Timeline")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("UpdatedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("UserTypeId")
+                    b.Property<int?>("UserTypeId")
+                        .IsRequired()
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasDefaultValue(2);
 
-                    b.Property<double>("Weight")
+                    b.Property<double?>("Weight")
+                        .IsRequired()
                         .HasColumnType("float");
 
                     b.HasKey("Id");
@@ -340,6 +341,26 @@ namespace DAL.Migrations
                     b.HasIndex("UserTypeId");
 
                     b.ToTable("Users");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            ActivityTypeId = 1,
+                            BMR = 1.0,
+                            BirthDate = new DateTime(2023, 2, 17, 15, 2, 12, 811, DateTimeKind.Local).AddTicks(4292),
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            FirstName = "admin",
+                            GenderId = 1,
+                            Height = 1.0,
+                            LastName = "admin",
+                            Name = "admin",
+                            Password = "admin",
+                            State = false,
+                            UpdatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UserTypeId = 1,
+                            Weight = 1.0
+                        });
                 });
 
             modelBuilder.Entity("Entities.Concrete.UserType", b =>

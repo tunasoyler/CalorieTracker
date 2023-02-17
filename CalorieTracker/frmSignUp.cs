@@ -14,6 +14,7 @@ using BLL.Services;
 using Microsoft.EntityFrameworkCore;
 using Entities.Concrete;
 using DAL;
+using Entities.Dtos.UserDtos;
 
 namespace UI
 {
@@ -144,9 +145,9 @@ namespace UI
         {
             UserService userService = new UserService(context);
 
-            User user = new User
+            UserCreateDTO user = new UserCreateDTO
             {
-                Name = txtUsername.Text,
+                UserName = txtUsername.Text,
                 Password = txtPassword.Text,
                 FirstName = txtFirstName.Text,
                 LastName = txtLastName.Text,

@@ -1,6 +1,8 @@
 ﻿using BLL.Services;
 using DAL;
 using Entities.Concrete;
+using Entities.Dtos.UserDtos;
+using Entities.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,9 +18,9 @@ namespace UI
 {
     public partial class frmQuestions2 : Form
     {
-        private User user;
+        private UserCreateDTO user;
         Context context = new Context();
-        public frmQuestions2(User user)
+        public frmQuestions2(UserCreateDTO user)
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -36,13 +38,8 @@ namespace UI
         private void frmQuestions2_Load(object sender, EventArgs e)
         {
             this.ClientSize = new System.Drawing.Size(640, 796);
-            ActivityTypeService activityTypeService = new ActivityTypeService(context);            
-            cmbActivityLevel.Items.Clear();
-
-            foreach (var item in activityTypeService.ActivityTypeList())
-            {
-                cmbActivityLevel.Items.Add(item);
-            }
+            FillActivityTypes();
+            
         }
 
         private void panelTitleBar_MouseDown(object sender, MouseEventArgs e)
@@ -91,12 +88,20 @@ namespace UI
         private void btnCalculate_Click(object sender, EventArgs e)
         {
             UserService userService = new UserService(context);
+            ActivityTypeService activityTypeService = new ActivityTypeService(context);
             user.GoalWeight = Convert.ToDouble(txtWeightGoal.Text);
             user.Timeline = cmbTimeline.Text;
-            user.ActivityType = (ActivityType)cmbActivityLevel.SelectedItem;
+            user.ActivityType = activityTypeService.GetActivityTypeById((cmbActivityLevel.SelectedIndex+1));
             userService.BMRCalculate(user);
             userService.DailyCalorieLimitCalculate(user);
             lblDailyCalorieLimit.Text = user.DailyCalorieLimit.ToString()+" kcal";
+        }
+
+        private void FillActivityTypes()
+        {
+            ActivityTypeService activityTypeService = new ActivityTypeService(context);
+            List<ActivityTypeViewModel> activityTypes = activityTypeService.ActivityTypeList();
+            cmbActivityLevel.DataSource = activityTypes;
         }
     }
 }

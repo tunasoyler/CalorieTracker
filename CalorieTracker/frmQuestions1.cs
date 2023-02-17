@@ -1,6 +1,9 @@
 ﻿using BLL.Services;
 using DAL;
+using DotNetOpenAuth.OpenId.Extensions.SimpleRegistration;
 using Entities.Concrete;
+using Entities.Dtos.UserDtos;
+using Entities.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,9 +19,9 @@ namespace UI
 {
     public partial class frmQuestions1 : Form
     {
-        private User user;
+        private UserCreateDTO user;
         Context context = new Context();
-        public frmQuestions1(User user)
+        public frmQuestions1(UserCreateDTO user)
         {
             //tüm formlarda kopyalanacak
             InitializeComponent();
@@ -96,20 +99,26 @@ namespace UI
         {
             GenderService genderService = new GenderService(context);
             dtpBirthDate.Value = DateTime.Now;
-            cmbGender.Items.Clear();
-            
-            foreach (var item in genderService.GenderList())
+            FillGenders();
+
+
+
+
+        }
+        private void FillGenders()
+        {
+            GenderService genderService = new GenderService(context);
+            List<GendersViewModel> genders = genderService.GenderList();
+            foreach (var item in genders)
             {
                 cmbGender.Items.Add(item);
-            }
-                
+            }            
         }
-
         frmQuestions2 frmQuestions2;
         private void btnNext_Click(object sender, EventArgs e)
         {
-
-            user.Gender = (Genders)cmbGender.SelectedItem;
+            GenderService genderService = new GenderService(context);           
+            user.Gender = genderService.GetGenderById((cmbGender.SelectedIndex+1));
             user.BirthDate = dtpBirthDate.Value;
             user.Weight=Convert.ToDouble(txtWeight.Text);
             user.Height=Convert.ToDouble(txtHeight.Text);
