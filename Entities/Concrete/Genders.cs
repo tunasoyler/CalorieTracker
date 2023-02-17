@@ -7,9 +7,9 @@
         {
             Users = new HashSet<User>();
         }
-        public override string ToString()
-        {
-            return Name;
-        }
+        //public override string ToString()
+        //{
+        //    return Name;
+        //}
     }
 }
