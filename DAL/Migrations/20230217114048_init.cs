@@ -33,8 +33,8 @@ namespace DAL.Migrations
                     Image = table.Column<byte[]>(type: "varbinary(max)", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false),
                     State = table.Column<bool>(type: "bit", nullable: false),
-                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2023, 2, 16, 16, 26, 46, 900, DateTimeKind.Local).AddTicks(5459)),
-                    UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2023, 2, 16, 16, 26, 46, 900, DateTimeKind.Local).AddTicks(5655))
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2023, 2, 17, 14, 40, 48, 184, DateTimeKind.Local).AddTicks(9791)),
+                    UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2023, 2, 17, 14, 40, 48, 185, DateTimeKind.Local).AddTicks(41))
                 },
                 constraints: table =>
                 {
@@ -137,8 +137,8 @@ namespace DAL.Migrations
                     MealTypeID = table.Column<int>(type: "int", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     State = table.Column<bool>(type: "bit", nullable: false),
-                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2023, 2, 16, 16, 26, 46, 900, DateTimeKind.Local).AddTicks(7843)),
-                    UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2023, 2, 16, 16, 26, 46, 900, DateTimeKind.Local).AddTicks(8058))
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2023, 2, 17, 14, 40, 48, 185, DateTimeKind.Local).AddTicks(2276)),
+                    UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2023, 2, 17, 14, 40, 48, 185, DateTimeKind.Local).AddTicks(2458))
                 },
                 constraints: table =>
                 {

@@ -1,5 +1,6 @@
 ﻿using BLL.Services;
 using DAL;
+using DotNetOpenAuth.OpenId.Extensions.SimpleRegistration;
 using Entities.Concrete;
 using Entities.Dtos.UserDtos;
 using Entities.ViewModels;
@@ -108,14 +109,16 @@ namespace UI
         {
             GenderService genderService = new GenderService(context);
             List<GendersViewModel> genders = genderService.GenderList();
-            cmbGender.DataSource = genders;
-
+            foreach (var item in genders)
+            {
+                cmbGender.Items.Add(item);
+            }            
         }
         frmQuestions2 frmQuestions2;
         private void btnNext_Click(object sender, EventArgs e)
         {
-            GenderService genderService = new GenderService(context);            
-            user.Gender = genderService.GetGenderById(((GendersViewModel)cmbGender.SelectedItem).Id);
+            GenderService genderService = new GenderService(context);           
+            user.Gender = genderService.GetGenderById((cmbGender.SelectedIndex+1));
             user.BirthDate = dtpBirthDate.Value;
             user.Weight=Convert.ToDouble(txtWeight.Text);
             user.Height=Convert.ToDouble(txtHeight.Text);

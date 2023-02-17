@@ -93,7 +93,7 @@ namespace UI
             ActivityTypeService activityTypeService = new ActivityTypeService(context);
             user.GoalWeight = Convert.ToDouble(txtWeightGoal.Text);
             user.Timeline = cmbTimeline.Text;
-            user.ActivityType = activityTypeService.GetActivityTypeById(((ActivityTypeViewModel)cmbActivityLevel.SelectedItem).Id);
+            user.ActivityType = activityTypeService.GetActivityTypeById((cmbActivityLevel.SelectedIndex+1));
             userService.BMRCalculate(user);
             userService.DailyCalorieLimitCalculate(user);
             lblDailyCalorieLimit.Text = user.DailyCalorieLimit.ToString()+" kcal";

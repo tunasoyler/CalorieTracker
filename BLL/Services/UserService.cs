@@ -63,8 +63,8 @@ namespace BLL.Services
             User newUser = new User()
             {
 
-                ActivityType = user.ActivityType,     
-                Gender = user.Gender,                 
+                ActivityTypeId = user.ActivityType.Id,     
+                GenderId = user.Gender.Id,                 
                 Height = user.Height,
                 Weight = user.Weight,
                 FirstName = user.FirstName,
