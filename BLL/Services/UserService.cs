@@ -3,6 +3,7 @@
 using DAL;
 using DAL.Repostories;
 using Entities.Concrete;
+using Entities.Dtos.UserDtos;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Migrations.Operations;
 using System;
@@ -20,13 +21,13 @@ namespace BLL.Services
         {
             
         }
-        public bool DoesUserExist(User user)
+        public bool DoesUserExist(UserCreateDTO user)
         {
             return context.Users.Any(u =>
-                u.Name == user.Name                             
+                u.Name == user.UserName                             
             );
         }
-        public void BMRCalculate(User user)
+        public void BMRCalculate(UserCreateDTO user)
         {
             if (user.Gender.Name == "Male")
             {
@@ -38,7 +39,7 @@ namespace BLL.Services
             }
         }
 
-        public void DailyCalorieLimitCalculate(User user)
+        public void DailyCalorieLimitCalculate(UserCreateDTO user)
         {
             switch (user.Timeline) 
             {
@@ -57,9 +58,29 @@ namespace BLL.Services
         {
             return GetAll().Select(x => new User { Gender = x.Gender, Height = x.Height, Weight=x.Weight, ActivityType = x.ActivityType, GoalWeight = x.GoalWeight,  BirthDate = x.BirthDate, BMR = x.BMR, CreatedDate=x.CreatedDate, UpdatedDate = x.UpdatedDate, Meals=x.Meals, Password=x.Password, State=x.State }).ToList();
         }
-        public void AddUser(User user)
+        public void AddUser(UserCreateDTO user)
         {
-            Add(user);
+            User newUser = new User()
+            {
+                ActivityType = user.ActivityType,
+                Gender = user.Gender,
+                Height = user.Height,
+                Weight = user.Weight,
+                FirstName = user.FirstName,
+                LastName = user.LastName,
+                Name = user.UserName,
+                BMR = user.BMR,
+                BirthDate = user.BirthDate,
+                DailyCalorieLimit = user.DailyCalorieLimit,
+                GoalWeight = user.GoalWeight,
+                Password = user.Password,
+                Timeline= user.Timeline,
+                CreatedDate=DateTime.Now,
+                UpdatedDate=DateTime.Now,
+                 
+ 
+            };
+            Add(newUser);
         }
         public void UpdateUser(User user)
         {

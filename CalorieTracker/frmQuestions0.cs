@@ -1,6 +1,7 @@
 ﻿using BLL.Services;
 using DAL;
 using Entities.Concrete;
+using Entities.Dtos.UserDtos;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,8 +19,8 @@ namespace UI
     public partial class frmQuestions0 : Form
     {
         frmQuestions1 frmQuestions1;
-        private User user;        
-        public frmQuestions0(User user)
+        private UserCreateDTO user;        
+        public frmQuestions0(UserCreateDTO user)
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.FixedSingle;

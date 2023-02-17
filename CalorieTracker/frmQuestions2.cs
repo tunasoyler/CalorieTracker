@@ -1,6 +1,7 @@
 ﻿using BLL.Services;
 using DAL;
 using Entities.Concrete;
+using Entities.Dtos.UserDtos;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,9 +17,9 @@ namespace UI
 {
     public partial class frmQuestions2 : Form
     {
-        private User user;
+        private UserCreateDTO user;
         Context context = new Context();
-        public frmQuestions2(User user)
+        public frmQuestions2(UserCreateDTO user)
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -37,12 +38,7 @@ namespace UI
         {
             this.ClientSize = new System.Drawing.Size(640, 796);
             ActivityTypeService activityTypeService = new ActivityTypeService(context);            
-            cmbActivityLevel.Items.Clear();
-
-            foreach (var item in activityTypeService.ActivityTypeList())
-            {
-                cmbActivityLevel.Items.Add(item);
-            }
+            cmbActivityLevel.DataSource
         }
 
         private void panelTitleBar_MouseDown(object sender, MouseEventArgs e)

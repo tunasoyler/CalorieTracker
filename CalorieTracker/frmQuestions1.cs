@@ -1,6 +1,7 @@
 ﻿using BLL.Services;
 using DAL;
 using Entities.Concrete;
+using Entities.Dtos.UserDtos;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,9 +17,9 @@ namespace UI
 {
     public partial class frmQuestions1 : Form
     {
-        private User user;
+        private UserCreateDTO user;
         Context context = new Context();
-        public frmQuestions1(User user)
+        public frmQuestions1(UserCreateDTO user)
         {
             //tüm formlarda kopyalanacak
             InitializeComponent();
