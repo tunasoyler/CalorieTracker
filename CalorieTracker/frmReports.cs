@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace UI
 {
-    public partial class frmStatistics : Form
+    public partial class frmReports : Form
     {
         private Form activeForm;
 
@@ -25,7 +25,7 @@ namespace UI
 
         private Button currentButton;
         private int tempIndex;
-        public frmStatistics()
+        public frmReports()
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.FixedSingle;

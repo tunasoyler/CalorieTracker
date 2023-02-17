@@ -80,8 +80,6 @@ namespace UI
         private void btnBegin_Click(object sender, EventArgs e)
         {
             UserService userService = new UserService(context);
-            user.FirstName = "Halit";
-            user.LastName = "Öztürk";
             
             userService.AddUser(user);
             

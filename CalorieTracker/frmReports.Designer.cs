@@ -1,6 +1,6 @@
 ﻿namespace UI
 {
-    partial class frmStatistics
+    partial class frmReports
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmStatistics));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmReports));
             this.panelBottom = new System.Windows.Forms.Panel();
             this.btnCloseApp = new System.Windows.Forms.Button();
             this.btnMinimizeApp = new System.Windows.Forms.Button();

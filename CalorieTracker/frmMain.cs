@@ -4,7 +4,7 @@ namespace UI
 {
     public partial class frmMain : Form
     {
-        frmStatistics statisticsForm;
+        frmReports statisticsForm;
         frmUser userForm;
         frmSettings settingsForm;
         frmAddMeal addMealForm;
@@ -72,7 +72,7 @@ namespace UI
         {
             ActivateButton(sender);
             this.Hide();
-            statisticsForm = new frmStatistics();
+            statisticsForm = new frmReports();
             statisticsForm.Show();
         }
 

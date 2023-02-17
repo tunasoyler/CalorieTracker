@@ -24,6 +24,7 @@ namespace DAL.Configurations
             builder.Property(x => x.Height).IsRequired();
             builder.Property(x => x.Weight).IsRequired();
             builder.Property(x => x.BirthDate).HasConversion(typeof(DateTime)).IsRequired();
+            builder.Property(x=> x.State).HasDefaultValue(1);
         }
     }
 }

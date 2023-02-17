@@ -39,17 +39,17 @@
             this.btnReports = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pnlDailyStats = new System.Windows.Forms.Panel();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.lstDailyStats = new System.Windows.Forms.ListView();
             this.clmFood = new System.Windows.Forms.ColumnHeader();
             this.clmCountByMeal = new System.Windows.Forms.ColumnHeader();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.listView1 = new System.Windows.Forms.ListView();
             this.clmFoodName2 = new System.Windows.Forms.ColumnHeader();
             this.clmCountByCategory = new System.Windows.Forms.ColumnHeader();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.panelTitleBar.SuspendLayout();
             this.panelMenu.SuspendLayout();
             this.pnlDailyStats.SuspendLayout();
@@ -84,6 +84,7 @@
             this.btnCloseApp.TabIndex = 5;
             this.btnCloseApp.Text = "X";
             this.btnCloseApp.UseVisualStyleBackColor = false;
+            this.btnCloseApp.Click += new System.EventHandler(this.btnCloseApp_Click);
             // 
             // label1
             // 
@@ -114,6 +115,7 @@
             this.btnMinimizeApp.Text = "_";
             this.btnMinimizeApp.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnMinimizeApp.UseVisualStyleBackColor = false;
+            this.btnMinimizeApp.Click += new System.EventHandler(this.btnMinimizeApp_Click);
             // 
             // panelBottom
             // 
@@ -154,6 +156,7 @@
             this.btnMeal.TabIndex = 2;
             this.btnMeal.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnMeal.UseVisualStyleBackColor = false;
+            this.btnMeal.Click += new System.EventHandler(this.btnMeal_Click);
             // 
             // btnReports
             // 
@@ -171,6 +174,7 @@
             this.btnReports.TabIndex = 1;
             this.btnReports.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnReports.UseVisualStyleBackColor = false;
+            this.btnReports.Click += new System.EventHandler(this.btnReports_Click);
             // 
             // panel3
             // 
@@ -192,6 +196,16 @@
             this.pnlDailyStats.Name = "pnlDailyStats";
             this.pnlDailyStats.Size = new System.Drawing.Size(168, 382);
             this.pnlDailyStats.TabIndex = 7;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(4, 57);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(158, 23);
+            this.comboBox1.TabIndex = 7;
             // 
             // label3
             // 
@@ -240,16 +254,15 @@
             this.panel1.Size = new System.Drawing.Size(168, 382);
             this.panel1.TabIndex = 8;
             // 
-            // label2
+            // comboBox2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(11, 9);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(138, 38);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "FOOD REPORTS\r\nBY CATEGORY\r\n";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.comboBox2.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.comboBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(3, 57);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(158, 23);
+            this.comboBox2.TabIndex = 7;
             // 
             // listView1
             // 
@@ -276,25 +289,16 @@
             this.clmCountByCategory.Text = "Count";
             this.clmCountByCategory.Width = 53;
             // 
-            // comboBox1
+            // label2
             // 
-            this.comboBox1.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(4, 57);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(158, 23);
-            this.comboBox1.TabIndex = 7;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.comboBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(3, 57);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(158, 23);
-            this.comboBox2.TabIndex = 7;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(11, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(138, 38);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "FOOD REPORTS\r\nBY CATEGORY\r\n";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // frmAdminReport
             // 

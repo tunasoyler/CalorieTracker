@@ -85,7 +85,37 @@ namespace UI
             ActivateButton(sender);            
         }
 
+        private void btnPictureOpenDialog_Click(object sender, EventArgs e)
+        {
+            Image image;
+            OpenFileDialog openFileDialog = new()
+            {
+                InitialDirectory = "C://Destkop",
+                Filter = "Image files (*.jpg, *.png) | *.jpg; *.png",
+                Title = "Load a picture for food."
+            };
 
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                image = Image.FromFile(openFileDialog.FileName);
+                //pbProductPicture.Image = image;
+                //pbProductPicture.SizeMode = PictureBoxSizeMode.StretchImage;
+            }
+        }
 
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
