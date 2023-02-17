@@ -34,7 +34,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(344, 481);
+            this.ClientSize = new System.Drawing.Size(423, 481);
             this.ControlBox = false;
             this.Name = "frmAddMeal";
             this.ResumeLayout(false);

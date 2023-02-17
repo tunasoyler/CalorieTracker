@@ -1,18 +1,23 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
 using System.Runtime.InteropServices;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace UI
 {
-    public partial class frmMain : Form
+    public partial class frmAdminReport : Form
     {
-        frmStatistics statisticsForm;
-        frmUser userForm;
-        frmSettings settingsForm;
-        frmAddMeal addMealForm;
-        frmMain mainForm;
+        frmAdminReport AdminReportForm;
+        frmAdminUpdate AdminUpdateForm;
 
         private Button currentButton;
-        //private int tempIndex;
-        public frmMain()
+        public frmAdminReport()
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -52,53 +57,20 @@ namespace UI
             }
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            SetWeeklyChartValues(1900, 1500, 2500, 1800, 1000, 1000, 2000);   
-        }
-
-        private void SetWeeklyChartValues(int day1, int day2, int day3, int day4, int day5, int day6, int day7)
-        {
-            int[] list = { day1, day2, day3, day4, day5, day6, day7 };
-            sparkLine1.Source = list;
-        }
-
-        private void btnHome_Click(object sender, EventArgs e)
-        {
-            ActivateButton(sender);
-        }
-
         private void btnReports_Click(object sender, EventArgs e)
         {
             ActivateButton(sender);
-            this.Hide();
-            statisticsForm = new frmStatistics();
-            statisticsForm.Show();
         }
 
         private void btnMeal_Click(object sender, EventArgs e)
         {
             ActivateButton(sender);
             this.Hide();
-            addMealForm = new frmAddMeal();
-            addMealForm.Show();
+            AdminUpdateForm = new frmAdminUpdate();
+            AdminUpdateForm.Show();
         }
 
-        private void btnUser_Click(object sender, EventArgs e)
-        {
-            ActivateButton(sender);
-            this.Hide();
-            userForm= new frmUser();
-            userForm.Show();
-        }
-
-        private void btnSettings_Click(object sender, EventArgs e)
-        {
-            ActivateButton(sender);
-            this.Hide();
-            settingsForm = new frmSettings();
-            settingsForm.Show();
-        }
+        
 
         private void btnCloseApp_Click(object sender, EventArgs e)
         {
@@ -115,7 +87,6 @@ namespace UI
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
-
 
     }
 }
