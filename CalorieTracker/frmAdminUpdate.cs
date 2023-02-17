@@ -1,4 +1,9 @@
-﻿using System;
+﻿using BLL.Services;
+using DAL;
+using Entities.Dtos.FoodDtos;
+using Entities.Dtos.UserDtos;
+using Entities.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -87,35 +92,110 @@ namespace UI
 
         private void btnPictureOpenDialog_Click(object sender, EventArgs e)
         {
-            Image image;
+            Image image = null;
             OpenFileDialog openFileDialog = new()
             {
                 InitialDirectory = "C://Destkop",
                 Filter = "Image files (*.jpg, *.png) | *.jpg; *.png",
-                Title = "Load a picture for food."
+                Title = "Resim dosyası yükleyin"
             };
-
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 image = Image.FromFile(openFileDialog.FileName);
-                //pbProductPicture.Image = image;
-                //pbProductPicture.SizeMode = PictureBoxSizeMode.StretchImage;
+                pbFoodPicture.Image = image;
+                pbFoodPicture.SizeMode = PictureBoxSizeMode.StretchImage;
             }
         }
-
+        
+    Context context = new Context();
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            if (txtFoodName.Text.Trim() == "")
+            {
+                MessageBox.Show("Yemek eklemek için yemek adı girişi zorunludur");
+                return;
+            }
+            try
+            {
+                FoodService foodService = new FoodService(context);
+                FoodCreateDTO food = new FoodCreateDTO
+                {
+                    FoodName = txtFoodName.Text,
+                    Calorie = (double)nmdUnitCalorie.Value,
+                    Image = ImageToByteArray(pbFoodPicture.Image)
 
+                };
+                foodService.AddFood(food);
+                FillFoods();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
+        }
+        
+        private void FillFoods()
+        {
+            FoodService foodService = new FoodService(context);
+            List<FoodViewModel> foodList = new List<FoodViewModel>();
+            dgvFoodList.Rows.Clear();
+
+            foodList = foodService.GetAllFoods();
+                           
+
+            foreach (var product in foodList)
+            {
+                dgvFoodList.Rows.Add(product.Name, product.Calorie, product.Image);
+            }
+        }
+        private byte[] ImageToByteArray(System.Drawing.Image imageIn)
+        {
+            if (imageIn != null)
+            {
+                using (var ms = new MemoryStream())
+                {
+                    imageIn.Save(ms, imageIn.RawFormat);
+                    return ms.ToArray();
+                }
+            }
+            return null;
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            if (txtFoodName.Text.Trim() == "")
+            {
+                MessageBox.Show("Yemek eklemek için yemek adı girişi zorunludur");
+                return;
+            }
+            try
+            {
+                FoodService foodService = new FoodService(context);
+                FoodUpdateDTO updateFood = new FoodUpdateDTO
+                {
+                    FoodName = txtFoodName.Text,
+                    Calorie = (double)nmdUnitCalorie.Value,
+                    Image = ImageToByteArray(pbFoodPicture.Image),
 
+                };
+                foodService.UpdateFood(updateFood);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void frmAdminUpdate_Load(object sender, EventArgs e)
+        {
+            FillFoods();
         }
     }
 }

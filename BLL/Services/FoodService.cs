@@ -1,5 +1,7 @@
 ﻿using DAL.Repostories;
 using Entities.Concrete;
+using Entities.Dtos.FoodDtos;
+using Entities.ViewModels;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -19,25 +21,41 @@ namespace BLL.Services
         {
             return GetAll().Select(x => new Food { Id = x.Id, Name=x.Name, Calorie=x.Calorie, Image=x.Image }).ToList();
         }
-        public void AddFood(Food food)
+        public void AddFood(FoodCreateDTO food)
         {
-            Add(food);
+            Food newfood= new Food { Name=food.FoodName, Calorie=food.Calorie, Image=food.Image };
+            Add(newfood);
         }
-        public void UpdateFood(Food food)
+        public void UpdateFood(FoodUpdateDTO food)
         {
-            Update(food);
+            Food updateFood = new Food { Name = food.FoodName, Calorie = (double)food.Calorie, Image = food.Image };
+            Update(updateFood);
         }
-        public void DeleteFood(Food food)
-        {
-            Delete(food);
-        }
+        //public void DeleteFood(FoodDeleteDTO food)
+        //{
+        //    Delete();
+        //}
         public Food GetFoodById(int id)
         {
             return GetById(id);
         }
-        public List<Food> GetAllFoods()
+        public List<FoodViewModel> GetAllFoods()
         {
-            return GetAll();
+            List<FoodViewModel> FoodsVmList = new List<FoodViewModel>();
+
+            foreach (Food item in GetAll())
+            {
+                FoodViewModel foodViewModel = new FoodViewModel()
+                {
+                    Name= item.Name,
+                    Calorie= item.Calorie,
+                    Image= item.Image
+                    
+                };
+                FoodsVmList.Add(foodViewModel);
+            }
+            return FoodsVmList;
+            
         }
     }
 }

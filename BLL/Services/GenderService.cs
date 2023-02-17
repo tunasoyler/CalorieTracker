@@ -16,9 +16,7 @@ namespace BLL.Services
         {
         }
         public List<GendersViewModel> GenderList()
-        {           
-            //var getAllGendersTuple = GetAll();
-            //List<Genders> genders = getAllGendersTuple;
+        {                       
             List<GendersViewModel> GendersVmList = new List<GendersViewModel>();
 
             foreach (Genders item in GetAll())
