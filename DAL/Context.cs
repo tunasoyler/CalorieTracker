@@ -21,7 +21,7 @@ namespace DAL
         public DbSet <ActivityType> ActivityTypes { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("server=DESKTOP-81CS8R3;database=CalorieTrackerDB;trusted_connection=true;");
+            optionsBuilder.UseSqlServer("server=DESKTOP-EFOB25G;database=CalorieTrackerDB;trusted_connection=true;");
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
