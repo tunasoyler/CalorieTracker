@@ -1,4 +1,7 @@
-﻿using System;
+﻿using BLL.Services;
+using DAL;
+using Entities.Concrete;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,13 +16,16 @@ namespace UI
 {
     public partial class frmQuestions2 : Form
     {
-        public frmQuestions2()
+        private User user;
+        Context context = new Context();
+        public frmQuestions2(User user)
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.ControlBox = false;
             this.Text = string.Empty;
+            this.user = user;
             CenterToScreen();
         }
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -30,6 +36,13 @@ namespace UI
         private void frmQuestions2_Load(object sender, EventArgs e)
         {
             this.ClientSize = new System.Drawing.Size(640, 796);
+            ActivityTypeService activityTypeService = new ActivityTypeService(context);            
+            cmbActivityLevel.Items.Clear();
+
+            foreach (var item in activityTypeService.ActivityTypeList())
+            {
+                cmbActivityLevel.Items.Add(item);
+            }
         }
 
         private void panelTitleBar_MouseDown(object sender, MouseEventArgs e)
@@ -66,9 +79,26 @@ namespace UI
 
         private void btnBegin_Click(object sender, EventArgs e)
         {
+            UserService userService = new UserService(context);
+            user.FirstName = "Halit";
+            user.LastName = "Öztürk";
+            
+            userService.AddUser(user);
+            
             frmMain frmMain = new frmMain();
             frmMain.Show();
             this.Hide();
+        }
+
+        private void btnCalculate_Click(object sender, EventArgs e)
+        {
+            UserService userService = new UserService(context);
+            user.GoalWeight = Convert.ToDouble(txtWeightGoal.Text);
+            user.Timeline = cmbTimeline.Text;
+            user.ActivityType = (ActivityType)cmbActivityLevel.SelectedItem;
+            userService.BMRCalculate(user);
+            userService.DailyCalorieLimitCalculate(user);
+            lblDailyCalorieLimit.Text = user.DailyCalorieLimit.ToString()+" kcal";
         }
     }
 }

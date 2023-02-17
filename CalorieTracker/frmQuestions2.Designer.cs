@@ -42,13 +42,14 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lblDailyCalorieLimit = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.cmbTimeline = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.cmbActivityLevel = new System.Windows.Forms.ComboBox();
+            this.btnCalculate = new System.Windows.Forms.Button();
             this.panelTitleBar.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -213,16 +214,16 @@
             this.label4.TabIndex = 48;
             this.label4.Text = "Daily calorie limit:";
             // 
-            // label6
+            // lblDailyCalorieLimit
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(215, 372);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(92, 22);
-            this.label6.TabIndex = 48;
-            this.label6.Text = "2200 kcal";
+            this.lblDailyCalorieLimit.AutoSize = true;
+            this.lblDailyCalorieLimit.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblDailyCalorieLimit.Location = new System.Drawing.Point(215, 372);
+            this.lblDailyCalorieLimit.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblDailyCalorieLimit.Name = "lblDailyCalorieLimit";
+            this.lblDailyCalorieLimit.Size = new System.Drawing.Size(92, 22);
+            this.lblDailyCalorieLimit.TabIndex = 48;
+            this.lblDailyCalorieLimit.Text = "2200 kcal";
             // 
             // panel1
             // 
@@ -285,17 +286,23 @@
             this.cmbActivityLevel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmbActivityLevel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cmbActivityLevel.FormattingEnabled = true;
-            this.cmbActivityLevel.Items.AddRange(new object[] {
-            "Sedentary (little or no exercise, desk job)",
-            "Lightly active (light exercise 1-3 days/week) ",
-            "Moderately active (moderate exercise 2-4 days/week)",
-            "Very active  (hard exercise every day)",
-            "Extra active (hard exercise 2 or more times per day)"});
             this.cmbActivityLevel.Location = new System.Drawing.Point(215, 323);
             this.cmbActivityLevel.Margin = new System.Windows.Forms.Padding(2);
             this.cmbActivityLevel.Name = "cmbActivityLevel";
             this.cmbActivityLevel.Size = new System.Drawing.Size(121, 26);
             this.cmbActivityLevel.TabIndex = 55;
+            // 
+            // btnCalculate
+            // 
+            this.btnCalculate.BackColor = System.Drawing.Color.OliveDrab;
+            this.btnCalculate.Location = new System.Drawing.Point(34, 410);
+            this.btnCalculate.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCalculate.Name = "btnCalculate";
+            this.btnCalculate.Size = new System.Drawing.Size(100, 30);
+            this.btnCalculate.TabIndex = 56;
+            this.btnCalculate.Text = "Calculate";
+            this.btnCalculate.UseVisualStyleBackColor = false;
+            this.btnCalculate.Click += new System.EventHandler(this.btnCalculate_Click);
             // 
             // frmQuestions2
             // 
@@ -304,10 +311,11 @@
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(360, 520);
             this.ControlBox = false;
+            this.Controls.Add(this.btnCalculate);
             this.Controls.Add(this.cmbActivityLevel);
             this.Controls.Add(this.cmbTimeline);
             this.Controls.Add(this.txtWeightGoal);
-            this.Controls.Add(this.label6);
+            this.Controls.Add(this.lblDailyCalorieLimit);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
@@ -346,12 +354,13 @@
         private Panel panel4;
         private Label label2;
         private Label label4;
-        private Label label6;
+        private Label lblDailyCalorieLimit;
         private Panel panel1;
         private ComboBox cmbTimeline;
         private Label label7;
         private Panel panel2;
         private Label label8;
         private ComboBox cmbActivityLevel;
+        private Button btnCalculate;
     }
 }

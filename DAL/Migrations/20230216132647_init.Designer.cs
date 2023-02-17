@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DAL.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20230213104702_init")]
+    [Migration("20230216132647_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -47,32 +47,32 @@ namespace DAL.Migrations
                         new
                         {
                             Id = 1,
-                            ActivityMultiplier = 1.1499999999999999,
-                            Name = "Active1"
+                            ActivityMultiplier = 1.2,
+                            Name = "Sedentary"
                         },
                         new
                         {
                             Id = 2,
-                            ActivityMultiplier = 1.2,
-                            Name = "Active2"
+                            ActivityMultiplier = 1.375,
+                            Name = "Lightly active"
                         },
                         new
                         {
                             Id = 3,
-                            ActivityMultiplier = 1.25,
-                            Name = "Active3"
+                            ActivityMultiplier = 1.55,
+                            Name = "Moderately active"
                         },
                         new
                         {
                             Id = 4,
-                            ActivityMultiplier = 1.3,
-                            Name = "Active4"
+                            ActivityMultiplier = 1.7250000000000001,
+                            Name = "Very active"
                         },
                         new
                         {
                             Id = 5,
-                            ActivityMultiplier = 1.3500000000000001,
-                            Name = "Active5"
+                            ActivityMultiplier = 1.8999999999999999,
+                            Name = "Extra active"
                         });
                 });
 
@@ -90,7 +90,7 @@ namespace DAL.Migrations
                     b.Property<DateTime>("CreatedDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2023, 2, 13, 13, 47, 2, 664, DateTimeKind.Local).AddTicks(9431));
+                        .HasDefaultValue(new DateTime(2023, 2, 16, 16, 26, 46, 900, DateTimeKind.Local).AddTicks(5459));
 
                     b.Property<byte[]>("Image")
                         .IsRequired()
@@ -107,7 +107,7 @@ namespace DAL.Migrations
                     b.Property<DateTime>("UpdatedDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2023, 2, 13, 13, 47, 2, 664, DateTimeKind.Local).AddTicks(9639));
+                        .HasDefaultValue(new DateTime(2023, 2, 16, 16, 26, 46, 900, DateTimeKind.Local).AddTicks(5655));
 
                     b.HasKey("Id");
 
@@ -154,7 +154,7 @@ namespace DAL.Migrations
                     b.Property<DateTime>("CreatedDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2023, 2, 13, 13, 47, 2, 665, DateTimeKind.Local).AddTicks(2252));
+                        .HasDefaultValue(new DateTime(2023, 2, 16, 16, 26, 46, 900, DateTimeKind.Local).AddTicks(7843));
 
                     b.Property<int>("MealTypeID")
                         .HasColumnType("int");
@@ -169,7 +169,7 @@ namespace DAL.Migrations
                     b.Property<DateTime>("UpdatedDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2023, 2, 13, 13, 47, 2, 665, DateTimeKind.Local).AddTicks(2461));
+                        .HasDefaultValue(new DateTime(2023, 2, 16, 16, 26, 46, 900, DateTimeKind.Local).AddTicks(8058));
 
                     b.Property<int>("UserID")
                         .HasColumnType("int");
@@ -281,6 +281,9 @@ namespace DAL.Migrations
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<double>("DailyCalorieLimit")
+                        .HasColumnType("float");
+
                     b.Property<string>("FirstName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -311,11 +314,17 @@ namespace DAL.Migrations
                     b.Property<bool>("State")
                         .HasColumnType("bit");
 
+                    b.Property<string>("Timeline")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<DateTime>("UpdatedDate")
                         .HasColumnType("datetime2");
 
                     b.Property<int>("UserTypeId")
-                        .HasColumnType("int");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasDefaultValue(2);
 
                     b.Property<double>("Weight")
                         .HasColumnType("float");

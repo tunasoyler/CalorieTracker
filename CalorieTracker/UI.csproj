@@ -9,12 +9,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="CircleProgressBar" Version="1.0.1" />
     <PackageReference Include="CircularProgressBar_NET5" Version="3.0.0" />
     <PackageReference Include="Syncfusion.Chart.Windows" Version="20.4.0.48" />
     <PackageReference Include="Syncfusion.SfChart.WPF" Version="20.4.0.48" />
     <PackageReference Include="Syncfusion.Xamarin.SfChart" Version="20.4.0.48" />
     <PackageReference Include="Syncfusion.Xamarin.SfProgressBar" Version="20.4.0.48" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj" />
   </ItemGroup>
 
   <ItemGroup>
