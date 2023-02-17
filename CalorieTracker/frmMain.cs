@@ -1,3 +1,4 @@
+using Entities.ViewModels;
 using System.Runtime.InteropServices;
 
 namespace UI
@@ -6,12 +7,13 @@ namespace UI
     {
         frmReports statisticsForm;
         frmUser userForm;
-        frmSettings settingsForm;
         frmAddMeal addMealForm;
         frmMain mainForm;
 
+        
+
         private Button currentButton;
-        //private int tempIndex;
+        
         public frmMain()
         {
             InitializeComponent();
@@ -52,9 +54,27 @@ namespace UI
             }
         }
 
+        UserViewModel userViewModel;
+
         private void Form1_Load(object sender, EventArgs e)
         {
-            SetWeeklyChartValues(1900, 1500, 2500, 1800, 1000, 1000, 2000);   
+            //MealDetailsViewModel mealDetailsVm = new MealDetailsViewModel();
+            //double dailyLimit = 0, currentCalorie = 0;
+
+            //foreach (var item in )
+            //{
+                
+            //}
+
+            //mealDetailsVm.Calorie
+            //currentCalorie = 
+            //cpbDailyLimit.Text = 
+
+
+
+            SetWeeklyChartValues(1900, 1500, 2500, 1800, 1000, 1000, 2000);
+            
+
         }
 
         private void SetWeeklyChartValues(int day1, int day2, int day3, int day4, int day5, int day6, int day7)
@@ -92,13 +112,7 @@ namespace UI
             userForm.Show();
         }
 
-        private void btnSettings_Click(object sender, EventArgs e)
-        {
-            ActivateButton(sender);
-            this.Hide();
-            settingsForm = new frmSettings();
-            settingsForm.Show();
-        }
+        
 
         private void btnCloseApp_Click(object sender, EventArgs e)
         {

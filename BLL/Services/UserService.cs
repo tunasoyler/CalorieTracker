@@ -31,11 +31,11 @@ namespace BLL.Services
         {
             if (user.Gender.Name == "Male")
             {
-                user.BMR = 655 + (13.7 * user.Weight) + (5 * user.Height) - (6.8 * (DateTime.Now.Year - user.BirthDate.Year));
+                user.BMR = 66 + (13.7 * user.Weight) + (5 * user.Height) - (6.8 * (DateTime.Now.Year - user.BirthDate.Year));
             }
             else
             {
-                user.BMR = 66 + (9.6 * user.Weight) + (1.8 * user.Height) - (4.7 * (DateTime.Now.Year - user.BirthDate.Year));
+                user.BMR = 655 + (9.6 * user.Weight) + (1.8 * user.Height) - (4.7 * (DateTime.Now.Year - user.BirthDate.Year));
             }
         }
 
@@ -44,9 +44,13 @@ namespace BLL.Services
             switch (user.Timeline) 
             {
                 case "6 months":
-                    user.DailyCalorieLimit = Math.Abs(user.ActivityType.ActivityMultiplier*user.BMR - (7400*(user.Weight-user.GoalWeight))/180); break;
+                    user.DailyCalorieLimit = Math.Abs(user.ActivityType.ActivityMultiplier*user.BMR - (7400*(user.Weight-user.GoalWeight))/180);
+                    user.DailyCalorieLimit = Math.Ceiling(user.DailyCalorieLimit / 50) * 50;
+                    break;
                 case "12 months":
-                    user.DailyCalorieLimit = Math.Abs(user.ActivityType.ActivityMultiplier * user.BMR - (7400 * (user.Weight - user.GoalWeight)) / 360); break;
+                    user.DailyCalorieLimit = Math.Abs(user.ActivityType.ActivityMultiplier * user.BMR - (7400 * (user.Weight - user.GoalWeight)) / 360);
+                    user.DailyCalorieLimit = Math.Ceiling(user.DailyCalorieLimit / 50) * 50;
+                    break;
             }
                
         }

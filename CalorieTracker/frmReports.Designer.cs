@@ -34,7 +34,6 @@
             this.btnMinimizeApp = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panelTitleBar = new System.Windows.Forms.Panel();
-            this.btnSettings = new System.Windows.Forms.Button();
             this.btnUser = new System.Windows.Forms.Button();
             this.btnMeal = new System.Windows.Forms.Button();
             this.btnReports = new System.Windows.Forms.Button();
@@ -116,24 +115,6 @@
             this.panelTitleBar.TabIndex = 9;
             this.panelTitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitleBar_MouseDown);
             // 
-            // btnSettings
-            // 
-            this.btnSettings.BackColor = System.Drawing.Color.OliveDrab;
-            this.btnSettings.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSettings.BackgroundImage")));
-            this.btnSettings.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnSettings.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnSettings.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSettings.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnSettings.Location = new System.Drawing.Point(270, 0);
-            this.btnSettings.Margin = new System.Windows.Forms.Padding(2);
-            this.btnSettings.Name = "btnSettings";
-            this.btnSettings.Size = new System.Drawing.Size(60, 40);
-            this.btnSettings.TabIndex = 4;
-            this.btnSettings.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnSettings.UseVisualStyleBackColor = false;
-            this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
-            // 
             // btnUser
             // 
             this.btnUser.BackColor = System.Drawing.Color.OliveDrab;
@@ -143,10 +124,10 @@
             this.btnUser.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUser.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnUser.Location = new System.Drawing.Point(210, 0);
+            this.btnUser.Location = new System.Drawing.Point(255, 0);
             this.btnUser.Margin = new System.Windows.Forms.Padding(2);
             this.btnUser.Name = "btnUser";
-            this.btnUser.Size = new System.Drawing.Size(60, 40);
+            this.btnUser.Size = new System.Drawing.Size(75, 40);
             this.btnUser.TabIndex = 3;
             this.btnUser.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnUser.UseVisualStyleBackColor = false;
@@ -161,10 +142,10 @@
             this.btnMeal.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnMeal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMeal.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnMeal.Location = new System.Drawing.Point(150, 0);
+            this.btnMeal.Location = new System.Drawing.Point(180, 0);
             this.btnMeal.Margin = new System.Windows.Forms.Padding(2);
             this.btnMeal.Name = "btnMeal";
-            this.btnMeal.Size = new System.Drawing.Size(60, 40);
+            this.btnMeal.Size = new System.Drawing.Size(75, 40);
             this.btnMeal.TabIndex = 2;
             this.btnMeal.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnMeal.UseVisualStyleBackColor = false;
@@ -179,10 +160,10 @@
             this.btnReports.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnReports.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReports.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnReports.Location = new System.Drawing.Point(90, 0);
+            this.btnReports.Location = new System.Drawing.Point(105, 0);
             this.btnReports.Margin = new System.Windows.Forms.Padding(2);
             this.btnReports.Name = "btnReports";
-            this.btnReports.Size = new System.Drawing.Size(60, 40);
+            this.btnReports.Size = new System.Drawing.Size(75, 40);
             this.btnReports.TabIndex = 1;
             this.btnReports.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnReports.UseVisualStyleBackColor = false;
@@ -200,7 +181,7 @@
             this.btnHome.Location = new System.Drawing.Point(30, 0);
             this.btnHome.Margin = new System.Windows.Forms.Padding(2);
             this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(60, 40);
+            this.btnHome.Size = new System.Drawing.Size(75, 40);
             this.btnHome.TabIndex = 0;
             this.btnHome.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnHome.UseVisualStyleBackColor = false;
@@ -219,7 +200,6 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.OliveDrab;
-            this.panelMenu.Controls.Add(this.btnSettings);
             this.panelMenu.Controls.Add(this.btnUser);
             this.panelMenu.Controls.Add(this.btnMeal);
             this.panelMenu.Controls.Add(this.btnReports);
@@ -259,7 +239,6 @@
         private Button btnMinimizeApp;
         private Label label1;
         private Panel panelTitleBar;
-        private Button btnSettings;
         private Button btnUser;
         private Button btnMeal;
         private Button btnReports;
