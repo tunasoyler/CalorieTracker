@@ -10,7 +10,7 @@ namespace Entities.Dtos.FoodDtos
     {
         public int Id { get; set; }
         public string FoodName { get; set; }
-        public double? Calorie { get; set; }
+        public double Calorie { get; set; }
         public byte[] Image { get; set; }
         public bool State { get; set; }
     }

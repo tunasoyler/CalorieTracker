@@ -47,13 +47,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgvFoodList = new System.Windows.Forms.DataGridView();
-            this.clmFoodName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmFoodCalorie = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmImage = new System.Windows.Forms.DataGridViewImageColumn();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.pbFoodPicture = new System.Windows.Forms.PictureBox();
+            this.clmId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmFoodName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmFoodCalorie = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmImage = new System.Windows.Forms.DataGridViewImageColumn();
             this.panelTitleBar.SuspendLayout();
             this.panelMenu.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -285,6 +286,7 @@
             this.dgvFoodList.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.dgvFoodList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvFoodList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.clmId,
             this.clmFoodName,
             this.clmFoodCalorie,
             this.clmImage});
@@ -296,23 +298,9 @@
             this.dgvFoodList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvFoodList.Size = new System.Drawing.Size(231, 218);
             this.dgvFoodList.TabIndex = 0;
-            // 
-            // clmFoodName
-            // 
-            this.clmFoodName.HeaderText = "FoodName";
-            this.clmFoodName.Name = "clmFoodName";
-            this.clmFoodName.Width = 80;
-            // 
-            // clmFoodCalorie
-            // 
-            this.clmFoodCalorie.HeaderText = "UnitCalorie";
-            this.clmFoodCalorie.Name = "clmFoodCalorie";
-            this.clmFoodCalorie.Width = 50;
-            // 
-            // clmImage
-            // 
-            this.clmImage.HeaderText = "Image";
-            this.clmImage.Name = "clmImage";
+            this.dgvFoodList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFoodList_CellClick);
+            this.dgvFoodList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFoodList_CellContentClick);
+            this.dgvFoodList.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFoodList_CellDoubleClick);
             // 
             // btnAdd
             // 
@@ -355,6 +343,28 @@
             this.pbFoodPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbFoodPicture.TabIndex = 12;
             this.pbFoodPicture.TabStop = false;
+            // 
+            // clmId
+            // 
+            this.clmId.HeaderText = "Id";
+            this.clmId.Name = "clmId";
+            // 
+            // clmFoodName
+            // 
+            this.clmFoodName.HeaderText = "FoodName";
+            this.clmFoodName.Name = "clmFoodName";
+            this.clmFoodName.Width = 80;
+            // 
+            // clmFoodCalorie
+            // 
+            this.clmFoodCalorie.HeaderText = "UnitCalorie";
+            this.clmFoodCalorie.Name = "clmFoodCalorie";
+            this.clmFoodCalorie.Width = 50;
+            // 
+            // clmImage
+            // 
+            this.clmImage.HeaderText = "Image";
+            this.clmImage.Name = "clmImage";
             // 
             // frmAdminUpdate
             // 
@@ -415,5 +425,6 @@
         private DataGridViewTextBoxColumn clmFoodName;
         private DataGridViewTextBoxColumn clmFoodCalorie;
         private DataGridViewImageColumn clmImage;
+        private DataGridViewTextBoxColumn clmId;
     }
 }

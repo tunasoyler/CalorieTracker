@@ -28,13 +28,23 @@ namespace BLL.Services
         }
         public void UpdateFood(FoodUpdateDTO food)
         {
-            Food updateFood = new Food { Name = food.FoodName, Calorie = (double)food.Calorie, Image = food.Image };
-            Update(updateFood);
+            var updateFood = GetById(food.Id);
+
+            if (updateFood != null)
+            {
+
+                updateFood.Name = food.FoodName;
+                updateFood.Calorie = food.Calorie;
+                updateFood.Image = food.Image;
+
+                Update(updateFood);
+            }
         }
-        //public void DeleteFood(FoodDeleteDTO food)
-        //{
-        //    Delete();
-        //}
+        public void DeleteFood(FoodDeleteDTO food)
+        {
+            var deletefood = GetById(food.Id);
+            Delete(deletefood);
+        }
         public Food GetFoodById(int id)
         {
             return GetById(id);
@@ -47,6 +57,7 @@ namespace BLL.Services
             {
                 FoodViewModel foodViewModel = new FoodViewModel()
                 {
+                    Id = item.Id,
                     Name= item.Name,
                     Calorie= item.Calorie,
                     Image= item.Image

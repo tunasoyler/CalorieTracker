@@ -148,9 +148,9 @@ namespace UI
             foodList = foodService.GetAllFoods();
                            
 
-            foreach (var product in foodList)
+            foreach (var food in foodList)
             {
-                dgvFoodList.Rows.Add(product.Name, product.Calorie, product.Image);
+                dgvFoodList.Rows.Add(food.Id,food.Name, food.Calorie, food.Image);
             }
         }
         private byte[] ImageToByteArray(System.Drawing.Image imageIn)
@@ -165,7 +165,7 @@ namespace UI
             }
             return null;
         }
-
+        FoodUpdateDTO updateFood = new FoodUpdateDTO();
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             if (txtFoodName.Text.Trim() == "")
@@ -175,16 +175,20 @@ namespace UI
             }
             try
             {
+                DataGridViewRow selectedRow = dgvFoodList.SelectedRows[0];
                 FoodService foodService = new FoodService(context);
-                FoodUpdateDTO updateFood = new FoodUpdateDTO
+                updateFood = new FoodUpdateDTO
                 {
+                    Id= Convert.ToInt32(selectedRow.Cells["clmId"].Value.ToString()),
                     FoodName = txtFoodName.Text,
                     Calorie = (double)nmdUnitCalorie.Value,
                     Image = ImageToByteArray(pbFoodPicture.Image),
 
                 };
                 foodService.UpdateFood(updateFood);
-
+                FillFoods();
+                btnUpdate.Enabled = false;
+                btnAdd.Enabled = btnDelete.Enabled = true;
             }
             catch (Exception ex)
             {
@@ -194,12 +198,56 @@ namespace UI
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-
+            DataGridViewRow selectedRow = dgvFoodList.SelectedRows[0];
+            FoodService foodService = new FoodService(context);
+            FoodDeleteDTO deleteFood = new FoodDeleteDTO
+            {
+                Id = Convert.ToInt32(selectedRow.Cells["clmId"].Value.ToString()),               
+            };
+            foodService.DeleteFood(deleteFood);
+            FillFoods();
         }
 
         private void frmAdminUpdate_Load(object sender, EventArgs e)
         {
+            btnUpdate.Enabled = false;
+            btnAdd.Enabled = btnDelete.Enabled = true;
             FillFoods();
+        }
+
+        private void dgvFoodList_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow selectedRow = dgvFoodList.SelectedRows[0];
+        }
+        private byte[] GetBytes()
+        {
+            return ImageToByteArray(pbFoodPicture.Image);
+        }
+        private void dgvFoodList_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvFoodList.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = dgvFoodList.SelectedRows[0];
+                btnUpdate.Enabled = true;
+                btnAdd.Enabled = btnDelete.Enabled = false;               
+                updateFood.FoodName = selectedRow.Cells["clmFoodName"].Value.ToString();
+                updateFood.Calorie = Convert.ToDouble(selectedRow.Cells["clmFoodCalorie"].Value);
+                updateFood.Image = (byte[])selectedRow.Cells["clmImage"].Value;
+                txtFoodName.Text = updateFood.FoodName;
+                byte[] bytes = GetBytes();
+                bytes = updateFood.Image;
+                //pbFoodPicture.Image = updateFood.Image;
+                if (updateFood.Calorie == null)
+                    nmdUnitCalorie.Value = 0;
+                else
+                    nmdUnitCalorie.Value = (decimal)updateFood.Calorie;
+
+            }
+        }
+
+        private void dgvFoodList_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
         }
     }
 }
