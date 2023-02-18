@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Entities.Concrete;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,13 +17,16 @@ namespace UI
         frmAdminReport AdminReportForm;
         frmAdminUpdate AdminUpdateForm;
 
+        User currentUser;
+
         private Button currentButton;
-        public frmAdminReport()
+        public frmAdminReport(User user)
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.ControlBox = false;
+            this.currentUser = user;
             CenterToScreen();
         }
 
@@ -66,7 +70,7 @@ namespace UI
         {
             ActivateButton(sender);
             this.Hide();
-            AdminUpdateForm = new frmAdminUpdate();
+            AdminUpdateForm = new frmAdminUpdate(currentUser);
             AdminUpdateForm.Show();
         }
 

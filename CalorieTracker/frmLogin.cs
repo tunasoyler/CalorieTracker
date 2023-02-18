@@ -110,8 +110,17 @@ namespace UI
 
             User currentUser = userService.LoginUser(user);
 
-            frmMain mainFrm = new frmMain(currentUser);
-            mainFrm.Show();
+            if(currentUser.UserTypeId == 1) 
+            {
+                frmAdminReport frmAdminReport = new frmAdminReport(currentUser);
+                mainFrm.Show();
+            }
+            else if (currentUser.UserTypeId == 2)
+            {
+                frmMain mainFrm = new frmMain(currentUser);
+                mainFrm.Show();
+            }
+            
             this.Hide();
         }
     }

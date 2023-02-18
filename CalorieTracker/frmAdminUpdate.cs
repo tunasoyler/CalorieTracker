@@ -1,5 +1,6 @@
 ﻿using BLL.Services;
 using DAL;
+using Entities.Concrete;
 using Entities.Dtos.FoodDtos;
 using Entities.Dtos.UserDtos;
 using Entities.ViewModels;
@@ -21,13 +22,16 @@ namespace UI
         frmAdminReport AdminReportForm;
         frmAdminUpdate AdminUpdateForm;
 
+        User currentUser;
+
         private Button currentButton;
-        public frmAdminUpdate()
+        public frmAdminUpdate(User user)
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.ControlBox = false;
+            this.currentUser= user;
             CenterToScreen();
         }
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -81,7 +85,7 @@ namespace UI
         {
             ActivateButton(sender);
             this.Hide();
-            AdminReportForm = new frmAdminReport();
+            AdminReportForm = new frmAdminReport(currentUser);
             AdminReportForm.Show();
         }
 

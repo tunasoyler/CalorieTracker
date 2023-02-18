@@ -34,6 +34,7 @@ namespace UI
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.ControlBox = false;
+            this.currentUser = user;
             CenterToScreen();
         }
 

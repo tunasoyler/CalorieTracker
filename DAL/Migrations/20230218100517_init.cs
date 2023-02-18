@@ -33,8 +33,8 @@ namespace DAL.Migrations
                     Image = table.Column<byte[]>(type: "varbinary(max)", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false),
                     State = table.Column<bool>(type: "bit", nullable: false),
-                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2023, 2, 17, 15, 2, 12, 810, DateTimeKind.Local).AddTicks(7429)),
-                    UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2023, 2, 17, 15, 2, 12, 810, DateTimeKind.Local).AddTicks(7624))
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2023, 2, 18, 13, 5, 17, 308, DateTimeKind.Local).AddTicks(7124)),
+                    UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2023, 2, 18, 13, 5, 17, 308, DateTimeKind.Local).AddTicks(7365))
                 },
                 constraints: table =>
                 {
@@ -137,8 +137,8 @@ namespace DAL.Migrations
                     MealTypeID = table.Column<int>(type: "int", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     State = table.Column<bool>(type: "bit", nullable: false),
-                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2023, 2, 17, 15, 2, 12, 810, DateTimeKind.Local).AddTicks(9863)),
-                    UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2023, 2, 17, 15, 2, 12, 811, DateTimeKind.Local).AddTicks(29))
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2023, 2, 18, 13, 5, 17, 308, DateTimeKind.Local).AddTicks(9773)),
+                    UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2023, 2, 18, 13, 5, 17, 308, DateTimeKind.Local).AddTicks(9984))
                 },
                 constraints: table =>
                 {
@@ -232,7 +232,7 @@ namespace DAL.Migrations
             migrationBuilder.InsertData(
                 table: "Users",
                 columns: new[] { "Id", "ActivityTypeId", "BMR", "BirthDate", "CreatedDate", "DailyCalorieLimit", "FirstName", "GenderId", "GoalWeight", "Height", "LastName", "Name", "Password", "State", "Timeline", "UpdatedDate", "UserTypeId", "Weight" },
-                values: new object[] { 1, 1, 1.0, new DateTime(2023, 2, 17, 15, 2, 12, 811, DateTimeKind.Local).AddTicks(4292), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "admin", 1, null, 1.0, "admin", "admin", "admin", false, null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 1, 1.0 });
+                values: new object[] { 1, 1, 1.0, new DateTime(2023, 2, 18, 13, 5, 17, 309, DateTimeKind.Local).AddTicks(5075), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "admin", 1, null, 1.0, "admin", "admin", "admin", false, null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 1, 1.0 });
 
             migrationBuilder.CreateIndex(
                 name: "IX_MealDetails_FoodId",
