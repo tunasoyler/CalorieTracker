@@ -42,28 +42,19 @@ namespace BLL.Services
 
         public double GetMealCalorieByMealType(MealDetails mealDetails)
         {
-            double mealCalorie = mealDetails.Gram*mealDetails.Food.Calorie;
-            
+            double mealCalorie = mealDetails.Gram * mealDetails.Food.Calorie;
+
             return mealCalorie;
         }
 
-        public double GetTotalCalorieByMeal(MealDetails mealDetails)
+        public List<object> GetTotalCalorieByMeal(MealDetails mealDetails, DateTime dateTime, User user)
         {
-            FoodService foodService = new FoodService(context);
-            MealService mealService = new MealService(context);
+            DateTime date = dateTime;
 
-            var mealType = mealService.GetMealById(mealDetails.MealId).MealType;
-
-            foreach (var item in collection)
-            {
-                var foodCalorie = foodService.GetById(mealDetails.FoodId).Calorie;
-            }
-
-            
-            
+            var SumCalorieByMeal = context.MealDetails.Where(md => md.Meal.CreatedDate == date && md.Meal.UserID == user.Id).GroupBy(md => md.Meal.MealType).Select(g => new { mealDetails.Meal.MealType, FoodCalories = g.Sum(md => md.Food.Calorie * md.Gram) }).ToList();
 
 
-            return
+            return SumCalorieByMeal.Cast<object>().ToList();
         }
         //public double TotalCalorieByDay { get; set; }
         //public double TotalCalorieByMeal { get; set; }

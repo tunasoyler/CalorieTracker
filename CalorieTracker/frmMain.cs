@@ -1,3 +1,5 @@
+using BLL.Services;
+using DAL;
 using Entities.Concrete;
 using Entities.Dtos.UserDtos;
 using Entities.ViewModels;
@@ -14,6 +16,8 @@ namespace UI
         frmMain mainForm;
 
         User currentUser;
+
+        Context context = new Context();
 
         private Button currentButton;
         
@@ -62,12 +66,28 @@ namespace UI
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            MealDetails mealDetails = new MealDetails();
+
+
+            MealDetailsService mealDetailsService = new MealDetailsService(context);
+
+
+            dgvMealsToday.DataSource = mealDetailsService.GetTotalCalorieByMeal(mealDetails, DateTime.Today, currentUser);
+
+
+
+
+
+
+
+
+
             //MealDetailsViewModel mealDetailsVm = new MealDetailsViewModel();
             //double dailyLimit = 0, currentCalorie = 0;
 
             //foreach (var item in )
             //{
-                
+
             //}
 
             //mealDetailsVm.Calorie

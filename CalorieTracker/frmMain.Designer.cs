@@ -38,7 +38,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.cpbDailyLimit = new CircularProgressBar_NET5.CircularProgressBar();
             this.pnlDailyStats = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvMealsToday = new System.Windows.Forms.DataGridView();
             this.clmMeals = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label3 = new System.Windows.Forms.Label();
@@ -65,7 +65,7 @@
             this.panelTitleBar.SuspendLayout();
             this.pnlDailyLimit.SuspendLayout();
             this.pnlDailyStats.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMealsToday)).BeginInit();
             this.pnlGoalProgress.SuspendLayout();
             this.panelMenu.SuspendLayout();
             this.SuspendLayout();
@@ -201,27 +201,27 @@
             // pnlDailyStats
             // 
             this.pnlDailyStats.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlDailyStats.Controls.Add(this.dataGridView1);
+            this.pnlDailyStats.Controls.Add(this.dgvMealsToday);
             this.pnlDailyStats.Controls.Add(this.label3);
             this.pnlDailyStats.Location = new System.Drawing.Point(190, 247);
             this.pnlDailyStats.Name = "pnlDailyStats";
             this.pnlDailyStats.Size = new System.Drawing.Size(140, 200);
             this.pnlDailyStats.TabIndex = 6;
             // 
-            // dataGridView1
+            // dgvMealsToday
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ControlLight;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvMealsToday.BackgroundColor = System.Drawing.SystemColors.ControlLight;
+            this.dgvMealsToday.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMealsToday.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clmMeals,
             this.dataGridViewTextBoxColumn1});
-            this.dataGridView1.Location = new System.Drawing.Point(-1, 31);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(140, 168);
-            this.dataGridView1.TabIndex = 7;
+            this.dgvMealsToday.Location = new System.Drawing.Point(-1, 31);
+            this.dgvMealsToday.Name = "dgvMealsToday";
+            this.dgvMealsToday.RowHeadersVisible = false;
+            this.dgvMealsToday.RowTemplate.Height = 25;
+            this.dgvMealsToday.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvMealsToday.Size = new System.Drawing.Size(140, 168);
+            this.dgvMealsToday.TabIndex = 7;
             // 
             // clmMeals
             // 
@@ -526,7 +526,7 @@
             this.pnlDailyLimit.PerformLayout();
             this.pnlDailyStats.ResumeLayout(false);
             this.pnlDailyStats.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMealsToday)).EndInit();
             this.pnlGoalProgress.ResumeLayout(false);
             this.pnlGoalProgress.PerformLayout();
             this.panelMenu.ResumeLayout(false);
@@ -566,7 +566,7 @@
         private Button btnReports;
         private Button btnHome;
         private Panel panel3;
-        private DataGridView dataGridView1;
+        private DataGridView dgvMealsToday;
         private DataGridViewTextBoxColumn clmMeals;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
     }
