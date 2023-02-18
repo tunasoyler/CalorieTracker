@@ -51,7 +51,14 @@ namespace BLL.Services
         {
             DateTime date = dateTime;
 
-            var SumCalorieByMeal = context.MealDetails.Where(md => md.Meal.CreatedDate == date && md.Meal.UserID == user.Id).GroupBy(md => md.Meal.MealType).Select(g => new { mealDetails.Meal.MealType, FoodCalories = g.Sum(md => md.Food.Calorie * md.Gram) }).ToList();
+            var SumCalorieByMeal = context.MealDetails
+                .Where(md => md.Meal.CreatedDate == date && md.Meal.UserID == user.Id)
+                .GroupBy(md => md.Meal.MealType)
+                .Select(g => new 
+                { 
+                    MealId = g.Key, MealName = g.Key,
+                    FoodCalories = g.Sum(md => md.Food.Calorie * md.Gram) 
+                }).ToList();
 
 
             return SumCalorieByMeal.Cast<object>().ToList();
