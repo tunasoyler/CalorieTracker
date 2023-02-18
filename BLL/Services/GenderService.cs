@@ -16,10 +16,7 @@ namespace BLL.Services
         {
         }
         public List<GendersViewModel> GenderList()
-        {
-            //return GetAll().Select(x => new GendersViewModel { GenderName = x.Name }).ToList();
-
-            
+        {                       
             List<GendersViewModel> GendersVmList = new List<GendersViewModel>();
 
             foreach (Genders item in GetAll())

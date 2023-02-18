@@ -16,12 +16,10 @@ namespace BLL.Services
         {
         }
         public List<ActivityTypeViewModel> ActivityTypeList()
-        {            
-            var getAllActivityTypeTuple = GetAll();
-            List<ActivityType> activityTypes = getAllActivityTypeTuple;
+        {                        
             List<ActivityTypeViewModel> ActivityTypeVmList = new List<ActivityTypeViewModel>();
 
-            foreach (ActivityType item in activityTypes)
+            foreach (ActivityType item in GetAll())
             {
                 ActivityTypeViewModel activityTypeViewModel = new ActivityTypeViewModel()
                 {

@@ -41,10 +41,10 @@ namespace BLL.Services
 
         public void DailyCalorieLimitCalculate(UserCreateDTO user)
         {
-            switch (user.Timeline) 
+            switch (user.Timeline)
             {
                 case "6 months":
-                    user.DailyCalorieLimit = Math.Abs(user.ActivityType.ActivityMultiplier*user.BMR - (7400*(user.Weight-user.GoalWeight))/180);
+                    user.DailyCalorieLimit = Math.Abs(user.ActivityType.ActivityMultiplier * user.BMR - (7400 * (user.Weight - user.GoalWeight)) / 180);
                     user.DailyCalorieLimit = Math.Ceiling(user.DailyCalorieLimit / 50) * 50;
                     break;
                 case "12 months":
@@ -52,8 +52,9 @@ namespace BLL.Services
                     user.DailyCalorieLimit = Math.Ceiling(user.DailyCalorieLimit / 50) * 50;
                     break;
             }
-               
+
         }
+        
         public List<User> UserList()
         {
             return GetAll().Select(x => new User { Id = x.Id, UserType = x.UserType, Name = x.Name, FirstName = x.FirstName, LastName = x.LastName  }).ToList();
