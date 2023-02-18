@@ -48,15 +48,15 @@
             this.btnDeleteFood = new System.Windows.Forms.Button();
             this.btnDeleteMeal = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmGram = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmTotalCalorie = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.clmMeal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmGram = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmTotalCalorie = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelTitleBar.SuspendLayout();
             this.panelMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -70,7 +70,7 @@
             this.panelBottom.BackColor = System.Drawing.Color.OliveDrab;
             this.panelBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelBottom.Location = new System.Drawing.Point(0, 504);
-            this.panelBottom.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelBottom.Margin = new System.Windows.Forms.Padding(2);
             this.panelBottom.Name = "panelBottom";
             this.panelBottom.Size = new System.Drawing.Size(360, 16);
             this.panelBottom.TabIndex = 7;
@@ -84,7 +84,7 @@
             this.btnCloseApp.FlatAppearance.MouseOverBackColor = System.Drawing.Color.OliveDrab;
             this.btnCloseApp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCloseApp.Location = new System.Drawing.Point(318, 10);
-            this.btnCloseApp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCloseApp.Margin = new System.Windows.Forms.Padding(2);
             this.btnCloseApp.Name = "btnCloseApp";
             this.btnCloseApp.Size = new System.Drawing.Size(28, 24);
             this.btnCloseApp.TabIndex = 10;
@@ -101,7 +101,7 @@
             this.btnMinimizeApp.FlatAppearance.MouseOverBackColor = System.Drawing.Color.OliveDrab;
             this.btnMinimizeApp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimizeApp.Location = new System.Drawing.Point(280, 10);
-            this.btnMinimizeApp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnMinimizeApp.Margin = new System.Windows.Forms.Padding(2);
             this.btnMinimizeApp.Name = "btnMinimizeApp";
             this.btnMinimizeApp.Size = new System.Drawing.Size(28, 24);
             this.btnMinimizeApp.TabIndex = 4;
@@ -130,7 +130,7 @@
             this.panelTitleBar.Controls.Add(this.label1);
             this.panelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitleBar.Location = new System.Drawing.Point(0, 0);
-            this.panelTitleBar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelTitleBar.Margin = new System.Windows.Forms.Padding(2);
             this.panelTitleBar.Name = "panelTitleBar";
             this.panelTitleBar.Size = new System.Drawing.Size(360, 40);
             this.panelTitleBar.TabIndex = 9;
@@ -146,7 +146,7 @@
             this.btnUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUser.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnUser.Location = new System.Drawing.Point(255, 0);
-            this.btnUser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnUser.Margin = new System.Windows.Forms.Padding(2);
             this.btnUser.Name = "btnUser";
             this.btnUser.Size = new System.Drawing.Size(75, 40);
             this.btnUser.TabIndex = 3;
@@ -164,7 +164,7 @@
             this.btnMeal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMeal.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnMeal.Location = new System.Drawing.Point(180, 0);
-            this.btnMeal.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnMeal.Margin = new System.Windows.Forms.Padding(2);
             this.btnMeal.Name = "btnMeal";
             this.btnMeal.Size = new System.Drawing.Size(75, 40);
             this.btnMeal.TabIndex = 2;
@@ -182,7 +182,7 @@
             this.btnReports.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReports.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnReports.Location = new System.Drawing.Point(105, 0);
-            this.btnReports.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnReports.Margin = new System.Windows.Forms.Padding(2);
             this.btnReports.Name = "btnReports";
             this.btnReports.Size = new System.Drawing.Size(75, 40);
             this.btnReports.TabIndex = 1;
@@ -200,7 +200,7 @@
             this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHome.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnHome.Location = new System.Drawing.Point(30, 0);
-            this.btnHome.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnHome.Margin = new System.Windows.Forms.Padding(2);
             this.btnHome.Name = "btnHome";
             this.btnHome.Size = new System.Drawing.Size(75, 40);
             this.btnHome.TabIndex = 0;
@@ -213,7 +213,7 @@
             this.panel3.BackColor = System.Drawing.Color.OliveDrab;
             this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(30, 40);
             this.panel3.TabIndex = 0;
@@ -228,7 +228,7 @@
             this.panelMenu.Controls.Add(this.panel3);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelMenu.Location = new System.Drawing.Point(0, 464);
-            this.panelMenu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelMenu.Margin = new System.Windows.Forms.Padding(2);
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(360, 40);
             this.panelMenu.TabIndex = 8;
@@ -321,6 +321,29 @@
             this.dataGridView1.Size = new System.Drawing.Size(334, 156);
             this.dataGridView1.TabIndex = 22;
             // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "Food Name";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Width = 110;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "Unit Calorie";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.Width = 70;
+            // 
+            // clmGram
+            // 
+            this.clmGram.HeaderText = "Gram";
+            this.clmGram.Name = "clmGram";
+            this.clmGram.Width = 50;
+            // 
+            // clmTotalCalorie
+            // 
+            this.clmTotalCalorie.HeaderText = "Total Calorie";
+            this.clmTotalCalorie.Name = "clmTotalCalorie";
+            // 
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -365,33 +388,11 @@
             this.clmTime.Name = "clmTime";
             this.clmTime.Width = 80;
             // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "Food Name";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 110;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "Unit Calorie";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 70;
-            // 
-            // clmGram
-            // 
-            this.clmGram.HeaderText = "Gram";
-            this.clmGram.Name = "clmGram";
-            this.clmGram.Width = 50;
-            // 
-            // clmTotalCalorie
-            // 
-            this.clmTotalCalorie.HeaderText = "Total Calorie";
-            this.clmTotalCalorie.Name = "clmTotalCalorie";
-            // 
             // frmReports
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(360, 520);
             this.ControlBox = false;
             this.Controls.Add(this.panel1);

@@ -57,7 +57,7 @@
             this.panelBottom.BackColor = System.Drawing.Color.OliveDrab;
             this.panelBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelBottom.Location = new System.Drawing.Point(0, 465);
-            this.panelBottom.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelBottom.Margin = new System.Windows.Forms.Padding(2);
             this.panelBottom.Name = "panelBottom";
             this.panelBottom.Size = new System.Drawing.Size(360, 55);
             this.panelBottom.TabIndex = 24;
@@ -70,7 +70,7 @@
             this.panelTitleBar.Controls.Add(this.btnCloseApp);
             this.panelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitleBar.Location = new System.Drawing.Point(0, 0);
-            this.panelTitleBar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelTitleBar.Margin = new System.Windows.Forms.Padding(2);
             this.panelTitleBar.Name = "panelTitleBar";
             this.panelTitleBar.Size = new System.Drawing.Size(360, 41);
             this.panelTitleBar.TabIndex = 20;
@@ -99,7 +99,7 @@
             this.btnMinimizeApp.FlatAppearance.MouseOverBackColor = System.Drawing.Color.OliveDrab;
             this.btnMinimizeApp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimizeApp.Location = new System.Drawing.Point(280, 10);
-            this.btnMinimizeApp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnMinimizeApp.Margin = new System.Windows.Forms.Padding(2);
             this.btnMinimizeApp.Name = "btnMinimizeApp";
             this.btnMinimizeApp.Size = new System.Drawing.Size(28, 24);
             this.btnMinimizeApp.TabIndex = 0;
@@ -117,7 +117,7 @@
             this.btnCloseApp.FlatAppearance.MouseOverBackColor = System.Drawing.Color.OliveDrab;
             this.btnCloseApp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCloseApp.Location = new System.Drawing.Point(320, 10);
-            this.btnCloseApp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCloseApp.Margin = new System.Windows.Forms.Padding(2);
             this.btnCloseApp.Name = "btnCloseApp";
             this.btnCloseApp.Size = new System.Drawing.Size(28, 24);
             this.btnCloseApp.TabIndex = 0;
@@ -129,7 +129,7 @@
             // 
             this.btnNext.BackColor = System.Drawing.Color.OliveDrab;
             this.btnNext.Location = new System.Drawing.Point(230, 410);
-            this.btnNext.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnNext.Margin = new System.Windows.Forms.Padding(2);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(100, 30);
             this.btnNext.TabIndex = 25;
@@ -141,7 +141,7 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panel1.Location = new System.Drawing.Point(28, 217);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(310, 1);
             this.panel1.TabIndex = 31;
@@ -165,7 +165,7 @@
             this.cmbGender.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cmbGender.FormattingEnabled = true;
             this.cmbGender.Location = new System.Drawing.Point(173, 185);
-            this.cmbGender.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbGender.Margin = new System.Windows.Forms.Padding(2);
             this.cmbGender.Name = "cmbGender";
             this.cmbGender.Size = new System.Drawing.Size(168, 30);
             this.cmbGender.TabIndex = 36;
@@ -175,7 +175,7 @@
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panel2.Location = new System.Drawing.Point(28, 265);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(310, 1);
             this.panel2.TabIndex = 31;
@@ -184,7 +184,7 @@
             // 
             this.panel4.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panel4.Location = new System.Drawing.Point(28, 361);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(310, 1);
             this.panel4.TabIndex = 31;
@@ -193,7 +193,7 @@
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panel3.Location = new System.Drawing.Point(28, 313);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(310, 1);
             this.panel3.TabIndex = 31;
@@ -222,10 +222,11 @@
             // 
             // dtpBirthDate
             // 
+            this.dtpBirthDate.CalendarMonthBackground = System.Drawing.SystemColors.ControlLight;
             this.dtpBirthDate.Checked = false;
             this.dtpBirthDate.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.dtpBirthDate.Location = new System.Drawing.Point(173, 235);
-            this.dtpBirthDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpBirthDate.Margin = new System.Windows.Forms.Padding(2);
             this.dtpBirthDate.Name = "dtpBirthDate";
             this.dtpBirthDate.Size = new System.Drawing.Size(168, 29);
             this.dtpBirthDate.TabIndex = 37;
@@ -260,7 +261,7 @@
             this.txtWeight.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtWeight.ForeColor = System.Drawing.SystemColors.GrayText;
             this.txtWeight.Location = new System.Drawing.Point(174, 290);
-            this.txtWeight.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtWeight.Margin = new System.Windows.Forms.Padding(2);
             this.txtWeight.Name = "txtWeight";
             this.txtWeight.Size = new System.Drawing.Size(79, 22);
             this.txtWeight.TabIndex = 38;
@@ -275,7 +276,7 @@
             this.txtHeight.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtHeight.ForeColor = System.Drawing.SystemColors.GrayText;
             this.txtHeight.Location = new System.Drawing.Point(173, 336);
-            this.txtHeight.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtHeight.Margin = new System.Windows.Forms.Padding(2);
             this.txtHeight.Name = "txtHeight";
             this.txtHeight.Size = new System.Drawing.Size(80, 22);
             this.txtHeight.TabIndex = 38;
@@ -330,7 +331,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label5);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmQuestions1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.frmQuestions1_Load);
