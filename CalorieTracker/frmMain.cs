@@ -72,7 +72,7 @@ namespace UI
             MealDetailsService mealDetailsService = new MealDetailsService(context);
 
 
-            dgvMealsToday.DataSource = mealDetailsService.GetTotalCalorieByMeal(mealDetails, DateTime.Today, currentUser);
+            //dgvMealsToday.DataSource = mealDetailsService.GetTotalCalorieByMeal(mealDetails, DateTime.Today, currentUser);
 
 
 

@@ -13,5 +13,10 @@ namespace Entities.ViewModels
         public bool State { get; set; }
         public double Calorie { get; set; }
         public byte[] Image { get; set; }
+        public override string ToString()
+        {
+            return $"{this.Name},{this.Calorie} kcal(Per gr.)";
+        }
     }
+    
 }

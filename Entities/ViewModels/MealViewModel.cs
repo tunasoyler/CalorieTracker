@@ -10,7 +10,7 @@ namespace Entities.ViewModels
     {
         public int Id { get; set; }
         public List<MealDetailsViewModel> MealDetailsViewModel { get; set; }
-        public string MealType { get; set; }
+        public string MealTypeName { get; set; }
         //date gerekli mi??
         public DateTime? Date { get; set; }
 

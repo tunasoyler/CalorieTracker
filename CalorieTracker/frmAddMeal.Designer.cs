@@ -46,7 +46,6 @@
             this.clmGram = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmCalorie = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmImage = new System.Windows.Forms.DataGridViewImageColumn();
-            this.btnAddMeal = new System.Windows.Forms.Button();
             this.btnDeleteFood = new System.Windows.Forms.Button();
             this.btnAddFood = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
@@ -54,8 +53,7 @@
             this.dgvMeals = new System.Windows.Forms.DataGridView();
             this.clmMeals = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pbFoodImage = new System.Windows.Forms.PictureBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbFoodList = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
@@ -292,16 +290,6 @@
             this.clmImage.Name = "clmImage";
             this.clmImage.Width = 125;
             // 
-            // btnAddMeal
-            // 
-            this.btnAddMeal.Location = new System.Drawing.Point(3, 169);
-            this.btnAddMeal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnAddMeal.Name = "btnAddMeal";
-            this.btnAddMeal.Size = new System.Drawing.Size(100, 30);
-            this.btnAddMeal.TabIndex = 43;
-            this.btnAddMeal.Text = "Add New Meal";
-            this.btnAddMeal.UseVisualStyleBackColor = true;
-            // 
             // btnDeleteFood
             // 
             this.btnDeleteFood.Location = new System.Drawing.Point(248, 228);
@@ -352,14 +340,15 @@
             this.dgvMeals.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMeals.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clmMeals});
-            this.dgvMeals.Location = new System.Drawing.Point(-1, -1);
+            this.dgvMeals.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvMeals.Location = new System.Drawing.Point(0, 0);
             this.dgvMeals.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvMeals.Name = "dgvMeals";
             this.dgvMeals.ReadOnly = true;
             this.dgvMeals.RowHeadersVisible = false;
             this.dgvMeals.RowHeadersWidth = 51;
             this.dgvMeals.RowTemplate.Height = 29;
-            this.dgvMeals.Size = new System.Drawing.Size(140, 126);
+            this.dgvMeals.Size = new System.Drawing.Size(138, 140);
             this.dgvMeals.TabIndex = 36;
             // 
             // clmMeals
@@ -382,26 +371,15 @@
             this.pbFoodImage.TabIndex = 35;
             this.pbFoodImage.TabStop = false;
             // 
-            // comboBox2
+            // cmbFoodList
             // 
-            this.comboBox2.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.comboBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(159, 71);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(189, 23);
-            this.comboBox2.TabIndex = 34;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(4, 134);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(119, 25);
-            this.comboBox1.TabIndex = 33;
+            this.cmbFoodList.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.cmbFoodList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbFoodList.FormattingEnabled = true;
+            this.cmbFoodList.Location = new System.Drawing.Point(159, 71);
+            this.cmbFoodList.Name = "cmbFoodList";
+            this.cmbFoodList.Size = new System.Drawing.Size(189, 23);
+            this.cmbFoodList.TabIndex = 34;
             // 
             // label2
             // 
@@ -417,12 +395,10 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.btnAddMeal);
             this.panel2.Controls.Add(this.dgvMeals);
-            this.panel2.Controls.Add(this.comboBox1);
             this.panel2.Location = new System.Drawing.Point(10, 49);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(140, 209);
+            this.panel2.Size = new System.Drawing.Size(140, 142);
             this.panel2.TabIndex = 44;
             // 
             // label5
@@ -450,7 +426,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.pbFoodImage);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.cmbFoodList);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.panelBottom);
@@ -489,15 +465,13 @@
         private Button btnCloseApp;
         private Panel panel1;
         private DataGridView dgvFood;
-        private Button btnAddMeal;
         private Button btnDeleteFood;
         private Button btnAddFood;
         private Label label3;
         private NumericUpDown numericUpDown1;
         private DataGridView dgvMeals;
         private PictureBox pbFoodImage;
-        private ComboBox comboBox2;
-        private ComboBox comboBox1;
+        private ComboBox cmbFoodList;
         private Label label2;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private DataGridViewTextBoxColumn clmGram;

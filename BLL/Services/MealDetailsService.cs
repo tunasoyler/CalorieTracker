@@ -47,22 +47,22 @@ namespace BLL.Services
             return mealCalorie;
         }
 
-        public List<object> GetTotalCalorieByMeal(MealDetails mealDetails, DateTime dateTime, User user)
-        {
-            DateTime date = dateTime;
+        //public List<object> GetTotalCalorieByMeal(MealDetails mealDetails, DateTime dateTime, User user)
+        //{
+        //    DateTime date = dateTime;
 
-            var SumCalorieByMeal = context.MealDetails
-                .Where(md => md.Meal.CreatedDate == date && md.Meal.UserID == user.Id)
-                .GroupBy(md => md.Meal.MealType)
-                .Select(g => new 
-                { 
-                    MealId = g.Key, MealName = g.Key,
-                    FoodCalories = g.Sum(md => md.Food.Calorie * md.Gram) 
-                }).ToList();
+        //    var SumCalorieByMeal = context.MealDetails
+        //        .Where(md => md.Meal.CreatedDate == date && md.Meal.UserID == user.Id)
+        //        .GroupBy(md => md.Meal.MealType)
+        //        .Select(g => new 
+        //        { 
+        //            MealId = mealDetails.MealId, MealName = mealDetails.Meal.Name,
+        //            FoodCalories = g.Sum(md => md.Food.Calorie * md.Gram) 
+        //        }).ToList();
 
 
-            return SumCalorieByMeal.Cast<object>().ToList();
-        }
+        //    return SumCalorieByMeal.Cast<object>().ToList();
+        //}
         //public double TotalCalorieByDay { get; set; }
         //public double TotalCalorieByMeal { get; set; }
 

@@ -1,5 +1,8 @@
-﻿using Entities.Concrete;
+﻿using BLL.Services;
+using DAL;
+using Entities.Concrete;
 using Entities.Dtos.UserDtos;
+using Entities.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,7 +19,7 @@ namespace UI
     public partial class frmAddMeal : Form
     {
         private Form activeForm;
-
+        Context context = new Context();
         frmReports statisticsForm;
         frmUser userForm;
         frmAddMeal addMealForm;
@@ -39,6 +42,8 @@ namespace UI
 
         private void frmAddMeal_Load(object sender, EventArgs e)
         {
+            FillFoods();
+            FillMealTypes();
             //Get daily meals of user
 
 
@@ -146,6 +151,26 @@ namespace UI
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
-
+        private void FillFoods()
+        {
+            FoodService foodService = new FoodService(context);
+            List<FoodViewModel> foodList = new List<FoodViewModel>();           
+            foodList = foodService.GetAllFoods();
+            foreach (var food in foodList)
+            {
+                cmbFoodList.Items.Add(food);
+            }
+        }
+        private void FillMealTypes()
+        {
+            MealService mealService = new MealService(context);
+            List<MealViewModel> mealList = new List<MealViewModel>();
+            mealList = mealService.GetAllMeals();
+            foreach (var meal in mealList)
+            {
+                dgvMeals = mealList;
+            }
+            
+        }
     }
 }

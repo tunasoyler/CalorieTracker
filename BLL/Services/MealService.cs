@@ -1,5 +1,6 @@
 ﻿using DAL.Repostories;
 using Entities.Concrete;
+using Entities.ViewModels;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -35,9 +36,22 @@ namespace BLL.Services
         {
             return GetById(id);
         }
-        public List<Meal> GetAllMeals()
+        public List<MealViewModel> GetAllMeals()
         {
-            return GetAll();
+            List<MealViewModel> mealVmList = new List<MealViewModel>();
+            foreach (Meal item in GetAll())
+            {
+                
+                MealViewModel mealViewModel = new MealViewModel()
+                {
+                   
+                    MealTypeName=item.MealType.Name
+
+                };
+                mealVmList.Add(mealViewModel);
+            }
+            return mealVmList;
         }
+        
     }
 }
