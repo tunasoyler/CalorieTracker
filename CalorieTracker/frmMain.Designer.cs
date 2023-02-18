@@ -38,6 +38,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.cpbDailyLimit = new CircularProgressBar_NET5.CircularProgressBar();
             this.pnlDailyStats = new System.Windows.Forms.Panel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.clmMeals = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label3 = new System.Windows.Forms.Label();
             this.pnlGoalProgress = new System.Windows.Forms.Panel();
             this.lblDay7 = new System.Windows.Forms.Label();
@@ -59,15 +62,12 @@
             this.btnReports = new System.Windows.Forms.Button();
             this.btnHome = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.clmMeals = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelTitleBar.SuspendLayout();
             this.pnlDailyLimit.SuspendLayout();
             this.pnlDailyStats.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.pnlGoalProgress.SuspendLayout();
             this.panelMenu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelBottom
@@ -123,6 +123,7 @@
             this.label1.Size = new System.Drawing.Size(80, 35);
             this.label1.TabIndex = 3;
             this.label1.Text = "HOME";
+            this.label1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitleBar_MouseDown);
             // 
             // btnCloseApp
             // 
@@ -206,6 +207,33 @@
             this.pnlDailyStats.Name = "pnlDailyStats";
             this.pnlDailyStats.Size = new System.Drawing.Size(140, 200);
             this.pnlDailyStats.TabIndex = 6;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ControlLight;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.clmMeals,
+            this.dataGridViewTextBoxColumn1});
+            this.dataGridView1.Location = new System.Drawing.Point(-1, 31);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.RowTemplate.Height = 25;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(140, 168);
+            this.dataGridView1.TabIndex = 7;
+            // 
+            // clmMeals
+            // 
+            this.clmMeals.HeaderText = "Meal ";
+            this.clmMeals.Name = "clmMeals";
+            this.clmMeals.Width = 75;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "Calorie";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Width = 60;
             // 
             // label3
             // 
@@ -474,33 +502,6 @@
             this.panel3.Size = new System.Drawing.Size(30, 40);
             this.panel3.TabIndex = 0;
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ControlLight;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.clmMeals,
-            this.dataGridViewTextBoxColumn1});
-            this.dataGridView1.Location = new System.Drawing.Point(-1, 31);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(140, 168);
-            this.dataGridView1.TabIndex = 7;
-            // 
-            // clmMeals
-            // 
-            this.clmMeals.HeaderText = "Meal ";
-            this.clmMeals.Name = "clmMeals";
-            this.clmMeals.Width = 75;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "Calorie";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 60;
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -525,10 +526,10 @@
             this.pnlDailyLimit.PerformLayout();
             this.pnlDailyStats.ResumeLayout(false);
             this.pnlDailyStats.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.pnlGoalProgress.ResumeLayout(false);
             this.pnlGoalProgress.PerformLayout();
             this.panelMenu.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }

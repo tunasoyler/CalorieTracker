@@ -22,6 +22,7 @@ namespace UI
         frmAdminReport AdminReportForm;
         frmAdminUpdate AdminUpdateForm;
 
+        Context context = new Context();
         User currentUser;
 
         private Button currentButton;
@@ -111,7 +112,7 @@ namespace UI
             }
         }
         
-    Context context = new Context();
+    
         private void btnAdd_Click(object sender, EventArgs e)
         {
             if (txtFoodName.Text.Trim() == "")

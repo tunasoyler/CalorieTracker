@@ -29,18 +29,34 @@ namespace BLL.Services
                 u.Name == user.UserName                             
             );
         }
+        public bool DoesUserExistLogin(UserLoginDTO user)
+        {
+            return context.Users.Any(u =>
+                u.Name == user.UserName
+            );
+        }
+
         public User LoginUser(UserLoginDTO user)
         {
-            var control = context.Users.FirstOrDefault(u=> u.Name == user.UserName && u.Password == user.Password);
+            try
+            {
+                var currentUser = context.Users.FirstOrDefault(u => u.Name == user.UserName && u.Password == user.Password);
 
-            if (control != null)
-            {
-                return control;
+                if (currentUser != null)
+                {
+                    return currentUser;
+                }
+                else
+                {
+                    throw new Exception();
+                }
             }
-            else
+            catch (Exception)
             {
-                throw new Exception("Username or Password is incorrect!");
-            }
+
+                throw;
+            }            
+            
         }
 
        
@@ -107,6 +123,25 @@ namespace BLL.Services
             };
             Add(newUser);
         }
+        public void ChangePassword(UserChangePasswordDTO userChangePassword)
+        {
+            var updateUser = GetUserById(userChangePassword.Id);
+
+            if (updateUser != null)
+            {
+                if (updateUser.Password == userChangePassword.OldPassword)
+                {
+                    updateUser.Password = userChangePassword.NewPassword;
+                    Update(updateUser);
+                }
+                else
+                {
+                    throw new Exception();
+                }
+            }
+        }
+
+
         public void UpdateUser(User user)
         {
             Update(user);

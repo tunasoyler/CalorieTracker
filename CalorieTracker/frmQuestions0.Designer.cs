@@ -98,6 +98,7 @@
             this.label2.Size = new System.Drawing.Size(125, 35);
             this.label2.TabIndex = 10;
             this.label2.Text = "WELCOME";
+            this.label2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitleBar_MouseDown);
             // 
             // btnMinimize
             // 

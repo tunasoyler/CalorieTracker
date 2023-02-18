@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace Entities.Dtos.UserDtos
 {
-    public class USerChangePasswordDTO
+    public class UserChangePasswordDTO 
     {
+        public int Id { get; set; } 
         public string UserName { get; set; }
         public string OldPassword { get; set; }
         public string NewPassword { get; set; }

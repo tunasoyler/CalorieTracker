@@ -87,6 +87,7 @@
             this.label1.Size = new System.Drawing.Size(137, 35);
             this.label1.TabIndex = 10;
             this.label1.Text = "QUESTIONS";
+            this.label1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitleBar_MouseDown);
             // 
             // btnMinimizeApp
             // 

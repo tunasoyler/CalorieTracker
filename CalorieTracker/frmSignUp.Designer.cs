@@ -94,6 +94,7 @@
             this.label1.Size = new System.Drawing.Size(102, 35);
             this.label1.TabIndex = 10;
             this.label1.Text = "SIGN UP";
+            this.label1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitleBar_MouseDown);
             // 
             // btnMinimizeApp
             // 

@@ -21,7 +21,10 @@ namespace DAL
         public DbSet <ActivityType> ActivityTypes { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("server=DESKTOP-81CS8R3;database=CalorieTrackerDB;trusted_connection=true;");
+            //halit DESKTOP-81CS8R3
+            //tuna  DESKTOP-BVE8G4S
+            //
+            optionsBuilder.UseSqlServer("server=DESKTOP-BVE8G4S;database=CalorieTrackerDB;trusted_connection=true;");
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

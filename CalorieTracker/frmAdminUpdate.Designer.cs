@@ -47,14 +47,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgvFoodList = new System.Windows.Forms.DataGridView();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.btnUpdate = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.pbFoodPicture = new System.Windows.Forms.PictureBox();
             this.clmId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmFoodName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmFoodCalorie = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmImage = new System.Windows.Forms.DataGridViewImageColumn();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.pbFoodPicture = new System.Windows.Forms.PictureBox();
             this.panelTitleBar.SuspendLayout();
             this.panelMenu.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -107,6 +107,7 @@
             this.label1.Size = new System.Drawing.Size(103, 35);
             this.label1.TabIndex = 3;
             this.label1.Text = "UPDATE";
+            this.label1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitleBar_MouseDown);
             // 
             // btnMinimizeApp
             // 
@@ -302,6 +303,28 @@
             this.dgvFoodList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFoodList_CellContentClick);
             this.dgvFoodList.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFoodList_CellDoubleClick);
             // 
+            // clmId
+            // 
+            this.clmId.HeaderText = "Id";
+            this.clmId.Name = "clmId";
+            // 
+            // clmFoodName
+            // 
+            this.clmFoodName.HeaderText = "FoodName";
+            this.clmFoodName.Name = "clmFoodName";
+            this.clmFoodName.Width = 80;
+            // 
+            // clmFoodCalorie
+            // 
+            this.clmFoodCalorie.HeaderText = "UnitCalorie";
+            this.clmFoodCalorie.Name = "clmFoodCalorie";
+            this.clmFoodCalorie.Width = 50;
+            // 
+            // clmImage
+            // 
+            this.clmImage.HeaderText = "Image";
+            this.clmImage.Name = "clmImage";
+            // 
             // btnAdd
             // 
             this.btnAdd.Location = new System.Drawing.Point(250, 338);
@@ -343,28 +366,6 @@
             this.pbFoodPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbFoodPicture.TabIndex = 12;
             this.pbFoodPicture.TabStop = false;
-            // 
-            // clmId
-            // 
-            this.clmId.HeaderText = "Id";
-            this.clmId.Name = "clmId";
-            // 
-            // clmFoodName
-            // 
-            this.clmFoodName.HeaderText = "FoodName";
-            this.clmFoodName.Name = "clmFoodName";
-            this.clmFoodName.Width = 80;
-            // 
-            // clmFoodCalorie
-            // 
-            this.clmFoodCalorie.HeaderText = "UnitCalorie";
-            this.clmFoodCalorie.Name = "clmFoodCalorie";
-            this.clmFoodCalorie.Width = 50;
-            // 
-            // clmImage
-            // 
-            this.clmImage.HeaderText = "Image";
-            this.clmImage.Name = "clmImage";
             // 
             // frmAdminUpdate
             // 

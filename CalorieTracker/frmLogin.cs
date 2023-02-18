@@ -20,6 +20,8 @@ namespace UI
         frmSignUp signUpForm;
         frmMain mainFrm;
 
+        User currentUser;
+
         Context context = new Context();
         private UserLoginDTO user;
 
@@ -30,7 +32,7 @@ namespace UI
             this.MaximizeBox = false;
             this.ControlBox = false;
             this.Text = string.Empty;
-            
+            //this.currentUser = user;
             CenterToScreen();
         }
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -81,7 +83,7 @@ namespace UI
 
         private void btnMinimizeApp_Click(object sender, EventArgs e)
         {
-             this.WindowState= FormWindowState.Minimized;
+            this.WindowState = FormWindowState.Minimized;
         }
 
         private void panelTitleBar_MouseDown(object sender, MouseEventArgs e)
@@ -104,28 +106,50 @@ namespace UI
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            UserService userService = new UserService(context);
-
-            user = new UserLoginDTO();
-
-            user.UserName = txtUsername.Text;
-            user.Password= txtPassword.Text;
-
-            User currentUser = userService.LoginUser(user);
-
-            if(currentUser.UserTypeId == 1) 
+            try
             {
-                frmAdminReport frmAdminReport = new frmAdminReport(currentUser);
-                frmAdminReport.Show();
+                UserService userService = new UserService(context);
+                user = new UserLoginDTO();
+                
+
+
+                user.UserName = txtUsername.Text;
+                user.Password = txtPassword.Text;
+
+                if (!userService.DoesUserExistLogin(user))
+                {
+                    MessageBox.Show("Username does not exists!");
+                }
+                else
+                {
+                    currentUser = userService.LoginUser(user);
+                    if (currentUser.UserTypeId == 1)
+                    {
+                        frmAdminReport frmAdminReport = new frmAdminReport(currentUser);
+                        frmAdminReport.Show();
+                    }
+                    else if (currentUser.UserTypeId == 2)
+                    {
+                        frmMain mainFrm = new frmMain(currentUser);
+                        mainFrm.Show();
+                    }
+
+                    this.Hide();
+                }
             }
-            else if (currentUser.UserTypeId == 2)
+            catch (Exception)
             {
-                frmMain mainFrm = new frmMain(currentUser);
-                mainFrm.Show();
+                MessageBox.Show("Your password is not correct!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             
-            this.Hide();
-        }
-    }
 
+
+
+
+
+        }
+
+    }
 }
+
+

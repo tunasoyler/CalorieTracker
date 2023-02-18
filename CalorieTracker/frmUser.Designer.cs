@@ -58,7 +58,7 @@
             this.panelBottom.BackColor = System.Drawing.Color.OliveDrab;
             this.panelBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelBottom.Location = new System.Drawing.Point(0, 504);
-            this.panelBottom.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelBottom.Margin = new System.Windows.Forms.Padding(2);
             this.panelBottom.Name = "panelBottom";
             this.panelBottom.Size = new System.Drawing.Size(360, 16);
             this.panelBottom.TabIndex = 1;
@@ -73,7 +73,7 @@
             this.panelMenu.Controls.Add(this.panel3);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelMenu.Location = new System.Drawing.Point(0, 464);
-            this.panelMenu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelMenu.Margin = new System.Windows.Forms.Padding(2);
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(360, 40);
             this.panelMenu.TabIndex = 2;
@@ -88,7 +88,7 @@
             this.btnUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUser.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnUser.Location = new System.Drawing.Point(255, 0);
-            this.btnUser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnUser.Margin = new System.Windows.Forms.Padding(2);
             this.btnUser.Name = "btnUser";
             this.btnUser.Size = new System.Drawing.Size(75, 40);
             this.btnUser.TabIndex = 3;
@@ -106,7 +106,7 @@
             this.btnMeal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMeal.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnMeal.Location = new System.Drawing.Point(180, 0);
-            this.btnMeal.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnMeal.Margin = new System.Windows.Forms.Padding(2);
             this.btnMeal.Name = "btnMeal";
             this.btnMeal.Size = new System.Drawing.Size(75, 40);
             this.btnMeal.TabIndex = 2;
@@ -124,7 +124,7 @@
             this.btnReports.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReports.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnReports.Location = new System.Drawing.Point(105, 0);
-            this.btnReports.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnReports.Margin = new System.Windows.Forms.Padding(2);
             this.btnReports.Name = "btnReports";
             this.btnReports.Size = new System.Drawing.Size(75, 40);
             this.btnReports.TabIndex = 1;
@@ -142,7 +142,7 @@
             this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHome.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnHome.Location = new System.Drawing.Point(30, 0);
-            this.btnHome.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnHome.Margin = new System.Windows.Forms.Padding(2);
             this.btnHome.Name = "btnHome";
             this.btnHome.Size = new System.Drawing.Size(75, 40);
             this.btnHome.TabIndex = 0;
@@ -155,7 +155,7 @@
             this.panel3.BackColor = System.Drawing.Color.OliveDrab;
             this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(30, 40);
             this.panel3.TabIndex = 0;
@@ -168,7 +168,7 @@
             this.panelTitleBar.Controls.Add(this.label1);
             this.panelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitleBar.Location = new System.Drawing.Point(0, 0);
-            this.panelTitleBar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelTitleBar.Margin = new System.Windows.Forms.Padding(2);
             this.panelTitleBar.Name = "panelTitleBar";
             this.panelTitleBar.Size = new System.Drawing.Size(360, 40);
             this.panelTitleBar.TabIndex = 3;
@@ -183,12 +183,13 @@
             this.btnCloseApp.FlatAppearance.MouseOverBackColor = System.Drawing.Color.OliveDrab;
             this.btnCloseApp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCloseApp.Location = new System.Drawing.Point(320, 10);
-            this.btnCloseApp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCloseApp.Margin = new System.Windows.Forms.Padding(2);
             this.btnCloseApp.Name = "btnCloseApp";
             this.btnCloseApp.Size = new System.Drawing.Size(28, 24);
             this.btnCloseApp.TabIndex = 5;
             this.btnCloseApp.Text = "X";
             this.btnCloseApp.UseVisualStyleBackColor = false;
+            this.btnCloseApp.Click += new System.EventHandler(this.btnCloseApp_Click);
             // 
             // btnMinimizeApp
             // 
@@ -199,13 +200,14 @@
             this.btnMinimizeApp.FlatAppearance.MouseOverBackColor = System.Drawing.Color.OliveDrab;
             this.btnMinimizeApp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimizeApp.Location = new System.Drawing.Point(280, 10);
-            this.btnMinimizeApp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnMinimizeApp.Margin = new System.Windows.Forms.Padding(2);
             this.btnMinimizeApp.Name = "btnMinimizeApp";
             this.btnMinimizeApp.Size = new System.Drawing.Size(28, 24);
             this.btnMinimizeApp.TabIndex = 4;
             this.btnMinimizeApp.Text = "_";
             this.btnMinimizeApp.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnMinimizeApp.UseVisualStyleBackColor = false;
+            this.btnMinimizeApp.Click += new System.EventHandler(this.btnMinimizeApp_Click);
             // 
             // label1
             // 
@@ -219,6 +221,7 @@
             this.label1.Size = new System.Drawing.Size(72, 35);
             this.label1.TabIndex = 3;
             this.label1.Text = "USER";
+            this.label1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitleBar_MouseDown);
             // 
             // btnChangePassword
             // 
@@ -229,6 +232,7 @@
             this.btnChangePassword.TabIndex = 22;
             this.btnChangePassword.Text = "Change Password";
             this.btnChangePassword.UseVisualStyleBackColor = true;
+            this.btnChangePassword.Click += new System.EventHandler(this.btnChangePassword_Click);
             // 
             // label4
             // 
@@ -278,6 +282,7 @@
             // 
             this.txtUsername.BackColor = System.Drawing.SystemColors.ControlLight;
             this.txtUsername.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtUsername.Enabled = false;
             this.txtUsername.Location = new System.Drawing.Point(49, 157);
             this.txtUsername.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.txtUsername.Name = "txtUsername";

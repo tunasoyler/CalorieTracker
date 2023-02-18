@@ -1,4 +1,6 @@
-﻿using Entities.Concrete;
+﻿using BLL.Services;
+using DAL;
+using Entities.Concrete;
 using Entities.Dtos.UserDtos;
 using System;
 using System.Collections.Generic;
@@ -21,7 +23,9 @@ namespace UI
         frmAddMeal addMealForm;
         frmMain mainForm;
 
+        Context context = new Context();
         User currentUser;
+        UserChangePasswordDTO changePasswordDTO;
 
         private Button currentButton;
         public frmUser(User user)
@@ -30,7 +34,8 @@ namespace UI
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.ControlBox = false;
-            this.currentUser= user;
+            this.currentUser = user;
+            txtUsername.Text = user.Name;
             CenterToScreen();
         }
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -91,7 +96,7 @@ namespace UI
             userForm.Show();
         }
 
-       
+
 
         private void btnCloseApp_Click(object sender, EventArgs e)
         {
@@ -107,6 +112,36 @@ namespace UI
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void btnChangePassword_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                UserService userService = new UserService(context);
+                changePasswordDTO = new UserChangePasswordDTO();
+
+                changePasswordDTO.NewPassword = txtCurrentPassword.Text;
+                changePasswordDTO.Id = currentUser.Id;
+
+                if (txtNewPassword.Text == txtConfirmNewPassword.Text)
+                {
+                    changePasswordDTO.OldPassword = txtCurrentPassword.Text;
+                    changePasswordDTO.NewPassword = txtNewPassword.Text;
+                    userService.ChangePassword(changePasswordDTO);
+
+                    MessageBox.Show("Your password succesfully changed!");
+                }
+                else
+                {
+                    MessageBox.Show("Your passwords are not matching!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Your old password is incorrect!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
 }

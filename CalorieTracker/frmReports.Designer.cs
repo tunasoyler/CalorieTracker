@@ -122,6 +122,7 @@
             this.label1.Size = new System.Drawing.Size(115, 35);
             this.label1.TabIndex = 3;
             this.label1.Text = "REPORTS";
+            this.label1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitleBar_MouseDown);
             // 
             // panelTitleBar
             // 
@@ -409,6 +410,7 @@
             this.Controls.Add(this.panelBottom);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmReports";
+            this.Text = ",,,";
             this.Load += new System.EventHandler(this.frmStatistics_Load);
             this.panelTitleBar.ResumeLayout(false);
             this.panelTitleBar.PerformLayout();
