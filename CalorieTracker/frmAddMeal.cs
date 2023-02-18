@@ -39,6 +39,26 @@ namespace UI
 
         private void frmAddMeal_Load(object sender, EventArgs e)
         {
+            //Get daily meals of user
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         }
 

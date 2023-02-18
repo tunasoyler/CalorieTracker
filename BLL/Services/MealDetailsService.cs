@@ -1,4 +1,5 @@
-﻿using DAL.Repostories;
+﻿using DAL;
+using DAL.Repostories;
 using Entities.Concrete;
 using Entities.ViewModels;
 using Microsoft.EntityFrameworkCore;
@@ -15,6 +16,9 @@ namespace BLL.Services
         public MealDetailsService(DbContext context) : base(context)
         {
         }
+
+        Context context = new Context();
+
         public List<MealDetailsViewModel> MealDetailList()
         {
             List<MealDetails> mealDetails = new List<MealDetails>();
@@ -42,5 +46,29 @@ namespace BLL.Services
             
             return mealCalorie;
         }
+
+        public double GetTotalCalorieByMeal(MealDetails mealDetails)
+        {
+            FoodService foodService = new FoodService(context);
+            MealService mealService = new MealService(context);
+
+            var mealType = mealService.GetMealById(mealDetails.MealId).MealType;
+
+            foreach (var item in collection)
+            {
+                var foodCalorie = foodService.GetById(mealDetails.FoodId).Calorie;
+            }
+
+            
+            
+
+
+            return
+        }
+        //public double TotalCalorieByDay { get; set; }
+        //public double TotalCalorieByMeal { get; set; }
+
+
+
     }
 }
