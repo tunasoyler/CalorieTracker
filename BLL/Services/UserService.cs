@@ -4,11 +4,13 @@ using DAL;
 using DAL.Repostories;
 using Entities.Concrete;
 using Entities.Dtos.UserDtos;
+using Entities.ViewModels;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Migrations.Operations;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -27,6 +29,22 @@ namespace BLL.Services
                 u.Name == user.UserName                             
             );
         }
+        public User LoginUser(UserLoginDTO user)
+        {
+            var control = context.Users.FirstOrDefault(u=> u.Name == user.UserName && u.Password == user.Password);
+
+            if (control != null)
+            {
+                return control;
+            }
+            else
+            {
+                throw new Exception("Username or Password is incorrect!");
+            }
+        }
+
+       
+
         public void BMRCalculate(UserCreateDTO user)
         {
             if (user.Gender.Name == "Male")

@@ -48,7 +48,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.dgvMeals = new System.Windows.Forms.DataGridView();
-            this.clmMeals = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pbFoodImage = new System.Windows.Forms.PictureBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -57,6 +56,8 @@
             this.clmGram = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmCalorie = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmImage = new System.Windows.Forms.DataGridViewImageColumn();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.clmMeals = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelMenu.SuspendLayout();
             this.panelTitleBar.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -64,6 +65,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMeals)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbFoodImage)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelMenu
@@ -264,7 +266,7 @@
             // 
             // btnAddMeal
             // 
-            this.btnAddMeal.Location = new System.Drawing.Point(10, 228);
+            this.btnAddMeal.Location = new System.Drawing.Point(3, 169);
             this.btnAddMeal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAddMeal.Name = "btnAddMeal";
             this.btnAddMeal.Size = new System.Drawing.Size(100, 30);
@@ -322,23 +324,15 @@
             this.dgvMeals.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMeals.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clmMeals});
-            this.dgvMeals.Location = new System.Drawing.Point(10, 55);
+            this.dgvMeals.Location = new System.Drawing.Point(-1, -1);
             this.dgvMeals.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvMeals.Name = "dgvMeals";
             this.dgvMeals.ReadOnly = true;
             this.dgvMeals.RowHeadersVisible = false;
             this.dgvMeals.RowHeadersWidth = 51;
             this.dgvMeals.RowTemplate.Height = 29;
-            this.dgvMeals.Size = new System.Drawing.Size(134, 136);
+            this.dgvMeals.Size = new System.Drawing.Size(140, 126);
             this.dgvMeals.TabIndex = 36;
-            // 
-            // clmMeals
-            // 
-            this.clmMeals.HeaderText = "Meals";
-            this.clmMeals.MinimumWidth = 6;
-            this.clmMeals.Name = "clmMeals";
-            this.clmMeals.ReadOnly = true;
-            this.clmMeals.Width = 130;
             // 
             // pbFoodImage
             // 
@@ -368,9 +362,9 @@
             this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBox1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(10, 198);
+            this.comboBox1.Location = new System.Drawing.Point(4, 134);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(134, 25);
+            this.comboBox1.Size = new System.Drawing.Size(119, 25);
             this.comboBox1.TabIndex = 33;
             // 
             // label2
@@ -410,6 +404,25 @@
             this.clmImage.Name = "clmImage";
             this.clmImage.Width = 125;
             // 
+            // panel2
+            // 
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.btnAddMeal);
+            this.panel2.Controls.Add(this.dgvMeals);
+            this.panel2.Controls.Add(this.comboBox1);
+            this.panel2.Location = new System.Drawing.Point(10, 49);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(140, 209);
+            this.panel2.TabIndex = 44;
+            // 
+            // clmMeals
+            // 
+            this.clmMeals.HeaderText = "Meals";
+            this.clmMeals.MinimumWidth = 6;
+            this.clmMeals.Name = "clmMeals";
+            this.clmMeals.ReadOnly = true;
+            this.clmMeals.Width = 133;
+            // 
             // frmAddMeal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -417,21 +430,19 @@
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(360, 520);
             this.ControlBox = false;
-            this.Controls.Add(this.btnAddMeal);
             this.Controls.Add(this.btnDeleteFood);
             this.Controls.Add(this.btnAddFood);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.numericUpDown1);
-            this.Controls.Add(this.dgvMeals);
             this.Controls.Add(this.pbFoodImage);
             this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.panelBottom);
             this.Controls.Add(this.btnCloseApp);
             this.Controls.Add(this.panelTitleBar);
+            this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmAddMeal";
             this.Load += new System.EventHandler(this.frmAddMeal_Load);
@@ -443,6 +454,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMeals)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbFoodImage)).EndInit();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -469,7 +481,6 @@
         private Label label3;
         private NumericUpDown numericUpDown1;
         private DataGridView dgvMeals;
-        private DataGridViewTextBoxColumn clmMeals;
         private PictureBox pbFoodImage;
         private ComboBox comboBox2;
         private ComboBox comboBox1;
@@ -478,5 +489,7 @@
         private DataGridViewTextBoxColumn clmGram;
         private DataGridViewTextBoxColumn clmCalorie;
         private DataGridViewImageColumn clmImage;
+        private DataGridViewTextBoxColumn clmMeals;
+        private Panel panel2;
     }
 }

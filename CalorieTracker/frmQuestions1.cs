@@ -21,6 +21,8 @@ namespace UI
     {
         private UserCreateDTO user;
         Context context = new Context();
+
+
         public frmQuestions1(UserCreateDTO user)
         {
             //tüm formlarda kopyalanacak

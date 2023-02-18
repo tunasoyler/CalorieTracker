@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Entities.Concrete;
+using Entities.Dtos.UserDtos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,8 +21,10 @@ namespace UI
         frmAddMeal addMealForm;
         frmMain mainForm;
 
+        User currentUser;
+
         private Button currentButton;
-        public frmUser()
+        public frmUser(User user)
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -66,7 +70,7 @@ namespace UI
         {
             ActivateButton(sender);
             this.Hide();
-            statisticsForm = new frmReports();
+            statisticsForm = new frmReports(currentUser);
             statisticsForm.Show();
         }
 
@@ -74,7 +78,7 @@ namespace UI
         {
             ActivateButton(sender);
             this.Hide();
-            addMealForm = new frmAddMeal();
+            addMealForm = new frmAddMeal(currentUser);
             addMealForm.Show();
         }
 
@@ -82,7 +86,7 @@ namespace UI
         {
             ActivateButton(sender);
             this.Hide();
-            userForm = new frmUser();
+            userForm = new frmUser(currentUser);
             userForm.Show();
         }
 

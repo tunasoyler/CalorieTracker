@@ -1,4 +1,8 @@
-﻿using System;
+﻿using BLL.Services;
+using DAL;
+using Entities.Concrete;
+using Entities.Dtos.UserDtos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,6 +17,11 @@ namespace UI
 {
     public partial class frmLogin : Form
     {
+        frmQuestions0 questions0Frm;
+        frmMain mainFrm;
+
+        Context context = new Context();
+        private UserLoginDTO user;
 
         public frmLogin()
         {
@@ -21,6 +30,7 @@ namespace UI
             this.MaximizeBox = false;
             this.ControlBox = false;
             this.Text = string.Empty;
+            
             CenterToScreen();
         }
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -85,6 +95,25 @@ namespace UI
 
         }
 
+        private void btnRegister_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            questions0Frm.Show();
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            UserService userService = new UserService(context);
+            
+            user.UserName = txtUsername.Text;
+            user.Password= txtPassword.Text;
+
+            User currentUser = userService.LoginUser(user);
+
+            frmMain mainFrm = new frmMain(currentUser);
+            mainFrm.Show();
+            this.Hide();
+        }
     }
 
 }

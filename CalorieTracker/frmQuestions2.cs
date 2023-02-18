@@ -79,9 +79,9 @@ namespace UI
             UserService userService = new UserService(context);
             
             userService.AddUser(user);
-            
-            frmMain frmMain = new frmMain();
-            frmMain.Show();
+
+            frmLogin frmLogin = new frmLogin();
+            frmLogin.Show();
             this.Hide();
         }
 
