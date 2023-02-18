@@ -24,7 +24,7 @@ namespace DAL
             //halit DESKTOP-81CS8R3
             //tuna  DESKTOP-BVE8G4S
             //
-            optionsBuilder.UseSqlServer("server=DESKTOP-BVE8G4S;database=CalorieTrackerDB;trusted_connection=true;");
+            optionsBuilder.UseSqlServer("server=DESKTOP-81CS8R3;database=CalorieTrackerDB;trusted_connection=true;");
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
