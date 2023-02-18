@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DAL.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20230218100517_init")]
+    [Migration("20230218144636_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -90,7 +90,7 @@ namespace DAL.Migrations
                     b.Property<DateTime>("CreatedDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2023, 2, 18, 13, 5, 17, 308, DateTimeKind.Local).AddTicks(7124));
+                        .HasDefaultValue(new DateTime(2023, 2, 18, 17, 46, 36, 770, DateTimeKind.Local).AddTicks(1981));
 
                     b.Property<byte[]>("Image")
                         .IsRequired()
@@ -107,7 +107,7 @@ namespace DAL.Migrations
                     b.Property<DateTime>("UpdatedDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2023, 2, 18, 13, 5, 17, 308, DateTimeKind.Local).AddTicks(7365));
+                        .HasDefaultValue(new DateTime(2023, 2, 18, 17, 46, 36, 770, DateTimeKind.Local).AddTicks(2213));
 
                     b.HasKey("Id");
 
@@ -154,7 +154,7 @@ namespace DAL.Migrations
                     b.Property<DateTime>("CreatedDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2023, 2, 18, 13, 5, 17, 308, DateTimeKind.Local).AddTicks(9773));
+                        .HasDefaultValue(new DateTime(2023, 2, 18, 17, 46, 36, 770, DateTimeKind.Local).AddTicks(4408));
 
                     b.Property<int>("MealTypeID")
                         .HasColumnType("int");
@@ -169,7 +169,7 @@ namespace DAL.Migrations
                     b.Property<DateTime>("UpdatedDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2023, 2, 18, 13, 5, 17, 308, DateTimeKind.Local).AddTicks(9984));
+                        .HasDefaultValue(new DateTime(2023, 2, 18, 17, 46, 36, 770, DateTimeKind.Local).AddTicks(4577));
 
                     b.Property<int>("UserID")
                         .HasColumnType("int");
@@ -348,7 +348,7 @@ namespace DAL.Migrations
                             Id = 1,
                             ActivityTypeId = 1,
                             BMR = 1.0,
-                            BirthDate = new DateTime(2023, 2, 18, 13, 5, 17, 309, DateTimeKind.Local).AddTicks(5075),
+                            BirthDate = new DateTime(2023, 2, 18, 17, 46, 36, 770, DateTimeKind.Local).AddTicks(8836),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             FirstName = "admin",
                             GenderId = 1,

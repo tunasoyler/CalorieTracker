@@ -54,16 +54,16 @@ namespace BLL.Services
 
             var mealType = mealService.GetMealById(mealDetails.MealId).MealType;
 
-            foreach (var item in collection)
-            {
-                var foodCalorie = foodService.GetById(mealDetails.FoodId).Calorie;
-            }
-
-            
-            
+            //foreach (var item in MealType
+            //{
+            //    var foodCalorie = foodService.GetById(mealDetails.FoodId).Calorie;
+            //}
 
 
-            return
+
+
+
+            return 1;
         }
         //public double TotalCalorieByDay { get; set; }
         //public double TotalCalorieByMeal { get; set; }
