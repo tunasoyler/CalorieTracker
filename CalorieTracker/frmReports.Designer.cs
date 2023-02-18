@@ -274,12 +274,12 @@
             // 
             // clmUnitCalorie
             // 
-            this.clmUnitCalorie.Text = "Unit Calorie";
+            this.clmUnitCalorie.Text = "Gram";
             this.clmUnitCalorie.Width = 90;
             // 
             // columnHeader1
             // 
-            this.columnHeader1.Text = "Gram";
+            this.columnHeader1.Text = "Calorie";
             this.columnHeader1.Width = 90;
             // 
             // label5
