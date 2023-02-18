@@ -40,10 +40,8 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.nmdUnitCalorie = new System.Windows.Forms.NumericUpDown();
-            this.txtPictureFilePath = new System.Windows.Forms.TextBox();
             this.btnPictureOpenDialog = new System.Windows.Forms.Button();
             this.txtFoodName = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -200,10 +198,8 @@
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.nmdUnitCalorie);
-            this.panel1.Controls.Add(this.txtPictureFilePath);
             this.panel1.Controls.Add(this.btnPictureOpenDialog);
             this.panel1.Controls.Add(this.txtFoodName);
-            this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label2);
@@ -222,20 +218,12 @@
             this.nmdUnitCalorie.Size = new System.Drawing.Size(216, 23);
             this.nmdUnitCalorie.TabIndex = 12;
             // 
-            // txtPictureFilePath
-            // 
-            this.txtPictureFilePath.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.txtPictureFilePath.Location = new System.Drawing.Point(115, 130);
-            this.txtPictureFilePath.Name = "txtPictureFilePath";
-            this.txtPictureFilePath.Size = new System.Drawing.Size(117, 23);
-            this.txtPictureFilePath.TabIndex = 8;
-            // 
             // btnPictureOpenDialog
             // 
-            this.btnPictureOpenDialog.Location = new System.Drawing.Point(236, 130);
+            this.btnPictureOpenDialog.Location = new System.Drawing.Point(42, 127);
             this.btnPictureOpenDialog.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.btnPictureOpenDialog.Name = "btnPictureOpenDialog";
-            this.btnPictureOpenDialog.Size = new System.Drawing.Size(95, 23);
+            this.btnPictureOpenDialog.Size = new System.Drawing.Size(259, 23);
             this.btnPictureOpenDialog.TabIndex = 11;
             this.btnPictureOpenDialog.Text = "Add Picture";
             this.btnPictureOpenDialog.UseVisualStyleBackColor = true;
@@ -248,17 +236,6 @@
             this.txtFoodName.Name = "txtFoodName";
             this.txtFoodName.Size = new System.Drawing.Size(216, 23);
             this.txtFoodName.TabIndex = 8;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(2, 132);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(115, 16);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "Picture File Path:";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label5
             // 
@@ -431,8 +408,6 @@
         private Button btnAdd;
         private Button btnUpdate;
         private Button btnDelete;
-        private Label label6;
-        private TextBox txtPictureFilePath;
         private Button btnPictureOpenDialog;
         private PictureBox pbFoodPicture;
         private NumericUpDown nmdUnitCalorie;

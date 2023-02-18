@@ -17,7 +17,7 @@ namespace UI
 {
     public partial class frmLogin : Form
     {
-        frmQuestions0 questions0Frm;
+        frmSignUp signUpForm;
         frmMain mainFrm;
 
         Context context = new Context();
@@ -98,13 +98,16 @@ namespace UI
         private void btnRegister_Click(object sender, EventArgs e)
         {
             this.Hide();
-            questions0Frm.Show();
+            signUpForm = new frmSignUp();
+            signUpForm.Show();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
             UserService userService = new UserService(context);
-            
+
+            user = new UserLoginDTO();
+
             user.UserName = txtUsername.Text;
             user.Password= txtPassword.Text;
 
@@ -113,7 +116,7 @@ namespace UI
             if(currentUser.UserTypeId == 1) 
             {
                 frmAdminReport frmAdminReport = new frmAdminReport(currentUser);
-                mainFrm.Show();
+                frmAdminReport.Show();
             }
             else if (currentUser.UserTypeId == 2)
             {
