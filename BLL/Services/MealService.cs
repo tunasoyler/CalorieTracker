@@ -36,22 +36,7 @@ namespace BLL.Services
         {
             return GetById(id);
         }
-        public List<MealViewModel> GetAllMeals()
-        {
-            List<MealViewModel> mealVmList = new List<MealViewModel>();
-            foreach (Meal item in GetAll())
-            {
-                
-                MealViewModel mealViewModel = new MealViewModel()
-                {
-                   
-                    MealTypeName=item.MealType.Name
-
-                };
-                mealVmList.Add(mealViewModel);
-            }
-            return mealVmList;
-        }
+        
         
     }
 }

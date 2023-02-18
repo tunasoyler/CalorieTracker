@@ -1,6 +1,7 @@
 ﻿using DAL;
 using DAL.Repostories;
 using Entities.Concrete;
+using Entities.Dtos.MealDetailsDtos;
 using Entities.ViewModels;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -19,7 +20,7 @@ namespace BLL.Services
 
         Context context = new Context();
 
-        public List<MealDetailsViewModel> MealDetailList()
+        public List<MealDetailsViewModel> GetFoodsByMealType()
         {
             List<MealDetails> mealDetails = new List<MealDetails>();
             List<MealDetailsViewModel> mealDetailVms = new List<MealDetailsViewModel>();
@@ -28,18 +29,21 @@ namespace BLL.Services
             {
                 MealDetailsViewModel mealDetailVm = new MealDetailsViewModel()
                 {
-                    Gram = item.Gram,
-                    MealType = item.Meal.MealType.Name,
-                    Id = item.Id,
                     Food = item.Food.Name,
-                    Calorie = item.Food.Calorie,
+                    Gram = item.Gram,                                                          
+                    Calorie = item.Food.Calorie*item.Gram,
                     Image = item.Food.Image
                 };
                 mealDetailVms.Add(mealDetailVm);
             }
             return mealDetailVms;
         }
-
+        public void AddMealDetail(MealDetailsCreateDTO mealDetails)
+        {
+            MealDetails newMealDetails = new MealDetails { Gram=mealDetails.Gram,MealId=mealDetails.MealId,FoodId=mealDetails.FoodId };
+            Add(newMealDetails);
+        }
+        
         public double GetMealCalorieByMealType(MealDetails mealDetails)
         {
             double mealCalorie = mealDetails.Gram * mealDetails.Food.Calorie;

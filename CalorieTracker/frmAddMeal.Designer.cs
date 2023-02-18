@@ -41,7 +41,7 @@
             this.panelBottom = new System.Windows.Forms.Panel();
             this.btnCloseApp = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dgvFood = new System.Windows.Forms.DataGridView();
+            this.dgvFoods = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmGram = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmCalorie = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,8 +49,8 @@
             this.btnDeleteFood = new System.Windows.Forms.Button();
             this.btnAddFood = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.dgvMeals = new System.Windows.Forms.DataGridView();
+            this.nudGram = new System.Windows.Forms.NumericUpDown();
+            this.dgvMealTypes = new System.Windows.Forms.DataGridView();
             this.clmMeals = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pbFoodImage = new System.Windows.Forms.PictureBox();
             this.cmbFoodList = new System.Windows.Forms.ComboBox();
@@ -60,9 +60,9 @@
             this.panelMenu.SuspendLayout();
             this.panelTitleBar.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvFood)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMeals)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFoods)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudGram)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMealTypes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbFoodImage)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -238,31 +238,31 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.dgvFood);
+            this.panel1.Controls.Add(this.dgvFoods);
             this.panel1.Location = new System.Drawing.Point(10, 266);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(339, 162);
             this.panel1.TabIndex = 12;
             // 
-            // dgvFood
+            // dgvFoods
             // 
-            this.dgvFood.AllowUserToOrderColumns = true;
-            this.dgvFood.BackgroundColor = System.Drawing.SystemColors.ControlLight;
-            this.dgvFood.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvFood.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvFoods.AllowUserToOrderColumns = true;
+            this.dgvFoods.BackgroundColor = System.Drawing.SystemColors.ControlLight;
+            this.dgvFoods.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvFoods.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.clmGram,
             this.clmCalorie,
             this.clmImage});
-            this.dgvFood.Location = new System.Drawing.Point(-3, -1);
-            this.dgvFood.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dgvFood.Name = "dgvFood";
-            this.dgvFood.RowHeadersVisible = false;
-            this.dgvFood.RowHeadersWidth = 51;
-            this.dgvFood.RowTemplate.Height = 29;
-            this.dgvFood.Size = new System.Drawing.Size(341, 159);
-            this.dgvFood.TabIndex = 21;
+            this.dgvFoods.Location = new System.Drawing.Point(-3, -1);
+            this.dgvFoods.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvFoods.Name = "dgvFoods";
+            this.dgvFoods.RowHeadersVisible = false;
+            this.dgvFoods.RowHeadersWidth = 51;
+            this.dgvFoods.RowTemplate.Height = 29;
+            this.dgvFoods.Size = new System.Drawing.Size(341, 159);
+            this.dgvFoods.TabIndex = 21;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -309,6 +309,7 @@
             this.btnAddFood.TabIndex = 41;
             this.btnAddFood.Text = "Add Food";
             this.btnAddFood.UseVisualStyleBackColor = true;
+            this.btnAddFood.Click += new System.EventHandler(this.btnAddFood_Click);
             // 
             // label3
             // 
@@ -321,35 +322,35 @@
             this.label3.Text = "Gram :";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // numericUpDown1
+            // nudGram
             // 
-            this.numericUpDown1.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.numericUpDown1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.numericUpDown1.Location = new System.Drawing.Point(160, 122);
-            this.numericUpDown1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(70, 25);
-            this.numericUpDown1.TabIndex = 37;
+            this.nudGram.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.nudGram.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.nudGram.Location = new System.Drawing.Point(160, 122);
+            this.nudGram.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nudGram.Name = "nudGram";
+            this.nudGram.Size = new System.Drawing.Size(70, 25);
+            this.nudGram.TabIndex = 37;
             // 
-            // dgvMeals
+            // dgvMealTypes
             // 
-            this.dgvMeals.AllowUserToAddRows = false;
-            this.dgvMeals.AllowUserToDeleteRows = false;
-            this.dgvMeals.AllowUserToOrderColumns = true;
-            this.dgvMeals.BackgroundColor = System.Drawing.SystemColors.ControlLight;
-            this.dgvMeals.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMeals.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvMealTypes.AllowUserToAddRows = false;
+            this.dgvMealTypes.AllowUserToDeleteRows = false;
+            this.dgvMealTypes.AllowUserToOrderColumns = true;
+            this.dgvMealTypes.BackgroundColor = System.Drawing.SystemColors.ControlLight;
+            this.dgvMealTypes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMealTypes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clmMeals});
-            this.dgvMeals.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvMeals.Location = new System.Drawing.Point(0, 0);
-            this.dgvMeals.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dgvMeals.Name = "dgvMeals";
-            this.dgvMeals.ReadOnly = true;
-            this.dgvMeals.RowHeadersVisible = false;
-            this.dgvMeals.RowHeadersWidth = 51;
-            this.dgvMeals.RowTemplate.Height = 29;
-            this.dgvMeals.Size = new System.Drawing.Size(138, 140);
-            this.dgvMeals.TabIndex = 36;
+            this.dgvMealTypes.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvMealTypes.Location = new System.Drawing.Point(0, 0);
+            this.dgvMealTypes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvMealTypes.Name = "dgvMealTypes";
+            this.dgvMealTypes.ReadOnly = true;
+            this.dgvMealTypes.RowHeadersVisible = false;
+            this.dgvMealTypes.RowHeadersWidth = 51;
+            this.dgvMealTypes.RowTemplate.Height = 29;
+            this.dgvMealTypes.Size = new System.Drawing.Size(138, 151);
+            this.dgvMealTypes.TabIndex = 36;
             // 
             // clmMeals
             // 
@@ -357,7 +358,7 @@
             this.clmMeals.MinimumWidth = 6;
             this.clmMeals.Name = "clmMeals";
             this.clmMeals.ReadOnly = true;
-            this.clmMeals.Width = 133;
+            this.clmMeals.Width = 134;
             // 
             // pbFoodImage
             // 
@@ -395,10 +396,10 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.dgvMeals);
+            this.panel2.Controls.Add(this.dgvMealTypes);
             this.panel2.Location = new System.Drawing.Point(10, 49);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(140, 142);
+            this.panel2.Size = new System.Drawing.Size(140, 153);
             this.panel2.TabIndex = 44;
             // 
             // label5
@@ -424,7 +425,7 @@
             this.Controls.Add(this.btnAddFood);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.nudGram);
             this.Controls.Add(this.pbFoodImage);
             this.Controls.Add(this.cmbFoodList);
             this.Controls.Add(this.panel1);
@@ -440,9 +441,9 @@
             this.panelTitleBar.ResumeLayout(false);
             this.panelTitleBar.PerformLayout();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvFood)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMeals)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFoods)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudGram)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMealTypes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbFoodImage)).EndInit();
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -464,12 +465,12 @@
         private Panel panelBottom;
         private Button btnCloseApp;
         private Panel panel1;
-        private DataGridView dgvFood;
+        private DataGridView dgvFoods;
         private Button btnDeleteFood;
         private Button btnAddFood;
         private Label label3;
-        private NumericUpDown numericUpDown1;
-        private DataGridView dgvMeals;
+        private NumericUpDown nudGram;
+        private DataGridView dgvMealTypes;
         private PictureBox pbFoodImage;
         private ComboBox cmbFoodList;
         private Label label2;
@@ -477,8 +478,8 @@
         private DataGridViewTextBoxColumn clmGram;
         private DataGridViewTextBoxColumn clmCalorie;
         private DataGridViewImageColumn clmImage;
-        private DataGridViewTextBoxColumn clmMeals;
         private Panel panel2;
         private Label label5;
+        private DataGridViewTextBoxColumn clmMeals;
     }
 }

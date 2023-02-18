@@ -1,6 +1,8 @@
 ﻿using BLL.Services;
 using DAL;
 using Entities.Concrete;
+using Entities.Dtos.FoodDtos;
+using Entities.Dtos.MealDetailsDtos;
 using Entities.Dtos.UserDtos;
 using Entities.ViewModels;
 using System;
@@ -163,14 +165,52 @@ namespace UI
         }
         private void FillMealTypes()
         {
-            MealService mealService = new MealService(context);
-            List<MealViewModel> mealList = new List<MealViewModel>();
-            mealList = mealService.GetAllMeals();
-            foreach (var meal in mealList)
+            MealTypeService mealTypeService = new MealTypeService(context);
+            List<MealTypeViewModel> mealTypeList = new List<MealTypeViewModel>();
+            mealTypeList = mealTypeService.GetAllMealTypes();
+            foreach (var mealType in mealTypeList)
             {
-                dgvMeals = mealList;
+                dgvMealTypes.Rows.Add(mealType.Name);               
             }
             
+        }
+        private void FillMealDetails()
+        {
+            MealDetailsService mealDetailsService = new MealDetailsService(context);
+            List<MealDetailsViewModel> mealDetailsVmList = new List<MealDetailsViewModel>();
+            mealDetailsVmList = mealDetailsService.GetFoodsByMealType();
+            foreach (var mealDetails in mealDetailsVmList)
+            {
+                dgvMealTypes.Rows.Add(mealDetails.Food, mealDetails.Gram, mealDetails.Calorie, mealDetails.Image);
+            }
+        }
+        private void btnAddFood_Click(object sender, EventArgs e)
+        {
+            if (nudGram.Value==0)
+            {
+                MessageBox.Show("You must enter gram value.");
+                return;
+            }
+            try
+            {
+                MealDetailsService mealDetailService = new MealDetailsService(context);
+                Food selectedFood= cmbFoodList.SelectedItem as Food;
+                Meal selectedMeal = dgvMealTypes.SelectedRows[0].Tag as Meal;
+                MealDetailsCreateDTO mealDetail = new MealDetailsCreateDTO
+                {
+                    Gram = Convert.ToDouble(nudGram.Value),
+                    FoodId = selectedFood.Id,
+                    MealId=selectedMeal.Id,
+
+
+                };
+                mealDetailService.AddMealDetail(mealDetail);
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
