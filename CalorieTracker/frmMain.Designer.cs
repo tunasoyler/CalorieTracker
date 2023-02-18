@@ -39,9 +39,6 @@
             this.cpbDailyLimit = new CircularProgressBar_NET5.CircularProgressBar();
             this.pnlDailyStats = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
-            this.lstDailyStats = new System.Windows.Forms.ListView();
-            this.clmMealType = new System.Windows.Forms.ColumnHeader();
-            this.clmCalorie = new System.Windows.Forms.ColumnHeader();
             this.pnlGoalProgress = new System.Windows.Forms.Panel();
             this.lblDay7 = new System.Windows.Forms.Label();
             this.lblDay6 = new System.Windows.Forms.Label();
@@ -62,11 +59,15 @@
             this.btnReports = new System.Windows.Forms.Button();
             this.btnHome = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.clmMeals = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelTitleBar.SuspendLayout();
             this.pnlDailyLimit.SuspendLayout();
             this.pnlDailyStats.SuspendLayout();
             this.pnlGoalProgress.SuspendLayout();
             this.panelMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelBottom
@@ -199,8 +200,8 @@
             // pnlDailyStats
             // 
             this.pnlDailyStats.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlDailyStats.Controls.Add(this.dataGridView1);
             this.pnlDailyStats.Controls.Add(this.label3);
-            this.pnlDailyStats.Controls.Add(this.lstDailyStats);
             this.pnlDailyStats.Location = new System.Drawing.Point(190, 247);
             this.pnlDailyStats.Name = "pnlDailyStats";
             this.pnlDailyStats.Size = new System.Drawing.Size(140, 200);
@@ -215,31 +216,6 @@
             this.label3.Size = new System.Drawing.Size(130, 19);
             this.label3.TabIndex = 6;
             this.label3.Text = "My Meals Today";
-            // 
-            // lstDailyStats
-            // 
-            this.lstDailyStats.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.lstDailyStats.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.lstDailyStats.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.clmMealType,
-            this.clmCalorie});
-            this.lstDailyStats.FullRowSelect = true;
-            this.lstDailyStats.Location = new System.Drawing.Point(2, 36);
-            this.lstDailyStats.Name = "lstDailyStats";
-            this.lstDailyStats.Size = new System.Drawing.Size(136, 159);
-            this.lstDailyStats.TabIndex = 1;
-            this.lstDailyStats.UseCompatibleStateImageBehavior = false;
-            this.lstDailyStats.View = System.Windows.Forms.View.Details;
-            // 
-            // clmMealType
-            // 
-            this.clmMealType.Text = "MealType";
-            this.clmMealType.Width = 80;
-            // 
-            // clmCalorie
-            // 
-            this.clmCalorie.Text = "Calorie";
-            this.clmCalorie.Width = 53;
             // 
             // pnlGoalProgress
             // 
@@ -498,6 +474,33 @@
             this.panel3.Size = new System.Drawing.Size(30, 40);
             this.panel3.TabIndex = 0;
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ControlLight;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.clmMeals,
+            this.dataGridViewTextBoxColumn1});
+            this.dataGridView1.Location = new System.Drawing.Point(-1, 31);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.RowTemplate.Height = 25;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(140, 168);
+            this.dataGridView1.TabIndex = 7;
+            // 
+            // clmMeals
+            // 
+            this.clmMeals.HeaderText = "Meal ";
+            this.clmMeals.Name = "clmMeals";
+            this.clmMeals.Width = 75;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "Calorie";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Width = 60;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -525,6 +528,7 @@
             this.pnlGoalProgress.ResumeLayout(false);
             this.pnlGoalProgress.PerformLayout();
             this.panelMenu.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -541,9 +545,6 @@
         private CircularProgressBar_NET5.CircularProgressBar cpbDailyLimit;
         private Panel pnlDailyStats;
         private Label label3;
-        private ListView lstDailyStats;
-        private ColumnHeader clmMealType;
-        private ColumnHeader clmCalorie;
         private Panel pnlGoalProgress;
         private Label lblDay7;
         private Label lblDay6;
@@ -564,5 +565,8 @@
         private Button btnReports;
         private Button btnHome;
         private Panel panel3;
+        private DataGridView dataGridView1;
+        private DataGridViewTextBoxColumn clmMeals;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
     }
 }

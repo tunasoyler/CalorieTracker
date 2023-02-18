@@ -39,21 +39,16 @@
             this.btnReports = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pnlDailyStats = new System.Windows.Forms.Panel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbMeals = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.lstDailyStats = new System.Windows.Forms.ListView();
-            this.clmFood = new System.Windows.Forms.ColumnHeader();
-            this.clmCountByMeal = new System.Windows.Forms.ColumnHeader();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.clmFoodName2 = new System.Windows.Forms.ColumnHeader();
-            this.clmCountByCategory = new System.Windows.Forms.ColumnHeader();
-            this.label2 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.clmFoodName2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmFoodCount2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmImage2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.panelTitleBar.SuspendLayout();
             this.panelMenu.SuspendLayout();
             this.pnlDailyStats.SuspendLayout();
-            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelTitleBar
@@ -189,116 +184,68 @@
             // pnlDailyStats
             // 
             this.pnlDailyStats.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlDailyStats.Controls.Add(this.comboBox1);
+            this.pnlDailyStats.Controls.Add(this.dataGridView1);
+            this.pnlDailyStats.Controls.Add(this.cmbMeals);
             this.pnlDailyStats.Controls.Add(this.label3);
-            this.pnlDailyStats.Controls.Add(this.lstDailyStats);
             this.pnlDailyStats.Location = new System.Drawing.Point(12, 62);
             this.pnlDailyStats.Name = "pnlDailyStats";
-            this.pnlDailyStats.Size = new System.Drawing.Size(168, 382);
+            this.pnlDailyStats.Size = new System.Drawing.Size(336, 382);
             this.pnlDailyStats.TabIndex = 7;
             // 
-            // comboBox1
+            // cmbMeals
             // 
-            this.comboBox1.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(4, 57);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(158, 23);
-            this.comboBox1.TabIndex = 7;
+            this.cmbMeals.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.cmbMeals.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbMeals.FormattingEnabled = true;
+            this.cmbMeals.Location = new System.Drawing.Point(4, 57);
+            this.cmbMeals.Name = "cmbMeals";
+            this.cmbMeals.Size = new System.Drawing.Size(327, 23);
+            this.cmbMeals.TabIndex = 7;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(17, 9);
+            this.label3.Location = new System.Drawing.Point(98, 10);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(138, 38);
             this.label3.TabIndex = 6;
             this.label3.Text = "FOOD REPORTS\r\nBY MEAL\r\n";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lstDailyStats
+            // dataGridView1
             // 
-            this.lstDailyStats.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.lstDailyStats.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.lstDailyStats.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.clmFood,
-            this.clmCountByMeal});
-            this.lstDailyStats.FullRowSelect = true;
-            this.lstDailyStats.Location = new System.Drawing.Point(3, 86);
-            this.lstDailyStats.Name = "lstDailyStats";
-            this.lstDailyStats.Size = new System.Drawing.Size(164, 295);
-            this.lstDailyStats.TabIndex = 1;
-            this.lstDailyStats.UseCompatibleStateImageBehavior = false;
-            this.lstDailyStats.View = System.Windows.Forms.View.Details;
-            // 
-            // clmFood
-            // 
-            this.clmFood.Text = "Food Name";
-            this.clmFood.Width = 110;
-            // 
-            // clmCountByMeal
-            // 
-            this.clmCountByMeal.Text = "Count";
-            this.clmCountByMeal.Width = 53;
-            // 
-            // panel1
-            // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.comboBox2);
-            this.panel1.Controls.Add(this.listView1);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Location = new System.Drawing.Point(180, 62);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(168, 382);
-            this.panel1.TabIndex = 8;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.comboBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(3, 57);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(158, 23);
-            this.comboBox2.TabIndex = 7;
-            // 
-            // listView1
-            // 
-            this.listView1.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.listView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ControlLight;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clmFoodName2,
-            this.clmCountByCategory});
-            this.listView1.FullRowSelect = true;
-            this.listView1.Location = new System.Drawing.Point(1, 86);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(166, 295);
-            this.listView1.TabIndex = 7;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
+            this.clmFoodCount2,
+            this.clmImage2});
+            this.dataGridView1.GridColor = System.Drawing.SystemColors.ControlLight;
+            this.dataGridView1.Location = new System.Drawing.Point(-1, 86);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.RowTemplate.Height = 25;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(336, 295);
+            this.dataGridView1.TabIndex = 9;
             // 
             // clmFoodName2
             // 
-            this.clmFoodName2.Text = "Food Name";
-            this.clmFoodName2.Width = 110;
+            this.clmFoodName2.HeaderText = "FoodName";
+            this.clmFoodName2.Name = "clmFoodName2";
             // 
-            // clmCountByCategory
+            // clmFoodCount2
             // 
-            this.clmCountByCategory.Text = "Count";
-            this.clmCountByCategory.Width = 53;
+            this.clmFoodCount2.HeaderText = "Count";
+            this.clmFoodCount2.Name = "clmFoodCount2";
+            this.clmFoodCount2.Width = 60;
             // 
-            // label2
+            // clmImage2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(11, 9);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(138, 38);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "FOOD REPORTS\r\nBY CATEGORY\r\n";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.clmImage2.HeaderText = "Image";
+            this.clmImage2.Name = "clmImage2";
+            this.clmImage2.Width = 170;
             // 
             // frmAdminReport
             // 
@@ -307,7 +254,6 @@
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(360, 520);
             this.ControlBox = false;
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlDailyStats);
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.panelTitleBar);
@@ -319,8 +265,7 @@
             this.panelMenu.ResumeLayout(false);
             this.pnlDailyStats.ResumeLayout(false);
             this.pnlDailyStats.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -338,15 +283,10 @@
         private Panel panel3;
         private Panel pnlDailyStats;
         private Label label3;
-        private ListView lstDailyStats;
-        private ColumnHeader clmFood;
-        private ColumnHeader clmCountByMeal;
-        private Panel panel1;
-        private ListView listView1;
-        private ColumnHeader clmFoodName2;
-        private ColumnHeader clmCountByCategory;
-        private Label label2;
-        private ComboBox comboBox1;
-        private ComboBox comboBox2;
+        private ComboBox cmbMeals;
+        private DataGridView dataGridView1;
+        private DataGridViewTextBoxColumn clmFoodName2;
+        private DataGridViewTextBoxColumn clmFoodCount2;
+        private DataGridViewImageColumn clmImage2;
     }
 }
