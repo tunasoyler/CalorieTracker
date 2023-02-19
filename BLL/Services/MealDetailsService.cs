@@ -22,7 +22,7 @@ namespace BLL.Services
         public List<MealDetails> GetFoodByMealType(DateTime date, User user, int mealTypeId)
         {
 
-            return context.MealDetails
+            return         GetAll()
                           .Where(m => m.CreatedDate.Date == date.Date && m.Meal.UserID == user.Id && m.Meal.MealTypeID==mealTypeId).ToList();
 
         }
@@ -37,20 +37,19 @@ namespace BLL.Services
             {
                 MealDetailsViewModel mealDetailVm = new MealDetailsViewModel()
                 {
-                    Food = item.Food.Name,
+                    Food = (context.Foods.Where(f=>f.Id==item.FoodId).FirstOrDefault()).Name,
                     Gram = item.Gram,
-                    Calorie = item.Food.Calorie * item.Gram,
+                    Calorie = (context.Foods.Where(f => f.Id == item.FoodId).FirstOrDefault()).Calorie * item.Gram,
                     Image = item.Food.Image
                 };
                 mealDetailVms.Add(mealDetailVm);
-            }
-            
+            }           
             return mealDetailVms;
         }
 
         public void AddMealDetail(MealDetailsCreateDTO mealDetails)
         {
-            MealDetails newMealDetails = new MealDetails {Name="meal", Gram = mealDetails.Gram, MealId = mealDetails.MealId, FoodId = mealDetails.FoodId };
+            MealDetails newMealDetails = new MealDetails {Name="meal", Gram = mealDetails.Gram, MealId = mealDetails.MealId, FoodId = mealDetails.FoodId, CreatedDate= DateTime.Now,UpdatedDate=DateTime.Now};
             Add(newMealDetails);
         }
 

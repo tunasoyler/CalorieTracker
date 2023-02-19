@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Entities.Concrete;
+using Entities.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,5 +13,6 @@ namespace Entities.Dtos.MealDetailsDtos
         public double Gram { get; set; }
         public int MealId { get; set; }
         public int FoodId { get; set; }
+        
     }
 }
