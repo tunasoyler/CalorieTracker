@@ -1,7 +1,6 @@
 ﻿using DAL;
 using DAL.Repostories;
 using Entities.Concrete;
-using Entities.Dtos.MealDetailsDtos;
 using Entities.ViewModels;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -20,7 +19,7 @@ namespace BLL.Services
 
         Context context = new Context();
 
-        public List<MealDetailsViewModel> GetFoodsByMealType(DateTime dateTime, User user, int mealTypeId)
+        public List<MealDetailsViewModel> MealDetailList()
         {
             List<MealDetails> mealDetails = new List<MealDetails>();
             List<MealDetailsViewModel> mealDetailVms = new List<MealDetailsViewModel>();
@@ -29,9 +28,11 @@ namespace BLL.Services
             {
                 MealDetailsViewModel mealDetailVm = new MealDetailsViewModel()
                 {
-                    Food = item.Food.Name,
                     Gram = item.Gram,
-                    Calorie = item.Food.Calorie * item.Gram,
+                    MealType = item.Meal.MealType.Name,
+                    Id = item.Id,
+                    Food = item.Food.Name,
+                    Calorie = item.Food.Calorie,
                     Image = item.Food.Image
                 };
                 mealDetailVms.Add(mealDetailVm);
@@ -39,53 +40,33 @@ namespace BLL.Services
             return mealDetailVms;
         }
 
-        public void AddMealDetail(MealDetailsCreateDTO mealDetails)
-        {
-            MealDetails newMealDetails = new MealDetails { Gram = mealDetails.Gram, MealId = mealDetails.MealId, FoodId = mealDetails.FoodId };
-            Add(newMealDetails);
-        }
-
-        
-
         public double GetMealCalorieByMealType(MealDetails mealDetails)
         {
-            double mealCalorie = mealDetails.Gram * mealDetails.Food.Calorie;
-
+            double mealCalorie = mealDetails.Gram*mealDetails.Food.Calorie;
+            
             return mealCalorie;
         }
-        public double GetMealCalorieByMeal(Meal meal)
+
+        public double GetTotalCalorieByMeal(MealDetails mealDetails)
         {
-            List<MealDetails> mealDetails = new List<MealDetails>();
+            FoodService foodService = new FoodService(context);
+            MealService mealService = new MealService(context);
 
-            double totalMealCalorie = 0;
+            var mealType = mealService.GetMealById(mealDetails.MealId).MealType;
 
-            foreach (var item in mealDetails)
-            {
-                totalMealCalorie += item.Gram * item.Food.Calorie;
-            }
+            //foreach (var item in MealType
+            //{
+            //    var foodCalorie = foodService.GetById(mealDetails.FoodId).Calorie;
+            //}
 
-            return totalMealCalorie;
+
+
+
+
+            return 1;
         }
-
-        public List<object> GetTotalCalorieByMeal(MealDetails mealDetails, DateTime dateTime, User user)
-        {
-            DateTime date = dateTime;
-
-            var SumCalorieByMeal = context.MealDetails
-                .Where(md => md.Meal.CreatedDate == date && md.Meal.UserID == user.Id)
-                .GroupBy(md => md.Meal.MealType)
-                .Select(g => new
-                {
-                    MealId = mealDetails.MealId,
-                    MealName = mealDetails.Meal.Name,
-                    FoodCalories = g.Sum(md => md.Food.Calorie * md.Gram)
-                }).ToList();
-
-
-            return SumCalorieByMeal.Cast<object>().ToList();
-        }
-        public double TotalCalorieByDay { get; set; }
-        public double TotalCalorieByMeal { get; set; }
+        //public double TotalCalorieByDay { get; set; }
+        //public double TotalCalorieByMeal { get; set; }
 
 
 
