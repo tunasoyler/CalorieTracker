@@ -90,15 +90,8 @@ namespace BLL.Services
             var deleteMeal = GetById(meal.Id);
             Delete(deleteMeal);
         }
-        public List<Meal> GetMealsByDate(DateTime date)
-        {
-            //using (var context = new Context())
-            //{
-            return context.Meals
-                          .Where(m => m.CreatedDate.Date == date.Date)
-                          .ToList();
-            //}
-        }
+        
+        
 
 
 

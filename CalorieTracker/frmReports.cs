@@ -183,9 +183,10 @@ namespace UI
         {
             try
             {
-                mealDetailsService = new MealDetailsService(context);
+                MealService mealService = new MealService(context);
+                MealDetailsService mealDetailsService= new MealDetailsService(context);
 
-                List<Meal> mealList = mealDetailsService.GetMealsByDate(dtpDate.Value.Date);
+                List<Meal> mealList = mealService.GetMealsByDate(dtpDate.Value.Date);
 
                 dgvMeals.Rows.Clear();
                 totalDailyCalorie = 0;
