@@ -71,41 +71,6 @@ namespace BLL.Services
         {
             DateTime date = dateTime;
 
-            var SumCalorieByMeal = context.MealDetails
-                .Where(md => md.Meal.CreatedDate == date && md.Meal.UserID == user.Id)
-                .GroupBy(md => md.Meal.MealType)
-                .Select(g => new
-                {
-                    MealId = mealDetails.MealId,
-                    MealName = mealDetails.Meal.Name,
-                    FoodCalories = g.Sum(md => md.Food.Calorie * md.Gram)
-                }).ToList();
-
-
-            return SumCalorieByMeal.Cast<object>().ToList();
-        }
-<<<<<<< HEAD
-
-        public List<FoodCountByMealViewModel> GetFoodsWithCount()
-        {
-            List<FoodCountByMealViewModel> foodList = new List<FoodCountByMealViewModel>();
-
-
-            foreach (MealDetails item in GetAll())
-            {
-                FoodCountByMealViewModel food = new FoodCountByMealViewModel()
-                {
-                    Name = item.Food.Name,
-                    Count = context.MealDetails.Count(x => x.Food.Name == item.Food.Name),
-                    Image = item.Food.Image
-                };
-
-                foodList.Add(food);
-            }
-
-            return foodList;
-        }
-
         //public List<object> GetTotalCalorieByMeal(MealDetails mealDetails, DateTime dateTime, User user)
         //{
         //    DateTime date = dateTime;
@@ -120,14 +85,10 @@ namespace BLL.Services
         //        }).ToList();
 
 
-        //    return SumCalorieByMeal.Cast<object>().ToList();
-        //}
-        //public double TotalCalorieByDay { get; set; }
-        //public double TotalCalorieByMeal { get; set; }
-=======
+            return SumCalorieByMeal.Cast<object>().ToList();
+        }
         public double TotalCalorieByDay { get; set; }
         public double TotalCalorieByMeal { get; set; }
->>>>>>> 7c4c9c83bdc0e5b1918e0ab92f69b47e325ea192
 
 
 
