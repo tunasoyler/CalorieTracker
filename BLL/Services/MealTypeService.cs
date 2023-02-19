@@ -23,7 +23,7 @@ namespace BLL.Services
 
                 MealTypeViewModel mealTypeVm = new MealTypeViewModel()
                 {
-
+                    Id= item.Id,
                     Name = item.Name
 
                 };

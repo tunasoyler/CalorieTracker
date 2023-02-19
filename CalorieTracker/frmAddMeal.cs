@@ -206,8 +206,9 @@ namespace UI
                 MealDetailsService mealDetailService = new MealDetailsService(context);
                 MealService mealService= new MealService(context);
                 DataGridViewRow selectedRow = dgvMealTypes.SelectedRows[0];
-                Food selectedFood= cmbFoodList.SelectedItem as Food;               
-                MealType selectedMealType = dgvMealTypes.SelectedRows[0].Tag as MealType;                               
+                Food selectedFood= cmbFoodList.SelectedItem as Food;
+                MealType selectedMealType = new MealType(); 
+                selectedMealType= dgvMealTypes.SelectedRows[0].Tag as MealType;
                 MealCreateDTO mealCreateDTO = new MealCreateDTO
                 {
                     MealTypeId = selectedMealType.Id,
