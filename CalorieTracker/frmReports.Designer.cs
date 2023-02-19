@@ -42,27 +42,27 @@
             this.panelMenu = new System.Windows.Forms.Panel();
             this.dtpDate = new System.Windows.Forms.DateTimePicker();
             this.btnFilter = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblMealCalorie = new System.Windows.Forms.Label();
+            this.lblDailyCalorie = new System.Windows.Forms.Label();
             this.sqlCommand1 = new Microsoft.Data.SqlClient.SqlCommand();
             this.btnDeleteFood = new System.Windows.Forms.Button();
             this.btnDeleteMeal = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvFoods = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmGram = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmTotalCalorie = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dgvMeals = new System.Windows.Forms.DataGridView();
             this.clmMeal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelTitleBar.SuspendLayout();
             this.panelMenu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFoods)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMeals)).BeginInit();
             this.SuspendLayout();
             // 
             // panelBottom
@@ -256,28 +256,29 @@
             this.btnFilter.TabIndex = 12;
             this.btnFilter.Text = "Filter";
             this.btnFilter.UseVisualStyleBackColor = true;
+            this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
             // 
-            // label5
+            // lblMealCalorie
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(10, 410);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(150, 16);
-            this.label5.TabIndex = 16;
-            this.label5.Text = "Total Calories in Meal :";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblMealCalorie.AutoSize = true;
+            this.lblMealCalorie.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblMealCalorie.Location = new System.Drawing.Point(10, 410);
+            this.lblMealCalorie.Name = "lblMealCalorie";
+            this.lblMealCalorie.Size = new System.Drawing.Size(150, 16);
+            this.lblMealCalorie.TabIndex = 16;
+            this.lblMealCalorie.Text = "Total Calories in Meal :";
+            this.lblMealCalorie.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label2
+            // lblDailyCalorie
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(10, 431);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(151, 16);
-            this.label2.TabIndex = 17;
-            this.label2.Text = "Total Calories in Daily :";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblDailyCalorie.AutoSize = true;
+            this.lblDailyCalorie.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblDailyCalorie.Location = new System.Drawing.Point(10, 431);
+            this.lblDailyCalorie.Name = "lblDailyCalorie";
+            this.lblDailyCalorie.Size = new System.Drawing.Size(151, 16);
+            this.lblDailyCalorie.TabIndex = 17;
+            this.lblDailyCalorie.Text = "Total Calories in Daily :";
+            this.lblDailyCalorie.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // sqlCommand1
             // 
@@ -295,6 +296,7 @@
             this.btnDeleteFood.TabIndex = 20;
             this.btnDeleteFood.Text = "Delete Food";
             this.btnDeleteFood.UseVisualStyleBackColor = true;
+            this.btnDeleteFood.Click += new System.EventHandler(this.btnDeleteFood_Click);
             // 
             // btnDeleteMeal
             // 
@@ -305,22 +307,25 @@
             this.btnDeleteMeal.TabIndex = 21;
             this.btnDeleteMeal.Text = "Delete Meal";
             this.btnDeleteMeal.UseVisualStyleBackColor = true;
+            this.btnDeleteMeal.Click += new System.EventHandler(this.btnDeleteMeal_Click);
             // 
-            // dataGridView1
+            // dgvFoods
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ControlLight;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvFoods.BackgroundColor = System.Drawing.SystemColors.ControlLight;
+            this.dgvFoods.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvFoods.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.clmGram,
             this.clmTotalCalorie});
-            this.dataGridView1.Location = new System.Drawing.Point(-1, -1);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(334, 156);
-            this.dataGridView1.TabIndex = 22;
+            this.dgvFoods.Location = new System.Drawing.Point(-1, -1);
+            this.dgvFoods.Name = "dgvFoods";
+            this.dgvFoods.RowHeadersVisible = false;
+            this.dgvFoods.RowTemplate.Height = 25;
+            this.dgvFoods.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvFoods.Size = new System.Drawing.Size(334, 156);
+            this.dgvFoods.TabIndex = 22;
+            this.dgvFoods.SelectionChanged += new System.EventHandler(this.dgvFoods_SelectionChanged);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -348,7 +353,7 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.dataGridView1);
+            this.panel2.Controls.Add(this.dgvFoods);
             this.panel2.Location = new System.Drawing.Point(12, 247);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(334, 156);
@@ -357,25 +362,26 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.dataGridView2);
+            this.panel1.Controls.Add(this.dgvMeals);
             this.panel1.Location = new System.Drawing.Point(12, 95);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(220, 131);
             this.panel1.TabIndex = 24;
             // 
-            // dataGridView2
+            // dgvMeals
             // 
-            this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.ControlLight;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvMeals.BackgroundColor = System.Drawing.SystemColors.ControlLight;
+            this.dgvMeals.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMeals.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clmMeal,
             this.clmTime});
-            this.dataGridView2.Location = new System.Drawing.Point(-1, -1);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersVisible = false;
-            this.dataGridView2.RowTemplate.Height = 25;
-            this.dataGridView2.Size = new System.Drawing.Size(230, 131);
-            this.dataGridView2.TabIndex = 23;
+            this.dgvMeals.Location = new System.Drawing.Point(-1, -1);
+            this.dgvMeals.Name = "dgvMeals";
+            this.dgvMeals.RowHeadersVisible = false;
+            this.dgvMeals.RowTemplate.Height = 25;
+            this.dgvMeals.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvMeals.Size = new System.Drawing.Size(230, 131);
+            this.dgvMeals.TabIndex = 23;
             // 
             // clmMeal
             // 
@@ -400,8 +406,8 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.btnDeleteFood);
             this.Controls.Add(this.btnDeleteMeal);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.lblDailyCalorie);
+            this.Controls.Add(this.lblMealCalorie);
             this.Controls.Add(this.btnFilter);
             this.Controls.Add(this.dtpDate);
             this.Controls.Add(this.btnCloseApp);
@@ -415,10 +421,10 @@
             this.panelTitleBar.ResumeLayout(false);
             this.panelTitleBar.PerformLayout();
             this.panelMenu.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFoods)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMeals)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -439,15 +445,15 @@
         private Panel panelMenu;
         private DateTimePicker dtpDate;
         private Button btnFilter;
-        private Label label5;
-        private Label label2;
+        private Label lblMealCalorie;
+        private Label lblDailyCalorie;
         private Microsoft.Data.SqlClient.SqlCommand sqlCommand1;
         private Button btnDeleteFood;
         private Button btnDeleteMeal;
-        private DataGridView dataGridView1;
+        private DataGridView dgvFoods;
         private Panel panel2;
         private Panel panel1;
-        private DataGridView dataGridView2;
+        private DataGridView dgvMeals;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private DataGridViewTextBoxColumn clmGram;
