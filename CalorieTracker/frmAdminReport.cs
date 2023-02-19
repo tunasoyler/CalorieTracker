@@ -1,4 +1,7 @@
-﻿using Entities.Concrete;
+﻿using BLL.Services;
+using DAL;
+using Entities.Concrete;
+using Entities.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,6 +21,10 @@ namespace UI
         frmAdminUpdate AdminUpdateForm;
 
         User currentUser;
+
+        MealService mealService;
+        MealDetailsService mealDetailsService;
+        Context context = new Context();
 
         private Button currentButton;
         public frmAdminReport(User user)
@@ -74,7 +81,7 @@ namespace UI
             AdminUpdateForm.Show();
         }
 
-        
+
 
         private void btnCloseApp_Click(object sender, EventArgs e)
         {
@@ -92,5 +99,55 @@ namespace UI
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
+        private void frmAdminReport_Load(object sender, EventArgs e)
+        {
+            FillCmbMeals();
+        }
+        private void cmbMeals_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            FillFoods();
+        }
+
+
+
+
+        public void FillCmbMeals()
+        {
+            meaTypeService = new MealService(context);
+            //List<MealViewModel> mealList = new List<MealViewModel>();
+
+            //mealList = mealService.MealList();
+
+            List<MealViewModel> mealList = mealService.MealList();
+
+
+            cmbMeals.Items.Clear();
+
+            foreach (var item in mealList)
+            {
+                cmbMeals.Items.Add(item);
+            }
+        }
+        
+        public void FillFoods()
+        {
+            mealDetailsService = new MealDetailsService(context);
+
+            dgvFoodByMeal.Rows.Clear();
+
+            List<FoodCountByMealViewModel> foodList = mealDetailsService.GetFoodsWithCount();
+
+            foreach (var food in foodList)
+            {
+                DataGridViewRow row = new DataGridViewRow();
+                row.CreateCells(dgvFoodByMeal);
+                row.Cells[0].Value = food.Id;
+                row.Cells[1].Value = food.Name;
+                row.Cells[2].Value = food.Count;
+                row.Cells[3].Value = food.Image;
+
+                dgvFoodByMeal.Rows.Add(row);
+            }
+        }
     }
 }
