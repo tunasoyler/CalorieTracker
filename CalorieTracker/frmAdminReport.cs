@@ -103,10 +103,17 @@ namespace UI
         {
             FillCmbMeals();
         }
+        private void cmbMeals_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            FillFoods();
+        }
+
+
+
 
         public void FillCmbMeals()
         {
-            mealService = new MealService(context);
+            meaTypeService = new MealService(context);
             //List<MealViewModel> mealList = new List<MealViewModel>();
 
             //mealList = mealService.MealList();
@@ -121,7 +128,8 @@ namespace UI
                 cmbMeals.Items.Add(item);
             }
         }
-        private void cmbMeals_SelectedIndexChanged(object sender, EventArgs e)
+        
+        public void FillFoods()
         {
             mealDetailsService = new MealDetailsService(context);
 
@@ -134,11 +142,12 @@ namespace UI
                 DataGridViewRow row = new DataGridViewRow();
                 row.CreateCells(dgvFoodByMeal);
                 row.Cells[0].Value = food.Id;
-                row.Cells[1].Value = food.MealType;
-                row.Cells[2].Value = food.CreatedDate.TimeOfDay;
+                row.Cells[1].Value = food.Name;
+                row.Cells[2].Value = food.Count;
+                row.Cells[3].Value = food.Image;
+
                 dgvFoodByMeal.Rows.Add(row);
             }
-
         }
     }
 }
