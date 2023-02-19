@@ -2,7 +2,10 @@
 using DAL;
 using DotNetOpenAuth.OpenId;
 using Entities.Concrete;
+using Entities.Dtos.FoodDtos;
+using Entities.Dtos.MealDetailsDtos;
 using Entities.Dtos.UserDtos;
+using Entities.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -142,35 +145,7 @@ namespace UI
 
         private void btnFilter_Click(object sender, EventArgs e)
         {
-            try
-            {
-                mealDetailsService = new MealDetailsService(context);
-
-                List<Meal> mealList = mealDetailsService.GetMealsByDate(dtpDate.Value.Date);
-
-                dgvMeals.Rows.Clear();
-                totalDailyCalorie = 0;
-
-                foreach (var meal in mealList)
-                {
-                    DataGridViewRow row = new DataGridViewRow();
-                    row.CreateCells(dgvMeals);
-                    row.Cells[0].Value = meal.MealType;
-                    row.Cells[1].Value = meal.CreatedDate.TimeOfDay;
-                    dgvMeals.Rows.Add(row);
-
-                    totalDailyCalorie += mealDetailsService.GetMealCalorieByMeal(meal);
-                }
-
-                lblDailyCalorie.Text = "Total Calories in Daily : " + totalDailyCalorie + " kcal";
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Could not found any information about selected date.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                lblDailyCalorie.Text = "Total Calories in Daily : ";
-            }
-
-
+            FilterMeals();
         }
 
         private void dgvFoods_SelectionChanged(object sender, EventArgs e)
@@ -204,17 +179,63 @@ namespace UI
             }
 
         }
+        private void FilterMeals()
+        {
+            try
+            {
+                mealDetailsService = new MealDetailsService(context);
+
+                List<Meal> mealList = mealDetailsService.GetMealsByDate(dtpDate.Value.Date);
+
+                dgvMeals.Rows.Clear();
+                totalDailyCalorie = 0;
+
+                foreach (var meal in mealList)
+                {
+                    DataGridViewRow row = new DataGridViewRow();
+                    row.CreateCells(dgvMeals);
+                    row.Cells[0].Value = meal.Id;
+                    row.Cells[1].Value = meal.MealType;
+                    row.Cells[2].Value = meal.CreatedDate.TimeOfDay;
+                    dgvMeals.Rows.Add(row);
+
+                    totalDailyCalorie += mealDetailsService.GetMealCalorieByMeal(meal);
+                }
+
+                lblDailyCalorie.Text = "Total Calories in Daily : " + totalDailyCalorie + " kcal";
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Could not found any information about selected date.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                lblDailyCalorie.Text = "Total Calories in Daily : ";
+            }
+        }
+       
 
         private void btnDeleteMeal_Click(object sender, EventArgs e)
         {
-            mealDetailsService = new MealDetailsService(context);
+            DataGridViewRow selectedRow = dgvMeals.SelectedRows[0];
+            MealDetailsService mealDetailsService = new MealDetailsService(context);
+            MealDetailsDeleteDTO deleteMeal = new MealDetailsDeleteDTO
+            {
+                Id = Convert.ToInt32(selectedRow.Cells["clmId"].Value.ToString()),
+            };
+            mealDetailsService.DeleteMeal(deleteMeal);
+
+            FilterMeals();
         }
 
         private void btnDeleteFood_Click(object sender, EventArgs e)
         {
-            mealDetailsService = new MealDetailsService(context);
+            DataGridViewRow selectedRow = dgvFoods.SelectedRows[0];
+            MealDetailsService mealDetailsService = new MealDetailsService(context);
+            MealDetailsDeleteDTO deleteMeal = new MealDetailsDeleteDTO
+            {
+                Id = Convert.ToInt32(selectedRow.Cells["clmId"].Value.ToString()),
+            };
+            mealDetailsService.DeleteMeal(deleteMeal);
 
-            mealDetailsService.Delete();
+            FilterMeals();
         }
     }
 }

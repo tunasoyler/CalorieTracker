@@ -1,6 +1,7 @@
 ﻿using DAL;
 using DAL.Repostories;
 using Entities.Concrete;
+using Entities.Dtos.FoodDtos;
 using Entities.Dtos.MealDetailsDtos;
 using Entities.ViewModels;
 using Microsoft.EntityFrameworkCore;
@@ -73,6 +74,12 @@ namespace BLL.Services
             }
 
             return totalMealCalorie;
+        }
+
+        public void DeleteMeal(MealDetailsDeleteDTO meal)
+        {
+            var deleteMeal = GetById(meal.Id);
+            Delete(deleteMeal);
         }
 
         //public List<object> GetTotalCalorieByMeal(MealDetails mealDetails, DateTime dateTime, User user)
