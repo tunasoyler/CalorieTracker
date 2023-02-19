@@ -4,6 +4,7 @@ using DotNetOpenAuth.OpenId;
 using Entities.Concrete;
 using Entities.Dtos.FoodDtos;
 using Entities.Dtos.MealDetailsDtos;
+using Entities.Dtos.MealDtos;
 using Entities.Dtos.UserDtos;
 using Entities.ViewModels;
 using System;
@@ -197,7 +198,7 @@ namespace UI
                     row.CreateCells(dgvMeals);
                     row.Cells[0].Value = meal.Id;
                     row.Cells[1].Value = meal.MealType;
-                    row.Cells[2].Value = meal.CreatedDate.TimeOfDay;
+                    row.Cells[2].Value = meal.CreatedDate.ToString("tt:ss");
                     dgvMeals.Rows.Add(row);
 
                     totalDailyCalorie += mealDetailsService.GetMealCalorieByMeal(meal);
@@ -216,12 +217,12 @@ namespace UI
         private void btnDeleteMeal_Click(object sender, EventArgs e)
         {
             DataGridViewRow selectedRow = dgvMeals.SelectedRows[0];
-            MealDetailsService mealDetailsService = new MealDetailsService(context);
-            MealDetailsDeleteDTO deleteMeal = new MealDetailsDeleteDTO
+            MealService mealService = new MealService(context);
+            MealDeleteDTO deleteMeal = new MealDeleteDTO
             {
                 Id = Convert.ToInt32(selectedRow.Cells["clmId"].Value.ToString()),
             };
-            mealDetailsService.DeleteMeal(deleteMeal);
+            mealService.DeleteMeal(deleteMeal);
 
             FilterMeals();
         }
@@ -230,11 +231,11 @@ namespace UI
         {
             DataGridViewRow selectedRow = dgvFoods.SelectedRows[0];
             MealDetailsService mealDetailsService = new MealDetailsService(context);
-            MealDetailsDeleteDTO deleteMeal = new MealDetailsDeleteDTO
+            MealDetailsDeleteDTO deleteMealDetail = new MealDetailsDeleteDTO
             {
                 Id = Convert.ToInt32(selectedRow.Cells["clmId"].Value.ToString()),
             };
-            mealDetailsService.DeleteMeal(deleteMeal);
+            mealDetailsService.DeleteMeal(deleteMealDetail);
 
             FilterMeals();
         }

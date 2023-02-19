@@ -43,9 +43,10 @@ namespace BLL.Services
         {
             Update(meal);
         }
-        public void DeleteMeal(Meal meal)
+        public void DeleteMeal(MealDeleteDTO meal)
         {
-            Delete(meal);
+            var deleteMeal = GetById(meal.Id);
+            Delete(deleteMeal);
         }
 
         public List<MealViewModel> GetAllMeals()
