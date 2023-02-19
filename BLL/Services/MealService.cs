@@ -18,14 +18,25 @@ namespace BLL.Services
         {
         }
         Context context = new Context();
-        public List<Meal> MealList()
+        public List<MealViewModel> MealList()
         {
-            return GetAll().Select(x => new Meal { Id = x.Id, MealType=x.MealType}).ToList();
+            List<MealViewModel> mealList = new List<MealViewModel>();
+
+            foreach (Meal item in GetAll())
+            {
+                MealViewModel mealViewModel = new MealViewModel()
+                {
+                    Id = item.Id,
+                    MealTypeName = item.MealType.Name,
+                };
+                mealList.Add(mealViewModel);
+            }
+            return mealList;
         }
         public void AddMeal(MealCreateDTO meal)
         {
 
-            Meal newMeal = new Meal() { MealTypeID = meal.MealTypeId, UserID = meal.UserId ,State=true, CreatedDate=DateTime.Now,UpdatedDate=DateTime.Now };
+            Meal newMeal = new Meal() { MealTypeID = meal.MealTypeId, UserID = meal.UserId, State = true, CreatedDate = DateTime.Now, UpdatedDate = DateTime.Now };
             Add(newMeal);
         }
         public void UpdateMeal(Meal meal)
@@ -39,11 +50,11 @@ namespace BLL.Services
         public MealViewModel GetMealListById(int id)
         {
             List<MealViewModel> MealVmList = new List<MealViewModel>();
-              
+
             return FoodsVmList;
         }
         public Meal GetMealById(int id)
-        {            
+        {
             return GetById(id);
         }
         //public MealDetailsViewModel GetMealByDate(DateTime dateTime,User user,int mealTypeId)
@@ -54,7 +65,7 @@ namespace BLL.Services
         //            .Select(g => new
         //            {
         //                g.f,g.Gram,g.Meal.MealDetails
-                        
+
         //            }).ToList();
         //    getMealByDate as List<MealDetailsViewModel>
         //        return;

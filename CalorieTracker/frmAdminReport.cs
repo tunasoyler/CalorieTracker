@@ -1,4 +1,7 @@
-﻿using Entities.Concrete;
+﻿using BLL.Services;
+using DAL;
+using Entities.Concrete;
+using Entities.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,6 +21,9 @@ namespace UI
         frmAdminUpdate AdminUpdateForm;
 
         User currentUser;
+
+        MealService mealService;
+        Context context = new Context();
 
         private Button currentButton;
         public frmAdminReport(User user)
@@ -91,6 +97,47 @@ namespace UI
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
+
+        private void frmAdminReport_Load(object sender, EventArgs e)
+        {
+            FillCmbMeals();            
+        }
+
+        public void FillCmbMeals()
+        {
+            mealService = new MealService(context);
+            List<MealViewModel> mealList = mealService.MealList();
+
+            cmbMeals.Items.Clear();
+
+            foreach (var item in mealList)
+            {
+                cmbMeals.Items.Add(item);
+            }
+        }
+        private void cmbMeals_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbMealType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lvTotalByMeal.Items.Clear();
+            List<ReportVm> meals = _mealDetailService.GetTopTenProduct(x => x.Meal.MealType.TypeName == ((MealTypeVm)cmbMealType.SelectedItem).MealTypeName);
+            FillListView(meals, lvTotalByMeal);
+        }
+
+        private void FillListView(List<ReportVm> meals, ListView listView)
+        {
+            listView.Items.Clear();
+            foreach (var product in meals)
+            {
+                string[] newProduct = { product.Key, product.Toplam.ToString() };
+                var row = new ListViewItem(newProduct);
+                listView.Items.Add(row);
+            }
+        }
+
 
     }
 }

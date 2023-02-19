@@ -82,6 +82,26 @@ namespace BLL.Services
             Delete(deleteMeal);
         }
 
+        public List<FoodCountByMealViewModel> GetFoodsWithCount()
+        {
+            List<FoodCountByMealViewModel> foodList = new List<FoodCountByMealViewModel>();
+
+
+            foreach (MealDetails item in GetAll())
+            {
+                FoodCountByMealViewModel food = new FoodCountByMealViewModel()
+                {
+                    Name = item.Food.Name,
+                    Count = context.MealDetails.Count(x => x.Food.Name == item.Food.Name),
+                    Image = item.Food.Image
+                };
+
+                foodList.Add(food);
+            }
+
+            return foodList;
+        }
+
         //public List<object> GetTotalCalorieByMeal(MealDetails mealDetails, DateTime dateTime, User user)
         //{
         //    DateTime date = dateTime;
