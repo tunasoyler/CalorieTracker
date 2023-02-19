@@ -29,7 +29,7 @@ namespace UI
         frmUser userForm;
         frmAddMeal addMealForm;
         frmMain mainForm;
-
+        Meal currentMeal;
         User currentUser;
 
         Context context = new Context();
@@ -151,57 +151,75 @@ namespace UI
 
         private void dgvFoods_SelectionChanged(object sender, EventArgs e)
         {
+            
+
+        }
+        private void FillMealDetails() 
+        {
             try
             {
                 mealDetailsService = new MealDetailsService(context);
-
-                List<MealDetails> mealDetailsList = mealDetailsService.GetAll();
-
+                MealService mealService = new MealService(context);
+                DataGridViewRow selectedRow = dgvMeals.SelectedRows[0];                
+                currentMeal = new Meal();               
+                DateTime date = dtpDate.Value.Date;
+                currentMeal = mealService.GetMealByDateAndMealType(date.Date, currentUser, Convert.ToInt32(selectedRow.Cells["clmId"].Value.ToString()));               
                 dgvFoods.Rows.Clear();
                 totalMealCalorie = 0;
-
-                foreach (var meal in mealDetailsList)
+                if (currentMeal != null)
                 {
-                    DataGridViewRow row = new DataGridViewRow();
-                    row.CreateCells(dgvFoods);
-                    row.Cells[0].Value = meal.Food.Name;
-                    row.Cells[1].Value = meal.Food.Calorie;
-                    row.Cells[2].Value = meal.Gram;
-                    row.Cells[3].Value = Math.Round(meal.Food.Calorie * meal.Gram);
+                    MealViewModel mealViewModel = new MealViewModel()
+                    {
+                        Id = currentMeal.Id,
+                        Date = date.Date,
+                        MealTypeName = selectedRow.Cells["clmMeal"].Value.ToString(),
+                    };
+                    mealViewModel.MealDetailsViewModel = mealDetailsService.GetFoodsByMealType(date.Date, currentUser, Convert.ToInt32(selectedRow.Cells["clmId"].Value.ToString()));
+                    foreach (var mealDetails in mealViewModel.MealDetailsViewModel)
+                    {
+                        dgvFoods.Rows.Add(mealDetails.Id ,mealDetails.Food, mealDetails.Gram, mealDetails.Calorie, mealDetails.Image);
+                    }
+                    var mealDetailList= mealDetailsService.GetFoodsByMealType(date.Date, currentUser, Convert.ToInt32(selectedRow.Cells["clmId"].Value.ToString()));
 
-                    dgvFoods.Rows.Add(row);
+                    foreach (var item in mealDetailList)
+                    {
 
-                    totalMealCalorie += meal.Food.Calorie * meal.Gram;
+                        totalDailyCalorie += item.Calorie;
+                    }
+
+                    lblDailyCalorie.Text = "Total Calories in Daily : " + totalDailyCalorie + " kcal";
                 }
             }
             catch (Exception)
             {
                 lblMealCalorie.Text = "Total Calories in Meal : ";
             }
-
+        }
+        private void FillMealTypes()
+        {
+            MealTypeService mealTypeService = new MealTypeService(context);
+            List<MealTypeViewModel> mealTypeList = new List<MealTypeViewModel>();
+            mealTypeList = mealTypeService.GetAllMealTypes();
+            foreach (var mealType in mealTypeList)
+            {
+                dgvMeals.Rows.Add(mealType.Id, mealType.Name);
+            }
         }
         private void FilterMeals()
         {
             try
             {
-                MealService mealService = new MealService(context);
-                MealDetailsService mealDetailsService= new MealDetailsService(context);
-
-                List<Meal> mealList = mealService.GetMealsByDate(dtpDate.Value.Date);
-
                 dgvMeals.Rows.Clear();
+                FillMealTypes();
+                MealService mealService = new MealService(context);
+                mealDetailsService= new MealDetailsService(context);
+                List<MealViewModel> mealList = new List<MealViewModel>();
+                mealList=mealService.GetMealsByDate(dtpDate.Value.Date);              
                 totalDailyCalorie = 0;
-
                 foreach (var meal in mealList)
-                {
-                    DataGridViewRow row = new DataGridViewRow();
-                    row.CreateCells(dgvMeals);
-                    row.Cells[0].Value = meal.Id;
-                    row.Cells[1].Value = meal.MealType;
-                    row.Cells[2].Value = meal.CreatedDate.ToString("tt:ss");
-                    dgvMeals.Rows.Add(row);
+                {                   
 
-                    totalDailyCalorie += mealDetailsService.GetMealCalorieByMeal(meal);
+                    totalDailyCalorie += mealDetailsService.GetMealCalorieByMealId(meal.Id);
                 }
 
                 lblDailyCalorie.Text = "Total Calories in Daily : " + totalDailyCalorie + " kcal";
@@ -212,19 +230,11 @@ namespace UI
                 lblDailyCalorie.Text = "Total Calories in Daily : ";
             }
         }
-       
+        
 
         private void btnDeleteMeal_Click(object sender, EventArgs e)
         {
-            DataGridViewRow selectedRow = dgvMeals.SelectedRows[0];
-            MealService mealService = new MealService(context);
-            MealDeleteDTO deleteMeal = new MealDeleteDTO
-            {
-                Id = Convert.ToInt32(selectedRow.Cells["clmId"].Value.ToString()),
-            };
-            mealService.DeleteMeal(deleteMeal);
-
-            FilterMeals();
+            
         }
 
         private void btnDeleteFood_Click(object sender, EventArgs e)
@@ -238,6 +248,11 @@ namespace UI
             mealDetailsService.DeleteMeal(deleteMealDetail);
 
             FilterMeals();
+        }
+
+        private void dgvMeals_SelectionChanged(object sender, EventArgs e)
+        {
+            FillMealDetails();
         }
     }
 }
