@@ -283,6 +283,7 @@
             // 
             // dgvFoodList
             // 
+            this.dgvFoodList.AllowUserToAddRows = false;
             this.dgvFoodList.AllowUserToOrderColumns = true;
             this.dgvFoodList.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.dgvFoodList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;

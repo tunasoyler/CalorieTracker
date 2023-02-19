@@ -3,6 +3,7 @@ using DAL;
 using Entities.Concrete;
 using Entities.Dtos.FoodDtos;
 using Entities.Dtos.MealDetailsDtos;
+using Entities.Dtos.MealDtos;
 using Entities.Dtos.UserDtos;
 using Entities.ViewModels;
 using System;
@@ -170,16 +171,18 @@ namespace UI
             mealTypeList = mealTypeService.GetAllMealTypes();
             foreach (var mealType in mealTypeList)
             {
-                dgvMealTypes.Rows.Add(mealType.Name);               
+                dgvMealTypes.Rows.Add(mealType.Id,mealType.Name);               
             }
             
         }
         private void FillMealDetails()
         {
             MealDetailsService mealDetailsService = new MealDetailsService(context);
-            List<MealDetailsViewModel> mealDetailsVmList = new List<MealDetailsViewModel>();
-            mealDetailsVmList = mealDetailsService.GetFoodsByMealType();
-            foreach (var mealDetails in mealDetailsVmList)
+            MealService mealService= new MealService(context);
+            DataGridViewRow selectedRow = dgvMealTypes.SelectedRows[0];
+            MealViewModel mealViewModel = mealService.GetMealListById();
+            mealViewModel.MealDetailsViewModel = mealDetailsService.GetFoodsByMealType(DateTime.Now, currentUser, Convert.ToInt32(selectedRow.Cells["clmId"].Value.ToString()));
+            foreach (var mealDetails in mealViewModel.MealDetailsViewModel)
             {
                 dgvMealTypes.Rows.Add(mealDetails.Food, mealDetails.Gram, mealDetails.Calorie, mealDetails.Image);
             }
@@ -194,18 +197,24 @@ namespace UI
             try
             {
                 MealDetailsService mealDetailService = new MealDetailsService(context);
-                Food selectedFood= cmbFoodList.SelectedItem as Food;
-                Meal selectedMeal = dgvMealTypes.SelectedRows[0].Tag as Meal;
+                MealService mealService= new MealService(context);
+                Food selectedFood= cmbFoodList.SelectedItem as Food;               
+                MealType selectedMealType = dgvMealTypes.SelectedRows[0].Tag as MealType;                               
+                MealCreateDTO mealCreateDTO = new MealCreateDTO
+                {
+                    MealTypeId = selectedMealType.Id,
+                    UserId = currentUser.Id,
+
+                };
+                mealService.AddMeal(mealCreateDTO);
                 MealDetailsCreateDTO mealDetail = new MealDetailsCreateDTO
                 {
                     Gram = Convert.ToDouble(nudGram.Value),
                     FoodId = selectedFood.Id,
-                    MealId=selectedMeal.Id,
-
-
+                    
                 };
                 mealDetailService.AddMealDetail(mealDetail);
-                
+                FillMealDetails();
             }
             catch (Exception ex)
             {
