@@ -314,6 +314,7 @@
             // dgvFoods
             // 
             this.dgvFoods.AllowUserToAddRows = false;
+            this.dgvFoods.AllowUserToOrderColumns = true;
             this.dgvFoods.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.dgvFoods.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvFoods.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -329,7 +330,6 @@
             this.dgvFoods.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvFoods.Size = new System.Drawing.Size(334, 156);
             this.dgvFoods.TabIndex = 22;
-            this.dgvFoods.SelectionChanged += new System.EventHandler(this.dgvFoods_SelectionChanged);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -381,6 +381,7 @@
             // dgvMeals
             // 
             this.dgvMeals.AllowUserToAddRows = false;
+            this.dgvMeals.AllowUserToOrderColumns = true;
             this.dgvMeals.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.dgvMeals.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMeals.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -394,6 +395,7 @@
             this.dgvMeals.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvMeals.Size = new System.Drawing.Size(230, 131);
             this.dgvMeals.TabIndex = 23;
+            this.dgvMeals.SelectionChanged += new System.EventHandler(this.dgvMeals_SelectionChanged);
             // 
             // Id
             // 

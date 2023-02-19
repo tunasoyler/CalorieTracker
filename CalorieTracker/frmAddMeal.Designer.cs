@@ -249,7 +249,6 @@
             // dgvFoods
             // 
             this.dgvFoods.AllowUserToAddRows = false;
-            this.dgvFoods.AllowUserToOrderColumns = true;
             this.dgvFoods.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.dgvFoods.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvFoods.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -336,8 +335,7 @@
             // 
             // dgvMealTypes
             // 
-            this.dgvMealTypes.AllowUserToDeleteRows = false;
-            this.dgvMealTypes.AllowUserToOrderColumns = true;
+            this.dgvMealTypes.AllowUserToAddRows = false;
             this.dgvMealTypes.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.dgvMealTypes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMealTypes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -347,7 +345,6 @@
             this.dgvMealTypes.Location = new System.Drawing.Point(0, 0);
             this.dgvMealTypes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvMealTypes.Name = "dgvMealTypes";
-            this.dgvMealTypes.ReadOnly = true;
             this.dgvMealTypes.RowHeadersVisible = false;
             this.dgvMealTypes.RowHeadersWidth = 51;
             this.dgvMealTypes.RowTemplate.Height = 29;
@@ -360,7 +357,6 @@
             // 
             this.clmId.HeaderText = "Id";
             this.clmId.Name = "clmId";
-            this.clmId.ReadOnly = true;
             this.clmId.Width = 30;
             // 
             // clmMeals
@@ -368,7 +364,6 @@
             this.clmMeals.HeaderText = "Meals";
             this.clmMeals.MinimumWidth = 6;
             this.clmMeals.Name = "clmMeals";
-            this.clmMeals.ReadOnly = true;
             this.clmMeals.Width = 104;
             // 
             // pbFoodImage

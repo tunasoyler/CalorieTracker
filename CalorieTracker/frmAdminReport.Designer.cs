@@ -40,12 +40,12 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.pnlDailyStats = new System.Windows.Forms.Panel();
             this.dgvFoodByMeal = new System.Windows.Forms.DataGridView();
-            this.cmbMeals = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.clmId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmFoodName2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmFoodCount2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmImage2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.cmbMeals = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.panelTitleBar.SuspendLayout();
             this.panelMenu.SuspendLayout();
             this.pnlDailyStats.SuspendLayout();
@@ -214,28 +214,6 @@
             this.dgvFoodByMeal.Size = new System.Drawing.Size(336, 295);
             this.dgvFoodByMeal.TabIndex = 9;
             // 
-            // cmbMeals
-            // 
-            this.cmbMeals.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.cmbMeals.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmbMeals.FormattingEnabled = true;
-            this.cmbMeals.Location = new System.Drawing.Point(4, 57);
-            this.cmbMeals.Name = "cmbMeals";
-            this.cmbMeals.Size = new System.Drawing.Size(327, 23);
-            this.cmbMeals.TabIndex = 7;
-            this.cmbMeals.SelectedIndexChanged += new System.EventHandler(this.cmbMeals_SelectedIndexChanged);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(98, 10);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(138, 38);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "FOOD REPORTS\r\nBY MEAL\r\n";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // clmId
             // 
             this.clmId.HeaderText = "Id";
@@ -258,6 +236,29 @@
             this.clmImage2.HeaderText = "Image";
             this.clmImage2.Name = "clmImage2";
             this.clmImage2.Width = 170;
+            // 
+            // cmbMeals
+            // 
+            this.cmbMeals.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.cmbMeals.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbMeals.FormattingEnabled = true;
+            this.cmbMeals.Location = new System.Drawing.Point(4, 57);
+            this.cmbMeals.Name = "cmbMeals";
+            this.cmbMeals.Size = new System.Drawing.Size(327, 23);
+            this.cmbMeals.TabIndex = 7;
+            this.cmbMeals.SelectedIndexChanged += new System.EventHandler(this.cmbMeals_SelectedIndexChanged);
+            this.cmbMeals.SelectedValueChanged += new System.EventHandler(this.cmbMeals_SelectedIndexChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(98, 10);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(138, 38);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "FOOD REPORTS\r\nBY MEAL\r\n";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // frmAdminReport
             // 

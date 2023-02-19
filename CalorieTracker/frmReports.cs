@@ -148,6 +148,10 @@ namespace UI
         {
             FilterMeals();
         }
+        private void dgvMeals_SelectionChanged(object sender, EventArgs e)
+        {
+            
+        }
 
         private void dgvFoods_SelectionChanged(object sender, EventArgs e)
         {
@@ -239,5 +243,7 @@ namespace UI
 
             FilterMeals();
         }
+
+       
     }
 }
