@@ -36,7 +36,7 @@ namespace BLL.Services
         public void AddMeal(MealCreateDTO meal)
         {
 
-            Meal newMeal = new Meal() { MealTypeID = meal.MealTypeId, UserID = meal.UserId, State = true, CreatedDate = DateTime.Now, UpdatedDate = DateTime.Now };
+            Meal newMeal = new Meal() { Name="meal" ,MealTypeID = meal.MealTypeId, UserID = meal.UserId, State = true, CreatedDate = DateTime.Now, UpdatedDate = DateTime.Now };
             Add(newMeal);
         }
         public void UpdateMeal(Meal meal)
@@ -79,12 +79,11 @@ namespace BLL.Services
                           .ToList();
             //}
         }
-        public List<Meal> GetMealsByDate(DateTime date, User user, int mealTypeId)
+        public Meal GetMealByDateAndMealType(DateTime date, User user, int mealTypeId)
         {
 
             return context.Meals
-                          .Where(m => m.CreatedDate.Date == date.Date && m.UserID == user.Id && m.MealTypeID == mealTypeId)
-                          .ToList();
+                          .Where(m => m.CreatedDate.Date == date.Date && m.UserID == user.Id && m.MealTypeID == mealTypeId).FirstOrDefault();
 
         }
         //public MealDetailsViewModel GetMealByDate(DateTime dateTime,User user,int mealTypeId)

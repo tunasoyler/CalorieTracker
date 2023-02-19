@@ -19,13 +19,21 @@ namespace BLL.Services
         }
 
         Context context = new Context();
-
-        public List<MealDetailsViewModel> GetFoodsByMealType(DateTime dateTime, User user, int mealTypeId)
+        public List<MealDetails> GetFoodByMealType(DateTime date, User user, int mealTypeId)
         {
-            List<MealDetails> mealDetails = new List<MealDetails>();
-            List<MealDetailsViewModel> mealDetailVms = new List<MealDetailsViewModel>();
 
-            foreach (var item in GetAll())
+            return context.MealDetails
+                          .Where(m => m.CreatedDate.Date == date.Date && m.Meal.UserID == user.Id && m.Meal.MealTypeID==mealTypeId).ToList();
+
+        }
+        public List<MealDetailsViewModel> GetFoodsByMealType(DateTime dateTime, User user, int mealTypeId)
+        {           
+            List<MealDetailsViewModel> mealDetailVms = new List<MealDetailsViewModel>();
+            List<MealDetails> mealDetailsList = new List<MealDetails>();
+            mealDetailsList = context.MealDetails
+                          .Where(m => m.CreatedDate.Date == dateTime.Date && m.Meal.UserID == user.Id && m.Meal.MealTypeID == mealTypeId).ToList();
+
+            foreach (var item in mealDetailsList)
             {
                 MealDetailsViewModel mealDetailVm = new MealDetailsViewModel()
                 {
@@ -36,12 +44,13 @@ namespace BLL.Services
                 };
                 mealDetailVms.Add(mealDetailVm);
             }
+            
             return mealDetailVms;
         }
 
         public void AddMealDetail(MealDetailsCreateDTO mealDetails)
         {
-            MealDetails newMealDetails = new MealDetails { Gram = mealDetails.Gram, MealId = mealDetails.MealId, FoodId = mealDetails.FoodId };
+            MealDetails newMealDetails = new MealDetails {Name="meal", Gram = mealDetails.Gram, MealId = mealDetails.MealId, FoodId = mealDetails.FoodId };
             Add(newMealDetails);
         }
 
