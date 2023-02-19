@@ -68,9 +68,7 @@ namespace BLL.Services
         }
         public int GetMealIdByMeal(Meal meal)
         {
-
             int id = meal.Id;
-                               
             
                 return id ;
         }
