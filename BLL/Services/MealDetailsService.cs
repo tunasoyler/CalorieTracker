@@ -45,15 +45,7 @@ namespace BLL.Services
             Add(newMealDetails);
         }
 
-        public List<Meal> GetMealsByDate(DateTime date)
-        {
-            //using (var context = new Context())
-            //{
-            return context.Meals
-                          .Where(m => m.CreatedDate.Date == date.Date)
-                          .ToList();
-            //}
-        }
+        
 
         public double GetMealCalorieByMealType(MealDetails mealDetails)
         {
@@ -75,24 +67,25 @@ namespace BLL.Services
             return totalMealCalorie;
         }
 
-        //public List<object> GetTotalCalorieByMeal(MealDetails mealDetails, DateTime dateTime, User user)
-        //{
-        //    DateTime date = dateTime;
+        public List<object> GetTotalCalorieByMeal(MealDetails mealDetails, DateTime dateTime, User user)
+        {
+            DateTime date = dateTime;
 
-        //    var SumCalorieByMeal = context.MealDetails
-        //        .Where(md => md.Meal.CreatedDate == date && md.Meal.UserID == user.Id)
-        //        .GroupBy(md => md.Meal.MealType)
-        //        .Select(g => new 
-        //        { 
-        //            MealId = mealDetails.MealId, MealName = mealDetails.Meal.Name,
-        //            FoodCalories = g.Sum(md => md.Food.Calorie * md.Gram) 
-        //        }).ToList();
+            var SumCalorieByMeal = context.MealDetails
+                .Where(md => md.Meal.CreatedDate == date && md.Meal.UserID == user.Id)
+                .GroupBy(md => md.Meal.MealType)
+                .Select(g => new
+                {
+                    MealId = mealDetails.MealId,
+                    MealName = mealDetails.Meal.Name,
+                    FoodCalories = g.Sum(md => md.Food.Calorie * md.Gram)
+                }).ToList();
 
 
-        //    return SumCalorieByMeal.Cast<object>().ToList();
-        //}
-        //public double TotalCalorieByDay { get; set; }
-        //public double TotalCalorieByMeal { get; set; }
+            return SumCalorieByMeal.Cast<object>().ToList();
+        }
+        public double TotalCalorieByDay { get; set; }
+        public double TotalCalorieByMeal { get; set; }
 
 
 
