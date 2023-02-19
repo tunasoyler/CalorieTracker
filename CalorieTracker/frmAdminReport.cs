@@ -23,6 +23,7 @@ namespace UI
         User currentUser;
 
         MealService mealService;
+        MealDetailsService mealDetailsService;
         Context context = new Context();
 
         private Button currentButton;
@@ -80,7 +81,7 @@ namespace UI
             AdminUpdateForm.Show();
         }
 
-        
+
 
         private void btnCloseApp_Click(object sender, EventArgs e)
         {
@@ -100,13 +101,18 @@ namespace UI
 
         private void frmAdminReport_Load(object sender, EventArgs e)
         {
-            FillCmbMeals();            
+            FillCmbMeals();
         }
 
         public void FillCmbMeals()
         {
             mealService = new MealService(context);
+            //List<MealViewModel> mealList = new List<MealViewModel>();
+
+            //mealList = mealService.MealList();
+
             List<MealViewModel> mealList = mealService.MealList();
+
 
             cmbMeals.Items.Clear();
 
@@ -117,27 +123,22 @@ namespace UI
         }
         private void cmbMeals_SelectedIndexChanged(object sender, EventArgs e)
         {
+            mealDetailsService = new MealDetailsService(context);
 
-        }
+            dgvFoodByMeal.Rows.Clear();
 
-        private void cmbMealType_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            lvTotalByMeal.Items.Clear();
-            List<ReportVm> meals = _mealDetailService.GetTopTenProduct(x => x.Meal.MealType.TypeName == ((MealTypeVm)cmbMealType.SelectedItem).MealTypeName);
-            FillListView(meals, lvTotalByMeal);
-        }
+            List<FoodCountByMealViewModel> foodList = mealDetailsService.GetFoodsWithCount();
 
-        private void FillListView(List<ReportVm> meals, ListView listView)
-        {
-            listView.Items.Clear();
-            foreach (var product in meals)
+            foreach (var food in foodList)
             {
-                string[] newProduct = { product.Key, product.Toplam.ToString() };
-                var row = new ListViewItem(newProduct);
-                listView.Items.Add(row);
+                DataGridViewRow row = new DataGridViewRow();
+                row.CreateCells(dgvFoodByMeal);
+                row.Cells[0].Value = food.Id;
+                row.Cells[1].Value = food.MealType;
+                row.Cells[2].Value = food.CreatedDate.TimeOfDay;
+                dgvFoodByMeal.Rows.Add(row);
             }
+
         }
-
-
     }
 }
