@@ -113,20 +113,17 @@ namespace UI
 
         public void FillCmbMeals()
         {
-            //meaTypeService = new MealService(context);
-            //List<MealViewModel> mealList = new List<MealViewModel>();
+            MealTypeService mealTypeService = new MealTypeService(context);
+            List<MealTypeViewModel> mealList = new List<MealTypeViewModel>();
 
-            //mealList = mealService.MealList();
+            mealList = mealTypeService.GetAllMealTypes();
 
-            //List<MealViewModel> mealList = mealService.MealList();
+            cmbMeals.Items.Clear();
 
-
-            //cmbMeals.Items.Clear();
-
-            //foreach (var item in mealList)
-            //{
-            //    cmbMeals.Items.Add(item);
-            //}
+            foreach (var item in mealList)
+            {
+                cmbMeals.Items.Add(item.Name);
+            }
         }
         
         public void FillFoods()
