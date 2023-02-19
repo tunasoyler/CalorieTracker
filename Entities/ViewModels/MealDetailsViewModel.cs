@@ -7,6 +7,7 @@
         public string Food { get; set; }
         public double Gram { get; set; }
         public byte[] Image { get; set; }
-        public double Calorie { get; set; } 
+        public double Calorie { get; set; }
+        public DateTime CreatedDate { get; set; }
     }
 }

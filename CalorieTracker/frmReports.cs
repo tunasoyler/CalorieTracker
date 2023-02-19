@@ -1,4 +1,7 @@
-﻿using Entities.Concrete;
+﻿using BLL.Services;
+using DAL;
+using DotNetOpenAuth.OpenId;
+using Entities.Concrete;
 using Entities.Dtos.UserDtos;
 using System;
 using System.Collections.Generic;
@@ -24,6 +27,10 @@ namespace UI
         frmMain mainForm;
 
         User currentUser;
+
+        Context context = new Context();
+        MealDetailsService mealDetailsService;
+        MealDetails mealDetails;
 
 
         private Button currentButton;
@@ -111,7 +118,7 @@ namespace UI
             userForm = new frmUser(currentUser);
             userForm.Show();
         }
-               
+
 
         private void btnMinimizeApp_Click(object sender, EventArgs e)
         {
@@ -129,7 +136,73 @@ namespace UI
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
-        
-        
+
+        double totalDailyCalorie = 0;
+        double totalMealCalorie = 0;
+
+        private void btnFilter_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                mealDetailsService = new MealDetailsService(context);
+
+                List<Meal> mealList = mealDetailsService.GetMealsByDate(dtpDate.Value.Date);
+
+                dgvMeals.Rows.Clear();
+                totalDailyCalorie = 0;
+
+                foreach (var meal in mealList)
+                {
+                    DataGridViewRow row = new DataGridViewRow();
+                    row.CreateCells(dgvMeals);
+                    row.Cells[0].Value = meal.MealType;
+                    row.Cells[1].Value = meal.CreatedDate.TimeOfDay;
+                    dgvMeals.Rows.Add(row);
+
+                    totalDailyCalorie += mealDetailsService.GetMealCalorieByMeal(meal);
+                }
+
+                lblDailyCalorie.Text = "Total Calories in Daily : " + totalDailyCalorie + " kcal";
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Could not found any information about selected date.","Information",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                lblDailyCalorie.Text = "Total Calories in Daily : ";
+            }
+
+            
+        }
+
+        private void dgvFoods_SelectionChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                mealDetailsService = new MealDetailsService(context);
+
+                List<MealDetails> mealDetailsList = mealDetailsService.GetAll();
+
+                dgvFoods.Rows.Clear();
+                totalMealCalorie = 0;
+
+                foreach (var meal in mealDetailsList)
+                {
+                    DataGridViewRow row = new DataGridViewRow();
+                    row.CreateCells(dgvFoods);
+                    row.Cells[0].Value = meal.Food.Name;
+                    row.Cells[1].Value = meal.Food.Calorie;
+                    row.Cells[2].Value = meal.Gram;
+                    row.Cells[3].Value = meal.Food.Calorie * meal.Gram;
+
+                    dgvFoods.Rows.Add(row);
+
+                    totalMealCalorie += meal.Food.Calorie * meal.Gram;
+                }
+            }
+            catch (Exception)
+            {
+                lblMealCalorie.Text = "Total Calories in Meal : ";
+            }
+
+        }
     }
 }
