@@ -48,17 +48,17 @@
             this.btnDeleteFood = new System.Windows.Forms.Button();
             this.btnDeleteMeal = new System.Windows.Forms.Button();
             this.dgvFoods = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmGram = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmTotalCalorie = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvMeals = new System.Windows.Forms.DataGridView();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmMeal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmGram = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmTotalCalorie = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelTitleBar.SuspendLayout();
             this.panelMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFoods)).BeginInit();
@@ -331,6 +331,35 @@
             this.dgvFoods.TabIndex = 22;
             this.dgvFoods.SelectionChanged += new System.EventHandler(this.dgvFoods_SelectionChanged);
             // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "clmId";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "Food Name";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.Width = 110;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.HeaderText = "Unit Calorie";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.Width = 70;
+            // 
+            // clmGram
+            // 
+            this.clmGram.HeaderText = "Gram";
+            this.clmGram.Name = "clmGram";
+            this.clmGram.Width = 50;
+            // 
+            // clmTotalCalorie
+            // 
+            this.clmTotalCalorie.HeaderText = "Total Calorie";
+            this.clmTotalCalorie.Name = "clmTotalCalorie";
+            // 
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -384,35 +413,6 @@
             this.clmTime.Name = "clmTime";
             this.clmTime.Width = 80;
             // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "clmId";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "Food Name";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 110;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.HeaderText = "Unit Calorie";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Width = 70;
-            // 
-            // clmGram
-            // 
-            this.clmGram.HeaderText = "Gram";
-            this.clmGram.Name = "clmGram";
-            this.clmGram.Width = 50;
-            // 
-            // clmTotalCalorie
-            // 
-            this.clmTotalCalorie.HeaderText = "Total Calorie";
-            this.clmTotalCalorie.Name = "clmTotalCalorie";
-            // 
             // frmReports
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -434,7 +434,6 @@
             this.Controls.Add(this.panelBottom);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmReports";
-            this.Text = ",,,";
             this.Load += new System.EventHandler(this.frmStatistics_Load);
             this.panelTitleBar.ResumeLayout(false);
             this.panelTitleBar.PerformLayout();

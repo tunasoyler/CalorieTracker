@@ -234,7 +234,7 @@ namespace UI
                 {
                     Gram = Convert.ToDouble(nudGram.Value),
                     FoodId = selectedFood.Id,                    
-                    MealId=currentMeal.Id,
+                    MealId=currentMeal.Id,                                                           
                 };
                 mealDetailService.AddMealDetail(mealDetail);
                 FillMealDetails();
