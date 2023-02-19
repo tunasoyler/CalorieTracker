@@ -51,12 +51,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.nudGram = new System.Windows.Forms.NumericUpDown();
             this.dgvMealTypes = new System.Windows.Forms.DataGridView();
-            this.clmMeals = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pbFoodImage = new System.Windows.Forms.PictureBox();
             this.cmbFoodList = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
+            this.clmId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmMeals = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelMenu.SuspendLayout();
             this.panelTitleBar.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -340,6 +341,7 @@
             this.dgvMealTypes.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.dgvMealTypes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMealTypes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.clmId,
             this.clmMeals});
             this.dgvMealTypes.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvMealTypes.Location = new System.Drawing.Point(0, 0);
@@ -351,14 +353,6 @@
             this.dgvMealTypes.RowTemplate.Height = 29;
             this.dgvMealTypes.Size = new System.Drawing.Size(138, 151);
             this.dgvMealTypes.TabIndex = 36;
-            // 
-            // clmMeals
-            // 
-            this.clmMeals.HeaderText = "Meals";
-            this.clmMeals.MinimumWidth = 6;
-            this.clmMeals.Name = "clmMeals";
-            this.clmMeals.ReadOnly = true;
-            this.clmMeals.Width = 134;
             // 
             // pbFoodImage
             // 
@@ -412,6 +406,21 @@
             this.label5.TabIndex = 45;
             this.label5.Text = "Total Calories in Meal :";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // clmId
+            // 
+            this.clmId.HeaderText = "Id";
+            this.clmId.Name = "clmId";
+            this.clmId.ReadOnly = true;
+            this.clmId.Width = 30;
+            // 
+            // clmMeals
+            // 
+            this.clmMeals.HeaderText = "Meals";
+            this.clmMeals.MinimumWidth = 6;
+            this.clmMeals.Name = "clmMeals";
+            this.clmMeals.ReadOnly = true;
+            this.clmMeals.Width = 104;
             // 
             // frmAddMeal
             // 
@@ -480,6 +489,7 @@
         private DataGridViewImageColumn clmImage;
         private Panel panel2;
         private Label label5;
+        private DataGridViewTextBoxColumn clmId;
         private DataGridViewTextBoxColumn clmMeals;
     }
 }

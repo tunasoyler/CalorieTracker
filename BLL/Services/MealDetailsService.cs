@@ -21,7 +21,7 @@ namespace BLL.Services
 
         Context context = new Context();
 
-        public List<MealDetailsViewModel> GetFoodsByMealType()
+        public List<MealDetailsViewModel> GetFoodsByMealType(DateTime dateTime, User user, int mealTypeId)
         {
             List<MealDetails> mealDetails = new List<MealDetails>();
             List<MealDetailsViewModel> mealDetailVms = new List<MealDetailsViewModel>();

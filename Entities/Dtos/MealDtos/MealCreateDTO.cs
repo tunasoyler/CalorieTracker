@@ -8,7 +8,7 @@ namespace Entities.Dtos.MealDtos
 {
     public class MealCreateDTO
     {
-        public string MealTypeName { get; set; }
-        public string UserName { get; set; }
+        public int MealTypeId { get; set; }
+        public int UserId { get; set; }
     }
 }
