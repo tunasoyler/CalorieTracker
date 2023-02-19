@@ -72,8 +72,20 @@ namespace BLL.Services
             Add(newMealDetails);
         }
 
-        
 
+        public List<FoodCountByMealViewModel> GetFoodsWithCount(string mealName) 
+        { List<FoodCountByMealViewModel> foodList = new List<FoodCountByMealViewModel>(); 
+            foreach (var food in context.Foods.Where(x => x.MealDetails.Any(y => y.Meal.MealType.Name == mealName))) 
+            { using (var context = new Context()) 
+                { FoodCountByMealViewModel foodCount = new FoodCountByMealViewModel() 
+                { Id = food.Id, 
+                    Name = food.Name, 
+                    Count = context.MealDetails.Count(x => x.Food.Name == food.Name), Image = food.Image 
+                }; 
+                    foodList.Add(foodCount); 
+                } 
+            } return foodList; 
+        }
         public double GetMealCalorieByMealType(MealDetails mealDetails)
         {
             double mealCalorie = mealDetails.Gram * mealDetails.Food.Calorie;

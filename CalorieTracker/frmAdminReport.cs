@@ -125,26 +125,21 @@ namespace UI
                 cmbMeals.Items.Add(item.Name);
             }
         }
-        
+
         public void FillFoods()
-        {
-            mealDetailsService = new MealDetailsService(context);
-
-            dgvFoodByMeal.Rows.Clear();
-
-            List<FoodCountByMealViewModel> foodList = mealDetailsService.GetFoodsWithCount();
-
-            foreach (var food in foodList)
-            {
-                DataGridViewRow row = new DataGridViewRow();
-                row.CreateCells(dgvFoodByMeal);
-                row.Cells[0].Value = food.Id;
-                row.Cells[1].Value = food.Name;
+        { 
+            mealDetailsService = new MealDetailsService(context); dgvFoodByMeal.Rows.Clear(); List<FoodCountByMealViewModel> foodList = new List<FoodCountByMealViewModel>(); 
+            string selectedMeal = cmbMeals.SelectedItem.ToString(); 
+            foodList = mealDetailsService.GetFoodsWithCount(selectedMeal); 
+            foreach (var food in foodList) { DataGridViewRow row = new DataGridViewRow(); 
+                row.CreateCells(dgvFoodByMeal); 
+                row.Cells[0].Value = food.Id; 
+                row.Cells[1].Value = food.Name; 
                 row.Cells[2].Value = food.Count;
-                row.Cells[3].Value = food.Image;
-
-                dgvFoodByMeal.Rows.Add(row);
-            }
+                row.Cells[3].Value = food.Image; 
+                dgvFoodByMeal.Rows.Add(row); 
+            } 
         }
+        
     }
 }

@@ -154,6 +154,7 @@ namespace UI
             
 
         }
+        
         private void FillMealDetails() 
         {
             try
@@ -184,15 +185,15 @@ namespace UI
                     foreach (var item in mealDetailList)
                     {
 
-                        totalDailyCalorie += item.Calorie;
+                        totalMealCalorie += item.Calorie;
                     }
 
-                    lblDailyCalorie.Text = "Total Calories in Daily : " + totalDailyCalorie + " kcal";
+                    lblMealCalorie.Text = "Total Calories in Daily : " + Math.Round(totalMealCalorie) + " kcal";
                 }
             }
             catch (Exception)
             {
-                lblMealCalorie.Text = "Total Calories in Meal : ";
+                
             }
         }
         private void FillMealTypes()
@@ -222,7 +223,7 @@ namespace UI
                     totalDailyCalorie += mealDetailsService.GetMealCalorieByMealId(meal.Id);
                 }
 
-                lblDailyCalorie.Text = "Total Calories in Daily : " + totalDailyCalorie + " kcal";
+                lblDailyCalorie.Text = "Total Calories in Daily : " + Math.Round(totalDailyCalorie) + " kcal";
             }
             catch (Exception)
             {

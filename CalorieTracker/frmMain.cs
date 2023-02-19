@@ -14,7 +14,7 @@ namespace UI
         frmUser userForm;
         frmAddMeal addMealForm;
         frmMain mainForm;
-
+        Meal currentMeal;
         User currentUser;
 
         Context context = new Context();
@@ -71,7 +71,8 @@ namespace UI
 
             MealDetailsService mealDetailsService = new MealDetailsService(context);
 
-
+            SetDates();
+            FillCaloriesByMealType();
             //dgvMealsToday.DataSource = mealDetailsService.GetTotalCalorieByMeal(mealDetails, DateTime.Today, currentUser);
 
 
@@ -94,7 +95,7 @@ namespace UI
             //currentCalorie = 
             //cpbDailyLimit.Text = 
 
-            
+
 
             SetWeeklyChartValues(1900, 1500, 2500, 1800, 1000, 1000, 2000);
             
@@ -153,7 +154,80 @@ namespace UI
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
+        private void SetDates() 
+        { 
+            lblStartDate.Text = currentUser.CreatedDate.ToString("dd.MM.yyyy"); 
+            if (currentUser.Timeline == "6 months") 
+            { 
+                lblGoalDate.Text = (currentUser.CreatedDate.AddMonths(6)).ToString("dd.MM.yyyy"); 
+            } 
+            else 
+            { 
+                lblGoalDate.Text = (currentUser.CreatedDate.AddMonths(12)).ToString("dd.MM.yyyy"); 
+            } 
+        }
+        double totalMealCalorie;
+        private void FillMealTypes()
+        {
+            MealTypeService mealTypeService = new MealTypeService(context);
+            List<MealTypeViewModel> mealTypeList = new List<MealTypeViewModel>();
+            mealTypeList = mealTypeService.GetAllMealTypes();
+            foreach (var mealType in mealTypeList)
+            {
+                dgvMyMealsToday.Rows.Add(mealType.Id, mealType.Name);
+            }
 
+        }
+        private void FillCaloriesByMealType()
+        {
+            try
+            {
+                MealDetailsService mealDetailsService = new MealDetailsService(context);
+                MealService mealService = new MealService(context);              
+                currentMeal = new Meal();
+                dgvMyMealsToday.Rows.Clear();
+                FillMealTypes();
+                for (int i = 1;i < 5; i++) 
+                {
+                    currentMeal = mealService.GetMealByDateAndMealType(DateTime.Now.Date, currentUser, i);                   
+                    totalMealCalorie = 0;
+                                       
+                        MealViewModel mealViewModel = new MealViewModel()
+                        {
+                            Id = currentMeal.Id,
+                            Date = DateTime.Now.Date,                           
+                            
+                        };
+                        mealViewModel.MealDetailsViewModel = mealDetailsService.GetFoodsByMealType(DateTime.Now, currentUser, i);
+                        
+                        var mealDetailList = mealDetailsService.GetFoodsByMealType(DateTime.Now.Date, currentUser, i);
+                        
+                        foreach (var item in mealDetailList)
+                        {
+
+                            totalMealCalorie += item.Calorie;
+                        }
+                    foreach (var food in mealViewModel.MealDetailsViewModel)
+                    {
+                        DataGridViewRow row = new DataGridViewRow();
+                        row.CreateCells(dgvMyMealsToday);                       
+                        row.Cells[1].Value = totalMealCalorie;
+                        dgvMyMealsToday.Rows.Insert(i);
+                    }                    
+                    
+                
+                
+                    
+                    
+
+                    
+                }
+            }
+            catch (Exception)
+            {
+
+            }
+        }
 
     }
 }

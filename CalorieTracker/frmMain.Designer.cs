@@ -39,8 +39,6 @@
             this.cpbDailyLimit = new CircularProgressBar_NET5.CircularProgressBar();
             this.pnlDailyStats = new System.Windows.Forms.Panel();
             this.dgvMyMealsToday = new System.Windows.Forms.DataGridView();
-            this.clmMeals = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label3 = new System.Windows.Forms.Label();
             this.pnlGoalProgress = new System.Windows.Forms.Panel();
             this.lblDay7 = new System.Windows.Forms.Label();
@@ -62,6 +60,9 @@
             this.btnReports = new System.Windows.Forms.Button();
             this.btnHome = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.clmId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmMeals = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmCalorie = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelTitleBar.SuspendLayout();
             this.pnlDailyLimit.SuspendLayout();
             this.pnlDailyStats.SuspendLayout();
@@ -213,8 +214,9 @@
             this.dgvMyMealsToday.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.dgvMyMealsToday.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMyMealsToday.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.clmId,
             this.clmMeals,
-            this.dataGridViewTextBoxColumn1});
+            this.clmCalorie});
             this.dgvMyMealsToday.Location = new System.Drawing.Point(-1, 31);
             this.dgvMyMealsToday.Name = "dgvMyMealsToday";
             this.dgvMyMealsToday.RowHeadersVisible = false;
@@ -222,18 +224,6 @@
             this.dgvMyMealsToday.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvMyMealsToday.Size = new System.Drawing.Size(140, 168);
             this.dgvMyMealsToday.TabIndex = 7;
-            // 
-            // clmMeals
-            // 
-            this.clmMeals.HeaderText = "Meal ";
-            this.clmMeals.Name = "clmMeals";
-            this.clmMeals.Width = 75;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "Calorie";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 60;
             // 
             // label3
             // 
@@ -502,6 +492,24 @@
             this.panel3.Size = new System.Drawing.Size(30, 40);
             this.panel3.TabIndex = 0;
             // 
+            // clmId
+            // 
+            this.clmId.HeaderText = "Id";
+            this.clmId.Name = "clmId";
+            this.clmId.Visible = false;
+            // 
+            // clmMeals
+            // 
+            this.clmMeals.HeaderText = "Meal ";
+            this.clmMeals.Name = "clmMeals";
+            this.clmMeals.Width = 75;
+            // 
+            // clmCalorie
+            // 
+            this.clmCalorie.HeaderText = "Calorie";
+            this.clmCalorie.Name = "clmCalorie";
+            this.clmCalorie.Width = 60;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -554,8 +562,6 @@
         private Label lblDay3;
         private Label lblDay2;
         private Label lblDay1;
-        private Label label7;
-        private Syncfusion.Windows.Forms.Chart.SparkLine sparkLine1;
         private Label lblStartDate;
         private Label lblGoalDate;
         private Label label4;
@@ -567,7 +573,10 @@
         private Button btnHome;
         private Panel panel3;
         private DataGridView dgvMyMealsToday;
+        private Label label7;
+        private Syncfusion.Windows.Forms.Chart.SparkLine sparkLine1;
+        private DataGridViewTextBoxColumn clmId;
         private DataGridViewTextBoxColumn clmMeals;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private DataGridViewTextBoxColumn clmCalorie;
     }
 }
