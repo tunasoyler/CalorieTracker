@@ -166,11 +166,11 @@ namespace UI
             }
             catch (Exception)
             {
-                MessageBox.Show("Could not found any information about selected date.","Information",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                MessageBox.Show("Could not found any information about selected date.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 lblDailyCalorie.Text = "Total Calories in Daily : ";
             }
 
-            
+
         }
 
         private void dgvFoods_SelectionChanged(object sender, EventArgs e)
@@ -191,7 +191,7 @@ namespace UI
                     row.Cells[0].Value = meal.Food.Name;
                     row.Cells[1].Value = meal.Food.Calorie;
                     row.Cells[2].Value = meal.Gram;
-                    row.Cells[3].Value = meal.Food.Calorie * meal.Gram;
+                    row.Cells[3].Value = Math.Round(meal.Food.Calorie * meal.Gram);
 
                     dgvFoods.Rows.Add(row);
 
@@ -203,6 +203,18 @@ namespace UI
                 lblMealCalorie.Text = "Total Calories in Meal : ";
             }
 
+        }
+
+        private void btnDeleteMeal_Click(object sender, EventArgs e)
+        {
+            mealDetailsService = new MealDetailsService(context);
+        }
+
+        private void btnDeleteFood_Click(object sender, EventArgs e)
+        {
+            mealDetailsService = new MealDetailsService(context);
+
+            mealDetailsService.Delete();
         }
     }
 }

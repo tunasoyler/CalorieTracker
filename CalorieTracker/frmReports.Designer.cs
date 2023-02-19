@@ -296,6 +296,7 @@
             this.btnDeleteFood.TabIndex = 20;
             this.btnDeleteFood.Text = "Delete Food";
             this.btnDeleteFood.UseVisualStyleBackColor = true;
+            this.btnDeleteFood.Click += new System.EventHandler(this.btnDeleteFood_Click);
             // 
             // btnDeleteMeal
             // 
@@ -306,6 +307,7 @@
             this.btnDeleteMeal.TabIndex = 21;
             this.btnDeleteMeal.Text = "Delete Meal";
             this.btnDeleteMeal.UseVisualStyleBackColor = true;
+            this.btnDeleteMeal.Click += new System.EventHandler(this.btnDeleteMeal_Click);
             // 
             // dgvFoods
             // 
