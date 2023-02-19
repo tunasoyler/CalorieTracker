@@ -47,8 +47,10 @@ namespace BLL.Services
         {
             Delete(meal);
         }
-        public MealViewModel GetMealListById(int id)
+        
+        public List<MealViewModel> GetAllMeals()
         {
+<<<<<<< HEAD
             List<MealViewModel> MealVmList = new List<MealViewModel>();
 
             return FoodsVmList;
@@ -70,6 +72,43 @@ namespace BLL.Services
         //    getMealByDate as List<MealDetailsViewModel>
         //        return;
         //}
+=======
+            List<MealViewModel> MealsVmList = new List<MealViewModel>();
+
+            foreach (Meal item in GetAll())
+            {
+                MealViewModel mealViewModel = new MealViewModel()
+                {
+                    Id = item.Id,
+                    Date=item.CreatedDate,
+                    MealTypeName=item.MealType.Name,                    
+
+                };
+                MealsVmList.Add(mealViewModel);
+            }
+            return MealsVmList;
+        }
+            public Meal GetMealById(int id)
+        {            
+            return GetById(id);
+        }
+        public List<Meal> GetMealsByDate(DateTime date, User user, int mealTypeId)
+        {
+            
+            return context.Meals
+                          .Where(m => m.CreatedDate.Date == date.Date && m.UserID == user.Id && m.MealTypeID == mealTypeId)
+                          .ToList();
+            
+        }
+        public int GetMealIdByMeal(Meal meal)
+        {
+
+            int id = meal.Id;
+                               
+            
+                return id ;
+        }
+>>>>>>> 7c4c9c83bdc0e5b1918e0ab92f69b47e325ea192
 
     }
 }

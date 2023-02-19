@@ -29,6 +29,7 @@ namespace UI
         frmMain mainForm;
 
         User currentUser;
+        Meal currentMeal;
 
         private Button currentButton;
         private int tempIndex;
@@ -180,7 +181,13 @@ namespace UI
             MealDetailsService mealDetailsService = new MealDetailsService(context);
             MealService mealService= new MealService(context);
             DataGridViewRow selectedRow = dgvMealTypes.SelectedRows[0];
-            MealViewModel mealViewModel = mealService.GetMealListById();
+            List<Meal> mealList = mealService.GetMealsByDate(DateTime.Now, currentUser, Convert.ToInt32(selectedRow.Cells["clmId"].Value.ToString()));
+            Meal meal=mealList.FirstOrDefault(s => s.Id == currentMeal.Id);
+            MealViewModel mealViewModel = new MealViewModel()
+            {
+                 Id= currentMeal.Id,
+                //devam edilcek
+            };
             mealViewModel.MealDetailsViewModel = mealDetailsService.GetFoodsByMealType(DateTime.Now, currentUser, Convert.ToInt32(selectedRow.Cells["clmId"].Value.ToString()));
             foreach (var mealDetails in mealViewModel.MealDetailsViewModel)
             {
@@ -198,6 +205,7 @@ namespace UI
             {
                 MealDetailsService mealDetailService = new MealDetailsService(context);
                 MealService mealService= new MealService(context);
+                DataGridViewRow selectedRow = dgvMealTypes.SelectedRows[0];
                 Food selectedFood= cmbFoodList.SelectedItem as Food;               
                 MealType selectedMealType = dgvMealTypes.SelectedRows[0].Tag as MealType;                               
                 MealCreateDTO mealCreateDTO = new MealCreateDTO
@@ -207,10 +215,12 @@ namespace UI
 
                 };
                 mealService.AddMeal(mealCreateDTO);
+             
                 MealDetailsCreateDTO mealDetail = new MealDetailsCreateDTO
                 {
                     Gram = Convert.ToDouble(nudGram.Value),
                     FoodId = selectedFood.Id,
+                    MealId=currentMeal.Id,
                     
                 };
                 mealDetailService.AddMealDetail(mealDetail);

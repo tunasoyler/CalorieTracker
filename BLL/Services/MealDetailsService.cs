@@ -1,7 +1,6 @@
 ﻿using DAL;
 using DAL.Repostories;
 using Entities.Concrete;
-using Entities.Dtos.FoodDtos;
 using Entities.Dtos.MealDetailsDtos;
 using Entities.ViewModels;
 using Microsoft.EntityFrameworkCore;
@@ -46,15 +45,7 @@ namespace BLL.Services
             Add(newMealDetails);
         }
 
-        public List<Meal> GetMealsByDate(DateTime date)
-        {
-            //using (var context = new Context())
-            //{
-            return context.Meals
-                          .Where(m => m.CreatedDate.Date == date.Date)
-                          .ToList();
-            //}
-        }
+        
 
         public double GetMealCalorieByMealType(MealDetails mealDetails)
         {
@@ -76,11 +67,24 @@ namespace BLL.Services
             return totalMealCalorie;
         }
 
-        public void DeleteMeal(MealDetailsDeleteDTO meal)
+        public List<object> GetTotalCalorieByMeal(MealDetails mealDetails, DateTime dateTime, User user)
         {
-            var deleteMeal = GetById(meal.Id);
-            Delete(deleteMeal);
+            DateTime date = dateTime;
+
+            var SumCalorieByMeal = context.MealDetails
+                .Where(md => md.Meal.CreatedDate == date && md.Meal.UserID == user.Id)
+                .GroupBy(md => md.Meal.MealType)
+                .Select(g => new
+                {
+                    MealId = mealDetails.MealId,
+                    MealName = mealDetails.Meal.Name,
+                    FoodCalories = g.Sum(md => md.Food.Calorie * md.Gram)
+                }).ToList();
+
+
+            return SumCalorieByMeal.Cast<object>().ToList();
         }
+<<<<<<< HEAD
 
         public List<FoodCountByMealViewModel> GetFoodsWithCount()
         {
@@ -120,6 +124,10 @@ namespace BLL.Services
         //}
         //public double TotalCalorieByDay { get; set; }
         //public double TotalCalorieByMeal { get; set; }
+=======
+        public double TotalCalorieByDay { get; set; }
+        public double TotalCalorieByMeal { get; set; }
+>>>>>>> 7c4c9c83bdc0e5b1918e0ab92f69b47e325ea192
 
 
 
