@@ -125,14 +125,16 @@ namespace UI
                 cmbMeals.Items.Add(item.Name);
             }
         }
-        
+
         public void FillFoods()
         {
             mealDetailsService = new MealDetailsService(context);
 
             dgvFoodByMeal.Rows.Clear();
 
-            List<FoodCountByMealViewModel> foodList = mealDetailsService.GetFoodsWithCount();
+            List<FoodCountByMealViewModel> foodList = new List<FoodCountByMealViewModel>();
+
+            foodList = mealDetailsService.GetFoodsWithCount();
 
             foreach (var food in foodList)
             {
