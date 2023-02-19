@@ -16,6 +16,8 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using Button = System.Windows.Forms.Button;
 
 namespace UI
 {
@@ -48,6 +50,7 @@ namespace UI
         {
             FillFoods();
             FillMealTypes();
+            FillMealDetails();
             //Get daily meals of user
 
 
@@ -178,21 +181,31 @@ namespace UI
         }
         private void FillMealDetails()
         {
-            MealDetailsService mealDetailsService = new MealDetailsService(context);
-            MealService mealService= new MealService(context);
-            DataGridViewRow selectedRow = dgvMealTypes.SelectedRows[0];
-            List<Meal> mealList = mealService.GetMealsByDate(DateTime.Now, currentUser, Convert.ToInt32(selectedRow.Cells["clmId"].Value.ToString()));
-            Meal meal=mealList.FirstOrDefault(s => s.Id == currentMeal.Id);
-            MealViewModel mealViewModel = new MealViewModel()
+            try
             {
-                 Id= currentMeal.Id,
-                //devam edilcek
-            };
-            mealViewModel.MealDetailsViewModel = mealDetailsService.GetFoodsByMealType(DateTime.Now, currentUser, Convert.ToInt32(selectedRow.Cells["clmId"].Value.ToString()));
-            foreach (var mealDetails in mealViewModel.MealDetailsViewModel)
-            {
-                dgvMealTypes.Rows.Add(mealDetails.Food, mealDetails.Gram, mealDetails.Calorie, mealDetails.Image);
+                MealDetailsService mealDetailsService = new MealDetailsService(context);
+                MealService mealService = new MealService(context);
+                DataGridViewRow selectedRow = dgvMealTypes.SelectedRows[0];
+                currentMeal = new Meal();
+                currentMeal = mealService.GetMealByDateAndMealType(DateTime.Now.Date, currentUser, Convert.ToInt32(selectedRow.Cells["clmId"].Value.ToString()));
+                dgvFoods.Rows.Clear();
+                MealViewModel mealViewModel = new MealViewModel()
+                {
+                    Id = currentMeal.Id,
+                    Date = DateTime.Now,
+                    MealTypeName = selectedRow.Cells["clmMeals"].Value.ToString(),
+                };
+                mealViewModel.MealDetailsViewModel = mealDetailsService.GetFoodsByMealType(DateTime.Now, currentUser, Convert.ToInt32(selectedRow.Cells["clmId"].Value.ToString()));
+                foreach (var mealDetails in mealViewModel.MealDetailsViewModel)
+                {
+                    dgvFoods.Rows.Add(mealDetails.Food, mealDetails.Gram, mealDetails.Calorie, mealDetails.Image);
+                }
             }
+            catch (Exception)
+            {
+                dgvFoods.Rows.Clear();
+            }
+            
         }
         private void btnAddFood_Click(object sender, EventArgs e)
         {
@@ -206,23 +219,22 @@ namespace UI
                 MealDetailsService mealDetailService = new MealDetailsService(context);
                 MealService mealService= new MealService(context);
                 DataGridViewRow selectedRow = dgvMealTypes.SelectedRows[0];
-                Food selectedFood= cmbFoodList.SelectedItem as Food;
-                MealType selectedMealType = new MealType(); 
-                selectedMealType= dgvMealTypes.SelectedRows[0].Tag as MealType;
+                FoodViewModel selectedFood = new FoodViewModel(); 
+                selectedFood=(FoodViewModel)cmbFoodList.SelectedItem;
                 MealCreateDTO mealCreateDTO = new MealCreateDTO
                 {
-                    MealTypeId = selectedMealType.Id,
+                    MealTypeId = Convert.ToInt32(selectedRow.Cells["clmId"].Value.ToString()),
                     UserId = currentUser.Id,
 
                 };
                 mealService.AddMeal(mealCreateDTO);
-             
+                currentMeal = new Meal();
+                currentMeal = mealService.GetMealByDateAndMealType(DateTime.Now, currentUser, Convert.ToInt32(selectedRow.Cells["clmId"].Value.ToString()));
                 MealDetailsCreateDTO mealDetail = new MealDetailsCreateDTO
                 {
                     Gram = Convert.ToDouble(nudGram.Value),
-                    FoodId = selectedFood.Id,
+                    FoodId = selectedFood.Id,                    
                     MealId=currentMeal.Id,
-                    
                 };
                 mealDetailService.AddMealDetail(mealDetail);
                 FillMealDetails();
@@ -231,6 +243,11 @@ namespace UI
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void dgvMealTypes_SelectionChanged(object sender, EventArgs e)
+        {
+            FillMealDetails();
         }
     }
 }

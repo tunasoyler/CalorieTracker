@@ -248,6 +248,7 @@
             // 
             // dgvFoods
             // 
+            this.dgvFoods.AllowUserToAddRows = false;
             this.dgvFoods.AllowUserToOrderColumns = true;
             this.dgvFoods.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.dgvFoods.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -335,7 +336,6 @@
             // 
             // dgvMealTypes
             // 
-            this.dgvMealTypes.AllowUserToAddRows = false;
             this.dgvMealTypes.AllowUserToDeleteRows = false;
             this.dgvMealTypes.AllowUserToOrderColumns = true;
             this.dgvMealTypes.BackgroundColor = System.Drawing.SystemColors.ControlLight;
@@ -354,6 +354,7 @@
             this.dgvMealTypes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvMealTypes.Size = new System.Drawing.Size(138, 151);
             this.dgvMealTypes.TabIndex = 36;
+            this.dgvMealTypes.SelectionChanged += new System.EventHandler(this.dgvMealTypes_SelectionChanged);
             // 
             // clmId
             // 
