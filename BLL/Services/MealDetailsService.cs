@@ -66,10 +66,41 @@ namespace BLL.Services
 
             return totalMealCalorie;
         }
-
-        public List<object> GetTotalCalorieByMeal(MealDetails mealDetails, DateTime dateTime, User user)
+        public List<FoodCountByMealViewModel> GetFoodsWithCount()
         {
-            DateTime date = dateTime;
+            List<FoodCountByMealViewModel> foodList = new List<FoodCountByMealViewModel>();
+
+
+            foreach (MealDetails item in GetAll())
+            {
+                FoodCountByMealViewModel food = new FoodCountByMealViewModel()
+                {
+                    Name = item.Food.Name,
+                    Count = context.MealDetails.Count(x => x.Food.Name == item.Food.Name),
+                    Image = item.Food.Image
+                };
+
+                foodList.Add(food);
+            }
+
+            return foodList;
+        }
+        public void DeleteMeal(MealDetailsDeleteDTO meal)
+        {
+            var deleteMeal = GetById(meal.Id);
+            Delete(deleteMeal);
+        }
+        public List<Meal> GetMealsByDate(DateTime date)
+        {
+            //using (var context = new Context())
+            //{
+            return context.Meals
+                          .Where(m => m.CreatedDate.Date == date.Date)
+                          .ToList();
+            //}
+        }
+
+
 
         //public List<object> GetTotalCalorieByMeal(MealDetails mealDetails, DateTime dateTime, User user)
         //{
@@ -84,9 +115,6 @@ namespace BLL.Services
         //            FoodCalories = g.Sum(md => md.Food.Calorie * md.Gram) 
         //        }).ToList();
 
-
-            return SumCalorieByMeal.Cast<object>().ToList();
-        }
         public double TotalCalorieByDay { get; set; }
         public double TotalCalorieByMeal { get; set; }
 
