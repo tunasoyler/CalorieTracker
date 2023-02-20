@@ -50,15 +50,14 @@
             this.dgvFoods = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmGram = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmTotalCalorie = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmImage = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvMeals = new System.Windows.Forms.DataGridView();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmMeal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelTitleBar.SuspendLayout();
             this.panelMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFoods)).BeginInit();
@@ -319,9 +318,9 @@
             this.dgvFoods.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
             this.clmGram,
-            this.clmTotalCalorie});
+            this.clmTotalCalorie,
+            this.clmImage});
             this.dgvFoods.Location = new System.Drawing.Point(-1, -1);
             this.dgvFoods.Name = "dgvFoods";
             this.dgvFoods.RowHeadersVisible = false;
@@ -343,12 +342,6 @@
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.Width = 110;
             // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.HeaderText = "Unit Calorie";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Width = 70;
-            // 
             // clmGram
             // 
             this.clmGram.HeaderText = "Gram";
@@ -359,6 +352,11 @@
             // 
             this.clmTotalCalorie.HeaderText = "Total Calorie";
             this.clmTotalCalorie.Name = "clmTotalCalorie";
+            // 
+            // clmImage
+            // 
+            this.clmImage.HeaderText = "Image";
+            this.clmImage.Name = "clmImage";
             // 
             // panel2
             // 
@@ -384,9 +382,8 @@
             this.dgvMeals.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.dgvMeals.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMeals.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Id,
-            this.clmMeal,
-            this.clmTime});
+            this.clmId,
+            this.clmMeal});
             this.dgvMeals.Location = new System.Drawing.Point(-1, -1);
             this.dgvMeals.Name = "dgvMeals";
             this.dgvMeals.RowHeadersVisible = false;
@@ -394,24 +391,19 @@
             this.dgvMeals.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvMeals.Size = new System.Drawing.Size(230, 131);
             this.dgvMeals.TabIndex = 23;
+            this.dgvMeals.SelectionChanged += new System.EventHandler(this.dgvMeals_SelectionChanged);
             // 
-            // Id
+            // clmId
             // 
-            this.Id.HeaderText = "clmId";
-            this.Id.Name = "Id";
-            this.Id.Visible = false;
+            this.clmId.HeaderText = "Id";
+            this.clmId.Name = "clmId";
+            this.clmId.Visible = false;
             // 
             // clmMeal
             // 
             this.clmMeal.HeaderText = "Meal";
             this.clmMeal.Name = "clmMeal";
-            this.clmMeal.Width = 140;
-            // 
-            // clmTime
-            // 
-            this.clmTime.HeaderText = "Time";
-            this.clmTime.Name = "clmTime";
-            this.clmTime.Width = 80;
+            this.clmMeal.Width = 215;
             // 
             // frmReports
             // 
@@ -473,11 +465,10 @@
         private DataGridView dgvMeals;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private DataGridViewTextBoxColumn clmGram;
         private DataGridViewTextBoxColumn clmTotalCalorie;
-        private DataGridViewTextBoxColumn Id;
+        private DataGridViewImageColumn clmImage;
+        private DataGridViewTextBoxColumn clmId;
         private DataGridViewTextBoxColumn clmMeal;
-        private DataGridViewTextBoxColumn clmTime;
     }
 }

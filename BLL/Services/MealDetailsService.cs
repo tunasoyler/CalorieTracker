@@ -19,15 +19,15 @@ namespace BLL.Services
         }
 
         Context context = new Context();
-        public List<MealDetails> GetFoodByMealType(DateTime date, User user, int mealTypeId)
-        {
+        //public List<MealDetails> GetFoodByMealType(DateTime date, User user, int mealTypeId)
+        //{
 
-            return GetAll()
-                          .Where(m => m.CreatedDate.Date == date.Date && m.Meal.UserID == user.Id && m.Meal.MealTypeID == mealTypeId).ToList();
+        //    return         GetAll()
+        //                  .Where(m => m.CreatedDate.Date == date.Date && m.Meal.UserID == user.Id && m.Meal.MealTypeID==mealTypeId).ToList();
 
-        }
+        //}
         public List<MealDetailsViewModel> GetFoodsByMealType(DateTime dateTime, User user, int mealTypeId)
-        {
+        {           
             List<MealDetailsViewModel> mealDetailVms = new List<MealDetailsViewModel>();
             List<MealDetails> mealDetailsList = new List<MealDetails>();
             mealDetailsList = context.MealDetails
@@ -37,23 +37,42 @@ namespace BLL.Services
             {
                 MealDetailsViewModel mealDetailVm = new MealDetailsViewModel()
                 {
-                    Food = (context.Foods.Where(f => f.Id == item.FoodId).FirstOrDefault()).Name,
+                    Food = (context.Foods.Where(f=>f.Id==item.FoodId).FirstOrDefault()).Name,
                     Gram = item.Gram,
                     Calorie = (context.Foods.Where(f => f.Id == item.FoodId).FirstOrDefault()).Calorie * item.Gram,
                     Image = item.Food.Image
                 };
                 mealDetailVms.Add(mealDetailVm);
+            }           
+            return mealDetailVms;
+        }
+        public List<MealDetailsViewModel> GetFoodsByMeal(DateTime dateTime, User user, int mealId)
+        {
+            List<MealDetailsViewModel> mealDetailVms = new List<MealDetailsViewModel>();
+            List<MealDetails> mealDetailsList = new List<MealDetails>();
+            mealDetailsList = context.MealDetails
+                          .Where(m => m.CreatedDate.Date == dateTime.Date && m.Meal.UserID == user.Id && m.Meal.Id == mealId).ToList();
+
+            foreach (var item in mealDetailsList)
+            {
+                MealDetailsViewModel mealDetailVm = new MealDetailsViewModel()
+                {
+                    Food = (context.Foods.Where(f => f.Id == item.FoodId).FirstOrDefault()).Name,
+                    Gram = item.Gram,                   
+                    Calorie = (context.Foods.Where(f => f.Id == item.FoodId).FirstOrDefault()).Calorie * item.Gram,
+                    MealType = item.Meal.MealType.Name,
+                };
+                mealDetailVms.Add(mealDetailVm);
             }
             return mealDetailVms;
         }
-
         public void AddMealDetail(MealDetailsCreateDTO mealDetails)
         {
-            MealDetails newMealDetails = new MealDetails { Name = "meal", Gram = mealDetails.Gram, MealId = mealDetails.MealId, FoodId = mealDetails.FoodId, CreatedDate = DateTime.Now, UpdatedDate = DateTime.Now };
+            MealDetails newMealDetails = new MealDetails {Name="meal", Gram = mealDetails.Gram, MealId = mealDetails.MealId, FoodId = mealDetails.FoodId};
             Add(newMealDetails);
         }
 
-
+        
 
         public double GetMealCalorieByMealType(MealDetails mealDetails)
         {
@@ -61,37 +80,48 @@ namespace BLL.Services
 
             return mealCalorie;
         }
-        public double GetMealCalorieByMeal(Meal meal)
+        //public double GetMealCalorieByMeal(Meal meal)
+        //{
+        //    List<MealDetails> mealDetails = new List<MealDetails>();
+
+        //    double totalMealCalorie = 0;
+
+        //    foreach (var item in mealDetails)
+        //    {
+        //        totalMealCalorie += item.Gram * item.Food.Calorie;
+        //    }
+
+        //    return totalMealCalorie;
+        //}
+        public double GetMealCalorieByMealId(int mealID)
         {
             List<MealDetails> mealDetails = new List<MealDetails>();
-
+            mealDetails = context.MealDetails
+                          .Where(m => m.MealId==mealID).ToList();
             double totalMealCalorie = 0;
 
             foreach (var item in mealDetails)
             {
-                totalMealCalorie += item.Gram * item.Food.Calorie;
+                totalMealCalorie += item.Gram * (context.Foods.Where(f=>f.Id==item.FoodId).FirstOrDefault()).Calorie;
             }
 
             return totalMealCalorie;
         }
-        public List<FoodCountByMealViewModel> GetFoodsWithCount(string mealName)
+        public List<FoodCountByMealViewModel> GetFoodsWithCount()
         {
             List<FoodCountByMealViewModel> foodList = new List<FoodCountByMealViewModel>();
 
 
-            foreach (var food in context.Foods.Where(x => x.MealDetails.Any(y => y.Meal.MealType.Name == mealName)))
+            foreach (MealDetails item in GetAll())
             {
-                using (var context = new Context())
+                FoodCountByMealViewModel food = new FoodCountByMealViewModel()
                 {
-                    FoodCountByMealViewModel foodCount = new FoodCountByMealViewModel()
-                    {
-                        Id = food.Id,
-                        Name = food.Name,
-                        Count = context.MealDetails.Count(x => x.Food.Name == food.Name),
-                        Image = food.Image
-                    };
-                    foodList.Add(foodCount);
-                }
+                    Name = item.Food.Name,
+                    Count = context.MealDetails.Count(x => x.Food.Name == item.Food.Name),
+                    Image = item.Food.Image
+                };
+
+                foodList.Add(food);
             }
 
             return foodList;
@@ -101,8 +131,8 @@ namespace BLL.Services
             var deleteMeal = GetById(meal.Id);
             Delete(deleteMeal);
         }
-
-
+        
+        
 
 
 

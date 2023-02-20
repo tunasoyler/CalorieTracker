@@ -36,7 +36,7 @@ namespace BLL.Services
         public void AddMeal(MealCreateDTO meal)
         {
 
-            Meal newMeal = new Meal() { Name="meal" ,MealTypeID = meal.MealTypeId, UserID = meal.UserId, State = true, CreatedDate = DateTime.Now, UpdatedDate = DateTime.Now };
+            Meal newMeal = new Meal() { Name="meal" ,MealTypeID = meal.MealTypeId, UserID = meal.UserId, State = true};
             Add(newMeal);
         }
         public void UpdateMeal(Meal meal)
@@ -70,14 +70,25 @@ namespace BLL.Services
         {            
             return GetById(id);
         }
-        public List<Meal> GetMealsByDate(DateTime date)
+        public List<MealViewModel> GetMealsByDate(DateTime date)
         {
-            //using (var context = new Context())
-            //{
-            return context.Meals
-                          .Where(m => m.CreatedDate.Date == date.Date)
-                          .ToList();
-            //}
+            List<MealViewModel> MealVmList = new List<MealViewModel>();
+            
+            foreach (Meal item in GetAll())
+            {
+                string mealType = context.MealTypes.Where(f => f.Id == item.MealTypeID).FirstOrDefault().Name;
+                MealViewModel mealViewModel = new MealViewModel()
+                {
+                    Id = item.Id,
+                    MealTypeName= mealType,
+                    Date = date.Date
+
+                };
+                MealVmList.Add(mealViewModel);
+            }
+            return MealVmList;
+            
+            
         }
         public Meal GetMealByDateAndMealType(DateTime date, User user, int mealTypeId)
         {
@@ -85,20 +96,7 @@ namespace BLL.Services
             return context.Meals
                           .Where(m => m.CreatedDate.Date == date.Date && m.UserID == user.Id && m.MealTypeID == mealTypeId).FirstOrDefault();
 
-        }
-        //public MealDetailsViewModel GetMealByDate(DateTime dateTime,User user,int mealTypeId)
-        //{           
-        //        DateTime date = dateTime;
-        //        var getMealByDate = context.Meals
-        //            .Where(md => md.CreatedDate == date && md.UserID == user.Id && md.MealTypeID==mealTypeId)                    
-        //            .Select(g => new
-        //            {
-        //                g.f,g.Gram,g.Meal.MealDetails
-
-        //            }).ToList();
-        //    getMealByDate as List<MealDetailsViewModel>
-        //        return;
-        //}
+        }     
 
     }
 }

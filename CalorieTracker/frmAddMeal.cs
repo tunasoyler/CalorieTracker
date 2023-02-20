@@ -186,24 +186,24 @@ namespace UI
                 MealDetailsService mealDetailsService = new MealDetailsService(context);
                 MealService mealService = new MealService(context);
                 DataGridViewRow selectedRow = dgvMealTypes.SelectedRows[0];
-
                 currentMeal = new Meal();
                 currentMeal = mealService.GetMealByDateAndMealType(DateTime.Now.Date, currentUser, Convert.ToInt32(selectedRow.Cells["clmId"].Value.ToString()));
-
                 dgvFoods.Rows.Clear();
-
-                MealViewModel mealViewModel = new MealViewModel()
+                if(currentMeal != null)
                 {
-                    Id = currentMeal.Id,
-                    Date = DateTime.Now,
-                    MealTypeName = selectedRow.Cells["clmMeals"].Value.ToString(),
-                };
-
-                mealViewModel.MealDetailsViewModel = mealDetailsService.GetFoodsByMealType(DateTime.Now, currentUser, Convert.ToInt32(selectedRow.Cells["clmId"].Value.ToString()));
-                foreach (var mealDetails in mealViewModel.MealDetailsViewModel)
-                {
-                    dgvFoods.Rows.Add(mealDetails.Food, mealDetails.Gram, mealDetails.Calorie, mealDetails.Image);
+                    MealViewModel mealViewModel = new MealViewModel()
+                    {
+                        Id = currentMeal.Id,
+                        Date = DateTime.Now,
+                        MealTypeName = selectedRow.Cells["clmMeals"].Value.ToString(),
+                    };
+                    mealViewModel.MealDetailsViewModel = mealDetailsService.GetFoodsByMealType(DateTime.Now, currentUser, Convert.ToInt32(selectedRow.Cells["clmId"].Value.ToString()));
+                    foreach (var mealDetails in mealViewModel.MealDetailsViewModel)
+                    {
+                        dgvFoods.Rows.Add(mealDetails.Food, mealDetails.Gram, mealDetails.Calorie, mealDetails.Image);
+                    }
                 }
+                
             }
             catch (Exception)
             {
