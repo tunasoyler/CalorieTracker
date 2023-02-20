@@ -115,8 +115,8 @@ namespace BLL.Services
                 GoalWeight = user.GoalWeight,
                 Password = user.Password,
                 Timeline = user.Timeline,
-                CreatedDate = DateTime.Now,
-                UpdatedDate = DateTime.Now,
+                CreatedDate = DateTime.Now.Date,
+                UpdatedDate = DateTime.Now.Date,
                 State = true
 
 

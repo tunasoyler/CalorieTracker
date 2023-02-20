@@ -23,7 +23,7 @@ namespace BLL.Services
         }
         public void AddFood(FoodCreateDTO food)
         {
-            Food newfood= new Food { Name=food.FoodName, Calorie=food.Calorie, Image=food.Image };
+            Food newfood= new Food { Name=food.FoodName, Calorie=food.Calorie, Image=food.Image,CreatedDate=DateTime.Now.Date,UpdatedDate=DateTime.Now.Date ,State=true };
             Add(newfood);
         }
         public void UpdateFood(FoodUpdateDTO food)

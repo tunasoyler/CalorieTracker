@@ -17,8 +17,8 @@ namespace DAL.Configurations
             builder.HasMany(x => x.MealDetails).WithOne(x => x.Meal).HasForeignKey(x => x.MealId).OnDelete(DeleteBehavior.Restrict);
             builder.HasOne(x => x.User).WithMany(x => x.Meals).HasForeignKey(x => x.UserID).OnDelete(DeleteBehavior.Restrict);
             builder.HasOne(x => x.MealType).WithMany(x => x.Meals).HasForeignKey(x => x.MealTypeID).OnDelete(DeleteBehavior.Restrict);
-            builder.Property(x => x.CreatedDate).HasConversion(typeof(DateTime)).HasDefaultValue(DateTime.Now);
-            builder.Property(x => x.UpdatedDate).HasConversion(typeof(DateTime)).HasDefaultValue(DateTime.Now);
+            builder.Property(x => x.CreatedDate).HasConversion(typeof(DateTime));
+            builder.Property(x => x.UpdatedDate).HasConversion(typeof(DateTime));
         }
     }
 }

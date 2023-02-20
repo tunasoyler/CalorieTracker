@@ -86,9 +86,7 @@ namespace DAL.Migrations
                         .HasColumnType("float");
 
                     b.Property<DateTime>("CreatedDate")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2023, 2, 19, 20, 45, 23, 974, DateTimeKind.Local).AddTicks(1285));
+                        .HasColumnType("datetime2");
 
                     b.Property<byte[]>("Image")
                         .IsRequired()
@@ -103,9 +101,7 @@ namespace DAL.Migrations
                         .HasColumnType("bit");
 
                     b.Property<DateTime>("UpdatedDate")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2023, 2, 19, 20, 45, 23, 974, DateTimeKind.Local).AddTicks(1486));
+                        .HasColumnType("datetime2");
 
                     b.HasKey("Id");
 
@@ -150,9 +146,7 @@ namespace DAL.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<DateTime>("CreatedDate")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2023, 2, 19, 20, 45, 23, 974, DateTimeKind.Local).AddTicks(3695));
+                        .HasColumnType("datetime2");
 
                     b.Property<int>("MealTypeID")
                         .HasColumnType("int");
@@ -165,9 +159,7 @@ namespace DAL.Migrations
                         .HasColumnType("bit");
 
                     b.Property<DateTime>("UpdatedDate")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2023, 2, 19, 20, 45, 23, 974, DateTimeKind.Local).AddTicks(3905));
+                        .HasColumnType("datetime2");
 
                     b.Property<int>("UserID")
                         .HasColumnType("int");
@@ -190,9 +182,7 @@ namespace DAL.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<DateTime>("CreatedDate")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2023, 2, 19, 20, 45, 23, 974, DateTimeKind.Local).AddTicks(5080));
+                        .HasColumnType("datetime2");
 
                     b.Property<int>("FoodId")
                         .HasColumnType("int");
@@ -211,9 +201,7 @@ namespace DAL.Migrations
                         .HasColumnType("bit");
 
                     b.Property<DateTime>("UpdatedDate")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2023, 2, 19, 20, 45, 23, 974, DateTimeKind.Local).AddTicks(5247));
+                        .HasColumnType("datetime2");
 
                     b.HasKey("Id");
 
@@ -350,7 +338,7 @@ namespace DAL.Migrations
                             Id = 1,
                             ActivityTypeId = 1,
                             BMR = 1.0,
-                            BirthDate = new DateTime(2023, 2, 19, 20, 45, 23, 974, DateTimeKind.Local).AddTicks(8537),
+                            BirthDate = new DateTime(2023, 2, 20, 13, 30, 23, 129, DateTimeKind.Local).AddTicks(5429),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             FirstName = "admin",
                             GenderId = 1,

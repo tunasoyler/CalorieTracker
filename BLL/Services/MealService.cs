@@ -36,7 +36,7 @@ namespace BLL.Services
         public void AddMeal(MealCreateDTO meal)
         {
 
-            Meal newMeal = new Meal() { Name="meal" ,MealTypeID = meal.MealTypeId, UserID = meal.UserId, State = true};
+            Meal newMeal = new Meal() { Name="meal" ,MealTypeID = meal.MealTypeId, UserID = meal.UserId, State = true, CreatedDate=DateTime.Now.Date,UpdatedDate=DateTime.Now.Date};
             Add(newMeal);
         }
         public void UpdateMeal(Meal meal)
