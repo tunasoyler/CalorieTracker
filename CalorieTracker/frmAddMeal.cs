@@ -233,15 +233,18 @@ namespace UI
                 };
                 mealService.AddMeal(mealCreateDTO);
                 currentMeal = new Meal();
-                currentMeal = mealService.GetMealByDateAndMealType(DateTime.Now, currentUser, Convert.ToInt32(selectedRow.Cells["clmId"].Value.ToString()));
-                MealDetailsCreateDTO mealDetail = new MealDetailsCreateDTO
-                {
-                    Gram = Convert.ToDouble(nudGram.Value),
-                    FoodId = selectedFood.Id,                    
-                    MealId=currentMeal.Id,                                                           
-                };
-                mealDetailService.AddMealDetail(mealDetail);
-                FillMealDetails();
+                currentMeal = mealService.GetMealByDateAndMealType(DateTime.Now.Date, currentUser, Convert.ToInt32(selectedRow.Cells["clmId"].Value.ToString()));                             
+                    
+                    MealDetailsCreateDTO mealDetail = new MealDetailsCreateDTO
+                    {
+                        Gram = Convert.ToDouble(nudGram.Value),
+                        FoodId = selectedFood.Id,
+                        MealId = currentMeal.Id,
+                    };
+                    mealDetailService.AddMealDetail(mealDetail);
+                    FillMealDetails();
+             
+                   
             }
             catch (Exception ex)
             {

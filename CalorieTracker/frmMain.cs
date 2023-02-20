@@ -72,7 +72,7 @@ namespace UI
             MealDetailsService mealDetailsService = new MealDetailsService(context);
 
             SetDates();
-            FillCaloriesByMealType();
+            //FillCaloriesByMealType();
             //dgvMealsToday.DataSource = mealDetailsService.GetTotalCalorieByMeal(mealDetails, DateTime.Today, currentUser);
 
 
@@ -183,37 +183,42 @@ namespace UI
             try
             {
                 MealDetailsService mealDetailsService = new MealDetailsService(context);
-                MealService mealService = new MealService(context);              
-                currentMeal = new Meal();
+                MealService mealService = new MealService(context);
+                
+                    currentMeal = new Meal();
                 dgvMyMealsToday.Rows.Clear();
                 FillMealTypes();
                 for (int i = 1;i < 5; i++) 
                 {
-                    currentMeal = mealService.GetMealByDateAndMealType(DateTime.Now.Date, currentUser, i);                   
-                    totalMealCalorie = 0;
-                                       
+                    if (currentMeal != null)
+                    {
+                        currentMeal = mealService.GetMealByDateAndMealType(DateTime.Now.Date, currentUser, i);
+                        totalMealCalorie = 0;
+
                         MealViewModel mealViewModel = new MealViewModel()
                         {
                             Id = currentMeal.Id,
-                            Date = DateTime.Now.Date,                           
-                            
+                            Date = DateTime.Now.Date,
+
                         };
                         mealViewModel.MealDetailsViewModel = mealDetailsService.GetFoodsByMealType(DateTime.Now, currentUser, i);
-                        
+
                         var mealDetailList = mealDetailsService.GetFoodsByMealType(DateTime.Now.Date, currentUser, i);
-                        
+
                         foreach (var item in mealDetailList)
                         {
 
                             totalMealCalorie += item.Calorie;
                         }
-                    foreach (var food in mealViewModel.MealDetailsViewModel)
-                    {
-                        DataGridViewRow row = new DataGridViewRow();
-                        row.CreateCells(dgvMyMealsToday);                       
-                        row.Cells[1].Value = totalMealCalorie;
-                        dgvMyMealsToday.Rows.Insert(i);
-                    }                    
+                        foreach (var food in mealViewModel.MealDetailsViewModel)
+                        {
+                            DataGridViewRow row = new DataGridViewRow();
+                            row.CreateCells(dgvMyMealsToday);
+                            row.Cells[1].Value = totalMealCalorie;
+                            dgvMyMealsToday.Rows.Insert(i);
+                        }
+                    }
+                                     
                     
                 
                 
