@@ -66,23 +66,44 @@ namespace UI
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            SetDates();
+            SetWeeklyChartValues(1900, 1500, 2500, 1800, 1000, 1000, 2000);
+            SetMealsToday();
+
             MealDetails mealDetails = new MealDetails();
 
 
             MealDetailsService mealDetailsService = new MealDetailsService(context);
 
 
-            //dgvMealsToday.DataSource = mealDetailsService.GetTotalCalorieByMeal(mealDetails, DateTime.Today, currentUser);
+            
+
+        }
+
+        private void SetMealsToday()
+        {
+            dgvMyMealsToday.Rows.Clear();
+            MealDetailsViewModel mealDetailsVm = new MealDetailsViewModel();
+            MealService mealService = new MealService(context);
+            MealDetailsService mealDetailsService = new MealDetailsService(context);
+
+
+            List<MealViewModel> mealList = mealService.GetMealsByDate(DateTime.Now);
+
+            foreach (var meal in mealList)
+            {
+                DataGridViewRow row = new DataGridViewRow();
+                row.CreateCells(dgvMyMealsToday);
+                row.Cells[0].Value = meal.Id;
+                row.Cells[1].Value = meal.MealTypeName;
+                row.Cells[2].Value = mealDetailsService.GetMealCalorieByMeal(meal);
+                dgvMyMealsToday.Rows.Add(row);
+
+            }
 
 
 
 
-
-
-
-
-
-            //MealDetailsViewModel mealDetailsVm = new MealDetailsViewModel();
             //double dailyLimit = 0, currentCalorie = 0;
 
             //foreach (var item in )
@@ -91,14 +112,22 @@ namespace UI
             //}
 
             //mealDetailsVm.Calorie
-            //currentCalorie = 
-            //cpbDailyLimit.Text = 
+            //currentCalorie =
+            //cpbDailyLimit.Text =
+        }
 
-            
 
-            SetWeeklyChartValues(1900, 1500, 2500, 1800, 1000, 1000, 2000);
-            
-
+        private void SetDates()
+        {
+            lblStartDate.Text = currentUser.CreatedDate.ToString("dd.MM.yyyy");
+            if (currentUser.Timeline == "6 months")
+            {
+                lblGoalDate.Text = (currentUser.CreatedDate.AddMonths(6)).ToString("dd.MM.yyyy");
+            }
+            else
+            {
+                lblGoalDate.Text = (currentUser.CreatedDate.AddMonths(12)).ToString("dd.MM.yyyy");
+            }
         }
 
         private void SetWeeklyChartValues(int day1, int day2, int day3, int day4, int day5, int day6, int day7)
