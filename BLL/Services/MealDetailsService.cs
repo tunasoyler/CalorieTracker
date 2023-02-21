@@ -105,11 +105,11 @@ namespace BLL.Services
 
         //    return totalMealCalorie;
         //}
-        public double GetMealCalorieByMealId(int mealID)
+        public double GetMealCalorieByMealId(int mealID,DateTime date)
         {
             List<MealDetails> mealDetails = new List<MealDetails>();
             mealDetails = context.MealDetails
-                          .Where(m => m.MealId==mealID).ToList();
+                          .Where(m => m.MealId==mealID&&m.Meal.CreatedDate==date.Date).ToList();
             double totalMealCalorie = 0;
 
             foreach (var item in mealDetails)

@@ -57,7 +57,7 @@
             this.cmbFoodList = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblMealCalorie = new System.Windows.Forms.Label();
             this.panelMenu.SuspendLayout();
             this.panelTitleBar.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -413,16 +413,16 @@
             this.panel2.Size = new System.Drawing.Size(140, 153);
             this.panel2.TabIndex = 44;
             // 
-            // label5
+            // lblMealCalorie
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(9, 434);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(150, 16);
-            this.label5.TabIndex = 45;
-            this.label5.Text = "Total Calories in Meal :";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblMealCalorie.AutoSize = true;
+            this.lblMealCalorie.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblMealCalorie.Location = new System.Drawing.Point(9, 434);
+            this.lblMealCalorie.Name = "lblMealCalorie";
+            this.lblMealCalorie.Size = new System.Drawing.Size(150, 16);
+            this.lblMealCalorie.TabIndex = 45;
+            this.lblMealCalorie.Text = "Total Calories in Meal :";
+            this.lblMealCalorie.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // frmAddMeal
             // 
@@ -431,7 +431,7 @@
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(360, 520);
             this.ControlBox = false;
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.lblMealCalorie);
             this.Controls.Add(this.btnDeleteFood);
             this.Controls.Add(this.btnAddFood);
             this.Controls.Add(this.label3);
@@ -490,7 +490,7 @@
         private DataGridViewTextBoxColumn clmCalorie;
         private DataGridViewImageColumn clmImage;
         private Panel panel2;
-        private Label label5;
+        private Label lblMealCalorie;
         private DataGridViewTextBoxColumn clmId;
         private DataGridViewTextBoxColumn clmMeals;
     }

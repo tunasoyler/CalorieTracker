@@ -194,7 +194,7 @@ namespace UI
                     MealViewModel mealViewModel = new MealViewModel()
                     {
                         Id = currentMeal.Id,
-                        Date = DateTime.Now,
+                        Date = DateTime.Now.Date,
                         MealTypeName = selectedRow.Cells["clmMeals"].Value.ToString(),
                     };
                     mealViewModel.MealDetailsViewModel = mealDetailsService.GetFoodsByMealType(DateTime.Now, currentUser, Convert.ToInt32(selectedRow.Cells["clmId"].Value.ToString()));
@@ -203,7 +203,9 @@ namespace UI
                         dgvFoods.Rows.Add(mealDetails.Food, mealDetails.Gram, mealDetails.Calorie, mealDetails.Image);
                     }
                 }
-                
+                double totalMealCalorie = mealDetailsService.GetMealCalorieByMealId(currentMeal.Id, DateTime.Now.Date);
+                lblMealCalorie.Text = "Total Calories in Meal : " + Math.Round(totalMealCalorie) + " kcal";
+
             }
             catch (Exception)
             {

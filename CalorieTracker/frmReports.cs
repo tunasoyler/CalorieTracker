@@ -182,13 +182,9 @@ namespace UI
                     }
                     var mealDetailList= mealDetailsService.GetFoodsByMealType(date.Date, currentUser, Convert.ToInt32(selectedRow.Cells["clmId"].Value.ToString()));
 
-                    foreach (var item in mealDetailList)
-                    {
+                    totalMealCalorie = mealDetailsService.GetMealCalorieByMealId(currentMeal.Id, date);
 
-                        totalMealCalorie += item.Calorie;
-                    }
-
-                    lblMealCalorie.Text = "Total Calories in Daily : " + Math.Round(totalMealCalorie) + " kcal";
+                    lblMealCalorie.Text = "Total Calories in Meal : " + Math.Round(totalMealCalorie) + " kcal";
                 }
             }
             catch (Exception)
@@ -215,12 +211,12 @@ namespace UI
                 MealService mealService = new MealService(context);
                 mealDetailsService= new MealDetailsService(context);
                 List<MealViewModel> mealList = new List<MealViewModel>();
-                mealList=mealService.GetMealsByDate(dtpDate.Value.Date);              
+                mealList = mealService.GetMealsByDate(dtpDate.Value.Date);
                 totalDailyCalorie = 0;
                 foreach (var meal in mealList)
                 {                   
 
-                    totalDailyCalorie += mealDetailsService.GetMealCalorieByMealId(meal.Id);
+                    totalDailyCalorie += mealDetailsService.GetMealCalorieByMealId(meal.Id, dtpDate.Value.Date);
                 }
 
                 lblDailyCalorie.Text = "Total Calories in Daily : " + Math.Round(totalDailyCalorie) + " kcal";
@@ -254,6 +250,7 @@ namespace UI
         private void dgvMeals_SelectionChanged(object sender, EventArgs e)
         {
             FillMealDetails();
+            
         }
     }
 }

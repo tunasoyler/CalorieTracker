@@ -45,8 +45,6 @@
             this.lblMealCalorie = new System.Windows.Forms.Label();
             this.lblDailyCalorie = new System.Windows.Forms.Label();
             this.sqlCommand1 = new Microsoft.Data.SqlClient.SqlCommand();
-            this.btnDeleteFood = new System.Windows.Forms.Button();
-            this.btnDeleteMeal = new System.Windows.Forms.Button();
             this.dgvFoods = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -288,28 +286,6 @@
             this.sqlCommand1.Notification = null;
             this.sqlCommand1.Transaction = null;
             // 
-            // btnDeleteFood
-            // 
-            this.btnDeleteFood.Location = new System.Drawing.Point(246, 418);
-            this.btnDeleteFood.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.btnDeleteFood.Name = "btnDeleteFood";
-            this.btnDeleteFood.Size = new System.Drawing.Size(100, 30);
-            this.btnDeleteFood.TabIndex = 20;
-            this.btnDeleteFood.Text = "Delete Food";
-            this.btnDeleteFood.UseVisualStyleBackColor = true;
-            this.btnDeleteFood.Click += new System.EventHandler(this.btnDeleteFood_Click);
-            // 
-            // btnDeleteMeal
-            // 
-            this.btnDeleteMeal.Location = new System.Drawing.Point(246, 196);
-            this.btnDeleteMeal.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.btnDeleteMeal.Name = "btnDeleteMeal";
-            this.btnDeleteMeal.Size = new System.Drawing.Size(100, 30);
-            this.btnDeleteMeal.TabIndex = 21;
-            this.btnDeleteMeal.Text = "Delete Meal";
-            this.btnDeleteMeal.UseVisualStyleBackColor = true;
-            this.btnDeleteMeal.Click += new System.EventHandler(this.btnDeleteMeal_Click);
-            // 
             // dgvFoods
             // 
             this.dgvFoods.AllowUserToAddRows = false;
@@ -414,8 +390,6 @@
             this.ControlBox = false;
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.btnDeleteFood);
-            this.Controls.Add(this.btnDeleteMeal);
             this.Controls.Add(this.lblDailyCalorie);
             this.Controls.Add(this.lblMealCalorie);
             this.Controls.Add(this.btnFilter);
@@ -457,8 +431,6 @@
         private Label lblMealCalorie;
         private Label lblDailyCalorie;
         private Microsoft.Data.SqlClient.SqlCommand sqlCommand1;
-        private Button btnDeleteFood;
-        private Button btnDeleteMeal;
         private DataGridView dgvFoods;
         private Panel panel2;
         private Panel panel1;
