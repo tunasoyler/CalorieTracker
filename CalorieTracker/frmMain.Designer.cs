@@ -39,15 +39,12 @@
             this.cpbDailyLimit = new CircularProgressBar_NET5.CircularProgressBar();
             this.pnlDailyStats = new System.Windows.Forms.Panel();
             this.dgvMyMealsToday = new System.Windows.Forms.DataGridView();
+            this.clmId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmMeals = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmCalorie = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label3 = new System.Windows.Forms.Label();
             this.pnlGoalProgress = new System.Windows.Forms.Panel();
-            this.lblDay7 = new System.Windows.Forms.Label();
-            this.lblDay6 = new System.Windows.Forms.Label();
-            this.lblDay5 = new System.Windows.Forms.Label();
-            this.lblDay4 = new System.Windows.Forms.Label();
-            this.lblDay3 = new System.Windows.Forms.Label();
-            this.lblDay2 = new System.Windows.Forms.Label();
-            this.lblDay1 = new System.Windows.Forms.Label();
+            this.lblDays = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.sparkLine1 = new Syncfusion.Windows.Forms.Chart.SparkLine();
             this.lblStartDate = new System.Windows.Forms.Label();
@@ -60,9 +57,6 @@
             this.btnReports = new System.Windows.Forms.Button();
             this.btnHome = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.clmId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmMeals = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmCalorie = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelTitleBar.SuspendLayout();
             this.pnlDailyLimit.SuspendLayout();
             this.pnlDailyStats.SuspendLayout();
@@ -157,11 +151,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(30, 123);
+            this.label2.Location = new System.Drawing.Point(26, 138);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(89, 44);
             this.label2.TabIndex = 6;
-            this.label2.Text = "My Daily\r\nLimit";
+            this.label2.Text = "My Daily\r\n Status";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // cpbDailyLimit
@@ -195,7 +189,6 @@
             this.cpbDailyLimit.SuperscriptMargin = new System.Windows.Forms.Padding(0);
             this.cpbDailyLimit.SuperscriptText = "";
             this.cpbDailyLimit.TabIndex = 5;
-            this.cpbDailyLimit.Text = "1900/2200";
             this.cpbDailyLimit.TextMargin = new System.Windows.Forms.Padding(1, 2, 0, 0);
             this.cpbDailyLimit.Value = 40;
             // 
@@ -225,6 +218,24 @@
             this.dgvMyMealsToday.Size = new System.Drawing.Size(140, 168);
             this.dgvMyMealsToday.TabIndex = 7;
             // 
+            // clmId
+            // 
+            this.clmId.HeaderText = "Id";
+            this.clmId.Name = "clmId";
+            this.clmId.Visible = false;
+            // 
+            // clmMeals
+            // 
+            this.clmMeals.HeaderText = "Meal ";
+            this.clmMeals.Name = "clmMeals";
+            this.clmMeals.Width = 75;
+            // 
+            // clmCalorie
+            // 
+            this.clmCalorie.HeaderText = "Calorie";
+            this.clmCalorie.Name = "clmCalorie";
+            this.clmCalorie.Width = 60;
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -238,13 +249,7 @@
             // pnlGoalProgress
             // 
             this.pnlGoalProgress.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlGoalProgress.Controls.Add(this.lblDay7);
-            this.pnlGoalProgress.Controls.Add(this.lblDay6);
-            this.pnlGoalProgress.Controls.Add(this.lblDay5);
-            this.pnlGoalProgress.Controls.Add(this.lblDay4);
-            this.pnlGoalProgress.Controls.Add(this.lblDay3);
-            this.pnlGoalProgress.Controls.Add(this.lblDay2);
-            this.pnlGoalProgress.Controls.Add(this.lblDay1);
+            this.pnlGoalProgress.Controls.Add(this.lblDays);
             this.pnlGoalProgress.Controls.Add(this.label7);
             this.pnlGoalProgress.Controls.Add(this.sparkLine1);
             this.pnlGoalProgress.Controls.Add(this.lblStartDate);
@@ -256,68 +261,13 @@
             this.pnlGoalProgress.Size = new System.Drawing.Size(300, 180);
             this.pnlGoalProgress.TabIndex = 6;
             // 
-            // lblDay7
+            // lblDays
             // 
-            this.lblDay7.AutoSize = true;
-            this.lblDay7.Location = new System.Drawing.Point(245, 161);
-            this.lblDay7.Name = "lblDay7";
-            this.lblDay7.Size = new System.Drawing.Size(32, 15);
-            this.lblDay7.TabIndex = 10;
-            this.lblDay7.Text = "day7";
-            // 
-            // lblDay6
-            // 
-            this.lblDay6.AutoSize = true;
-            this.lblDay6.Location = new System.Drawing.Point(208, 161);
-            this.lblDay6.Name = "lblDay6";
-            this.lblDay6.Size = new System.Drawing.Size(32, 15);
-            this.lblDay6.TabIndex = 10;
-            this.lblDay6.Text = "day6";
-            // 
-            // lblDay5
-            // 
-            this.lblDay5.AutoSize = true;
-            this.lblDay5.Location = new System.Drawing.Point(171, 161);
-            this.lblDay5.Name = "lblDay5";
-            this.lblDay5.Size = new System.Drawing.Size(32, 15);
-            this.lblDay5.TabIndex = 10;
-            this.lblDay5.Text = "day5";
-            // 
-            // lblDay4
-            // 
-            this.lblDay4.AutoSize = true;
-            this.lblDay4.Location = new System.Drawing.Point(134, 161);
-            this.lblDay4.Name = "lblDay4";
-            this.lblDay4.Size = new System.Drawing.Size(32, 15);
-            this.lblDay4.TabIndex = 10;
-            this.lblDay4.Text = "day4";
-            // 
-            // lblDay3
-            // 
-            this.lblDay3.AutoSize = true;
-            this.lblDay3.Location = new System.Drawing.Point(97, 161);
-            this.lblDay3.Name = "lblDay3";
-            this.lblDay3.Size = new System.Drawing.Size(32, 15);
-            this.lblDay3.TabIndex = 10;
-            this.lblDay3.Text = "day3";
-            // 
-            // lblDay2
-            // 
-            this.lblDay2.AutoSize = true;
-            this.lblDay2.Location = new System.Drawing.Point(60, 161);
-            this.lblDay2.Name = "lblDay2";
-            this.lblDay2.Size = new System.Drawing.Size(32, 15);
-            this.lblDay2.TabIndex = 10;
-            this.lblDay2.Text = "day2";
-            // 
-            // lblDay1
-            // 
-            this.lblDay1.AutoSize = true;
-            this.lblDay1.Location = new System.Drawing.Point(23, 161);
-            this.lblDay1.Name = "lblDay1";
-            this.lblDay1.Size = new System.Drawing.Size(32, 15);
-            this.lblDay1.TabIndex = 10;
-            this.lblDay1.Text = "day1";
+            this.lblDays.AutoSize = true;
+            this.lblDays.Location = new System.Drawing.Point(23, 161);
+            this.lblDays.Name = "lblDays";
+            this.lblDays.Size = new System.Drawing.Size(0, 15);
+            this.lblDays.TabIndex = 10;
             // 
             // label7
             // 
@@ -492,24 +442,6 @@
             this.panel3.Size = new System.Drawing.Size(30, 40);
             this.panel3.TabIndex = 0;
             // 
-            // clmId
-            // 
-            this.clmId.HeaderText = "Id";
-            this.clmId.Name = "clmId";
-            this.clmId.Visible = false;
-            // 
-            // clmMeals
-            // 
-            this.clmMeals.HeaderText = "Meal ";
-            this.clmMeals.Name = "clmMeals";
-            this.clmMeals.Width = 75;
-            // 
-            // clmCalorie
-            // 
-            this.clmCalorie.HeaderText = "Calorie";
-            this.clmCalorie.Name = "clmCalorie";
-            this.clmCalorie.Width = 60;
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -555,13 +487,7 @@
         private Panel pnlDailyStats;
         private Label label3;
         private Panel pnlGoalProgress;
-        private Label lblDay7;
-        private Label lblDay6;
-        private Label lblDay5;
-        private Label lblDay4;
-        private Label lblDay3;
-        private Label lblDay2;
-        private Label lblDay1;
+        private Label lblDays;
         private Label lblStartDate;
         private Label lblGoalDate;
         private Label label4;

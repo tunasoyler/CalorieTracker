@@ -1,10 +1,13 @@
 using BLL.Services;
 using DAL;
+using DotNetOpenAuth.Messaging;
 using Entities.Concrete;
 using Entities.Dtos.UserDtos;
 using Entities.ViewModels;
 using Syncfusion.UI.Xaml.Charts;
+using System.Collections.Generic;
 using System.Runtime.InteropServices;
+using System.Windows.Forms;
 
 namespace UI
 {
@@ -66,13 +69,13 @@ namespace UI
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            MealDetails mealDetails = new MealDetails();
-
-
-            MealDetailsService mealDetailsService = new MealDetailsService(context);
-
+            
             SetDates();
             FillCaloriesByMealType();
+            CircularProgresBarLoad();
+            SetWeeklyChartValues();
+
+
             //dgvMealsToday.DataSource = mealDetailsService.GetTotalCalorieByMeal(mealDetails, DateTime.Today, currentUser);
 
 
@@ -97,14 +100,32 @@ namespace UI
 
 
 
-            SetWeeklyChartValues(1900, 1500, 2500, 1800, 1000, 1000, 2000);
-            
+
+
 
         }
 
-        private void SetWeeklyChartValues(int day1, int day2, int day3, int day4, int day5, int day6, int day7)
+        private void SetWeeklyChartValues()
         {
-            int[] list = { day1, day2, day3, day4, day5, day6, day7 };
+            MealService mealService = new MealService(context);
+            MealDetailsService mealDetailsService = new MealDetailsService(context);
+            List<MealViewModel> mealList = new List<MealViewModel>();
+            int[] list = new int[7];
+            for (int i = 0; i < 7; i++)
+            {
+                DateTime date = (DateTime.Now.Date).AddDays(-i);
+                mealList = mealService.GetMealsByDate(date);
+                double totalDailyCalorie = 0;
+                foreach (var meal in mealList)
+                {
+
+                    totalDailyCalorie += mealDetailsService.GetMealCalorieByMealId(meal.Id, date);
+                }
+                
+                list[i] = Convert.ToInt32(totalDailyCalorie);
+                lblDays.Text += $"{date.Day}.{date.Month}     ";
+
+            }
             sparkLine1.Source = list;
         }
 
@@ -155,29 +176,35 @@ namespace UI
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
         private void SetDates() 
-        { 
+        {
+            DateTime goalDate;
             lblStartDate.Text = currentUser.CreatedDate.ToString("dd.MM.yyyy"); 
             if (currentUser.Timeline == "6 months") 
-            { 
-                lblGoalDate.Text = (currentUser.CreatedDate.AddMonths(6)).ToString("dd.MM.yyyy"); 
+            {
+                goalDate = currentUser.CreatedDate.AddMonths(6);
+                lblGoalDate.Text = (goalDate).ToString("dd.MM.yyyy");
+
             } 
             else 
-            { 
-                lblGoalDate.Text = (currentUser.CreatedDate.AddMonths(12)).ToString("dd.MM.yyyy"); 
-            } 
+            {
+                goalDate = currentUser.CreatedDate.AddMonths(12);
+                lblGoalDate.Text = (goalDate).ToString("dd.MM.yyyy"); 
+            }
+            progressBar1.Maximum = (goalDate-currentUser.CreatedDate).Days;
+            progressBar1.Value=(DateTime.Now- currentUser.CreatedDate).Days;
         }
         double totalMealCalorie;
-        private void FillMealTypes()
-        {
-            MealTypeService mealTypeService = new MealTypeService(context);
-            List<MealTypeViewModel> mealTypeList = new List<MealTypeViewModel>();
-            mealTypeList = mealTypeService.GetAllMealTypes();
-            foreach (var mealType in mealTypeList)
-            {
-                dgvMyMealsToday.Rows.Add(mealType.Id, mealType.Name);
-            }
+        //private void FillMealTypes()
+        //{
+        //    MealTypeService mealTypeService = new MealTypeService(context);
+        //    List<MealTypeViewModel> mealTypeList = new List<MealTypeViewModel>();
+        //    mealTypeList = mealTypeService.GetAllMealTypes();
+        //    foreach (var mealType in mealTypeList)
+        //    {
+        //        dgvMyMealsToday.Rows.Add(mealType.Id, mealType.Name);
+        //    }
 
-        }
+        //}
         private void FillCaloriesByMealType()
         {
             try
@@ -204,6 +231,18 @@ namespace UI
             {
 
             }
+        }
+        private void CircularProgresBarLoad()
+        {
+            
+            cpbDailyLimit.Maximum = Convert.ToInt32(currentUser.DailyCalorieLimit);
+            for (int i = 0; i<4; i++)
+            {
+                cpbDailyLimit.Value += Convert.ToInt32(dgvMyMealsToday.Rows[i].Cells["clmCalorie"].Value);
+            }
+            cpbDailyLimit.Text = $"{cpbDailyLimit.Value}/{cpbDailyLimit.Maximum}";
+
+
         }
 
     }
