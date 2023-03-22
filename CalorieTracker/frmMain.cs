@@ -220,7 +220,7 @@ namespace UI
                 {
                     currentMeal = mealService.GetMealByDateAndMealType(date.Date, currentUser, mealType.Id);
                     double mealCalorie = mealDetailsService.GetMealCalorieByMealId(currentMeal.Id, date);
-                    dgvMyMealsToday.Rows.Add(mealType.Id, mealType.Name,mealCalorie);
+                    dgvMyMealsToday.Rows.Add(mealType.Id, mealType.Name, mealCalorie);
                 }
                 
                
